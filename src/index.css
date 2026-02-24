@@ -329,6 +329,23 @@
     color: hsl(var(--accent));
   }
 
+  /* Transparent header: light text on dark hero */
+  .header-transparent .nav-link {
+    color: hsl(40 27% 85%);
+  }
+
+  .header-transparent .nav-link:hover {
+    color: hsl(0 0% 100%);
+  }
+
+  .header-transparent .nav-link.active {
+    color: hsl(var(--accent));
+  }
+
+  .header-transparent .text-foreground {
+    color: hsl(0 0% 100%);
+  }
+
   /* Texture overlay */
   .texture-overlay {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='none'/%3E%3Ccircle cx='1' cy='1' r='0.5' fill='white' fill-opacity='0.04'/%3E%3C/svg%3E");

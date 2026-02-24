@@ -41,7 +41,7 @@ export function Header() {
           scrolled
             ? "bg-white/95 backdrop-blur-sm shadow-nav border-b border-border"
             : "bg-transparent"
-        }`}
+        } ${!scrolled ? "header-transparent" : ""}`}
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
