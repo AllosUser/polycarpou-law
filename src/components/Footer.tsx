@@ -1,16 +1,19 @@
 import { Link } from "react-router-dom";
-import { Scale, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { Scale, MapPin, Phone, Mail } from "lucide-react";
 import { GoldDivider } from "./GoldDivider";
-
-const footerLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/team", label: "Our Team" },
-  { href: "/contact", label: "Contact" },
-];
+import { useI18n } from "@/lib/i18n";
 
 export function Footer() {
+  const { t } = useI18n();
+
+  const footerLinks = [
+    { href: "/", label: t("nav.home") },
+    { href: "/about", label: t("nav.about") },
+    { href: "/services", label: t("nav.services") },
+    { href: "/team", label: t("footer.ourTeam") },
+    { href: "/contact", label: t("nav.contact") },
+  ];
+
   return (
     <footer className="bg-foreground text-primary-foreground" role="contentinfo">
       <div className="container-law pt-16 pb-8">
@@ -29,14 +32,14 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm leading-relaxed" style={{ color: "hsl(0 0% 70%)" }}>
-              Boutique legal services in Cyprus delivered with integrity, precision, and a relentless focus on results.
+              {t("footer.desc")}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="text-xs font-semibold tracking-widest uppercase mb-4 text-gold">
-              Quick Links
+              {t("footer.quickLinks")}
             </h3>
             <ul className="space-y-2.5">
               {footerLinks.map((link) => (
@@ -56,11 +59,11 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-xs font-semibold tracking-widest uppercase mb-4 text-gold">
-              Contact
+              {t("footer.contact")}
             </h3>
             <ul className="space-y-3">
               {[
-                { icon: MapPin, text: "28 Arch. Makarios III Ave\nNicosia 1065, Cyprus" },
+                { icon: MapPin, text: t("contact.address.value") },
                 { icon: Phone, text: "+357 22 123 456" },
                 { icon: Mail, text: "info@polycarpoulaw.cy" },
               ].map(({ icon: Icon, text }) => (
@@ -77,13 +80,13 @@ export function Footer() {
           {/* Hours */}
           <div>
             <h3 className="text-xs font-semibold tracking-widest uppercase mb-4 text-gold">
-              Office Hours
+              {t("footer.hours")}
             </h3>
             <ul className="space-y-2.5">
               {[
-                { day: "Monday – Friday", hours: "9:00 – 18:00" },
-                { day: "Saturday", hours: "10:00 – 14:00" },
-                { day: "Sunday", hours: "Closed" },
+                { day: t("footer.monFri"), hours: "9:00 – 18:00" },
+                { day: t("footer.sat"), hours: "10:00 – 14:00" },
+                { day: t("footer.sun"), hours: t("footer.closed") },
               ].map(({ day, hours }) => (
                 <li key={day} className="flex justify-between gap-4">
                   <span className="text-sm" style={{ color: "hsl(0 0% 70%)" }}>{day}</span>
@@ -97,8 +100,8 @@ export function Footer() {
         <GoldDivider className="mb-6" />
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-xs" style={{ color: "hsl(0 0% 50%)" }}>
-          <p>© {new Date().getFullYear()} Polycarpou Law LLC. All rights reserved.</p>
-          <p>Member of the Cyprus Bar Association · Regulated by CBA</p>
+          <p>&copy; {new Date().getFullYear()} {t("footer.copyright")}</p>
+          <p>{t("footer.regulated")}</p>
         </div>
       </div>
     </footer>

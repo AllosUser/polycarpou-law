@@ -2,19 +2,22 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Scale } from "lucide-react";
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/team", label: "Team" },
-  { href: "/contact", label: "Contact" },
-];
+import { useI18n } from "@/lib/i18n";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Header() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { t } = useI18n();
+
+  const navLinks = [
+    { href: "/", label: t("nav.home") },
+    { href: "/about", label: t("nav.about") },
+    { href: "/services", label: t("nav.services") },
+    { href: "/team", label: t("nav.team") },
+    { href: "/contact", label: t("nav.contact") },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -73,10 +76,11 @@ export function Header() {
             ))}
           </nav>
 
-          {/* CTA */}
-          <div className="hidden md:block">
+          {/* CTA + Language */}
+          <div className="hidden md:flex items-center gap-4">
+            <LanguageSwitcher />
             <Link to="/contact" className="btn-primary text-xs">
-              Schedule Consultation
+              {t("nav.cta")}
             </Link>
           </div>
 
@@ -145,9 +149,10 @@ export function Header() {
                 ))}
               </nav>
 
-              <div className="p-6 border-t border-border">
+              <div className="p-6 border-t border-border space-y-4">
+                <LanguageSwitcher className="justify-center" />
                 <Link to="/contact" className="btn-primary w-full justify-center text-xs">
-                  Schedule Consultation
+                  {t("nav.cta")}
                 </Link>
               </div>
             </motion.div>
