@@ -56,7 +56,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "why.bullet3.title": "Results-focused",
     "why.bullet3.desc": "We measure success by outcomes, not activity. Your win is our priority.",
     "why.cta": "Our Story",
-    "why.quote": "\\u201CJustice is the sum of all moral duty.\\u201D",
+    "why.quote": "«Justice is the sum of all moral duty.»",
     "why.quoteAuthor": "— William Godwin",
 
     // Process
