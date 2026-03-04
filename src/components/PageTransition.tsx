@@ -9,7 +9,7 @@ const OVERLAY_DURATION_MS = 700;
  * that transitions upward before revealing the new page.
  */
 export function PageTransition() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const prevPathRef = useRef(pathname);
   const [showOverlay, setShowOverlay] = useState(false);
   const isFirstMount = useRef(true);
@@ -20,22 +20,33 @@ export function PageTransition() {
     if (isFirstMount.current) {
       isFirstMount.current = false;
       prevPathRef.current = pathname;
-      window.scrollTo(0, 0);
+      if (hash) {
+        setTimeout(() => {
+          const el = document.getElementById(hash.slice(1));
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      } else {
+        window.scrollTo(0, 0);
+      }
       return;
     }
 
     if (isNavigation) {
       prevPathRef.current = pathname;
-      window.scrollTo(0, 0);
+      if (!hash) window.scrollTo(0, 0);
       setShowOverlay(true);
 
       const timer = setTimeout(() => {
         setShowOverlay(false);
+        if (hash) {
+          const el = document.getElementById(hash.slice(1));
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       }, OVERLAY_DURATION_MS);
 
       return () => clearTimeout(timer);
     }
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return (
     <AnimatePresence>

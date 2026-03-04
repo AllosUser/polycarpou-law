@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { MapPin, Phone, Mail, Clock, CheckCircle, Send, AlertCircle } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { GoldDivider } from "@/components/GoldDivider";
@@ -19,8 +20,23 @@ interface FormErrors {
   message?: string;
 }
 
+const VALID_AREAS = ["corporate", "litigation", "real-estate", "family", "contract", "other"];
+
 export default function Contact() {
   const { t } = useI18n();
+  const [searchParams] = useSearchParams();
+
+  const [form, setForm] = useState<FormState>({ name: "", email: "", phone: "", subject: "", message: "" });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const area = searchParams.get("area");
+    if (area && VALID_AREAS.includes(area)) {
+      setForm((prev) => ({ ...prev, subject: area }));
+    }
+  }, [searchParams]);
 
   function validate(data: FormState): FormErrors {
     const errors: FormErrors = {};
@@ -29,11 +45,6 @@ export default function Contact() {
     if (!data.message.trim() || data.message.trim().length < 10) errors.message = t("contact.form.error.message");
     return errors;
   }
-
-  const [form, setForm] = useState<FormState>({ name: "", email: "", phone: "", subject: "", message: "" });
-  const [errors, setErrors] = useState<FormErrors>({});
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -80,7 +91,7 @@ export default function Contact() {
                   {[
                     { icon: MapPin, label: t("contact.address.label"), content: t("contact.address.value") },
                     { icon: Phone, label: t("contact.phone.label"), content: "+357 22 123 456", href: "tel:+35722123456" },
-                    { icon: Mail, label: t("contact.email.label"), content: "info@polycarpoulaw.cy", href: "mailto:info@polycarpoulaw.cy" },
+                    { icon: Mail, label: t("contact.email.label"), content: "polucarpoullc@gmail.com", href: "mailto:polucarpoullc@gmail.com" },
                   ].map(({ icon: Icon, label, content, href }) => (
                     <div key={label} className="flex gap-4">
                       <div className="w-10 h-10 rounded-sm flex items-center justify-center shrink-0" style={{ background: "hsl(var(--accent-light))" }}>
@@ -135,7 +146,7 @@ export default function Contact() {
 
             {/* Contact form */}
             <Reveal direction="right" delay={0.15} className="lg:col-span-3">
-              <div className="rounded-sm p-8 md:p-10" style={{ border: "1px solid hsl(var(--border))", boxShadow: "var(--shadow-md)", background: "hsl(var(--card))" }}>
+              <div id="contact-form" className="rounded-sm p-8 md:p-10 scroll-mt-24" style={{ border: "1px solid hsl(var(--border))", boxShadow: "var(--shadow-md)", background: "hsl(var(--card))" }}>
                 <AnimatePresence mode="wait">
                   {submitted ? (
                     <motion.div key="success" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} className="flex flex-col items-center justify-center text-center py-12 gap-5">

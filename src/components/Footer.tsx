@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Scale, MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import { GoldDivider } from "./GoldDivider";
 import { useI18n } from "@/lib/i18n";
 
@@ -20,17 +20,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
-              <span
-                className="w-8 h-8 rounded-sm flex items-center justify-center shrink-0"
-                style={{ background: "var(--gradient-gold)" }}
-              >
-                <Scale size={16} color="hsl(222 47% 11%)" strokeWidth={2} />
-              </span>
+            <Link to="/" className="flex items-center gap-2.5 mb-4 inline-flex" aria-label="Polycarpou LLC — Home">
+              <img src="/logo.png" alt="Polycarpou LLC" className="h-9 w-auto" />
               <span className="heading-serif text-xl font-medium text-primary-foreground">
-                Polycarpou <span className="text-gold">Law</span>
+                Polycarpou <span className="text-gold">LLC</span>
               </span>
-            </div>
+            </Link>
             <p className="text-sm leading-relaxed" style={{ color: "hsl(0 0% 70%)" }}>
               {t("footer.desc")}
             </p>
@@ -65,7 +60,7 @@ export function Footer() {
               {[
                 { icon: MapPin, text: t("contact.address.value") },
                 { icon: Phone, text: "+357 22 123 456" },
-                { icon: Mail, text: "info@polycarpoulaw.cy" },
+                { icon: Mail, text: "polucarpoullc@gmail.com" },
               ].map(({ icon: Icon, text }) => (
                 <li key={text} className="flex items-start gap-2.5">
                   <Icon size={14} className="text-gold shrink-0 mt-0.5" />

@@ -13,6 +13,7 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 const svcKeys = ["corporate", "litigation", "realestate", "family", "contract"];
+const areaParamMap: Record<string, string> = { corporate: "corporate", litigation: "litigation", realestate: "real-estate", family: "family", contract: "contract" };
 
 const timelineIcons = [MessageSquare, Search, FileText, Handshake, CheckCircle];
 
@@ -52,16 +53,13 @@ export default function Services() {
                       <Icon size={40} className="text-gold" strokeWidth={1.25} />
                     </div>
                     <div className="md:col-span-10 p-8 md:p-10 bg-card">
-                      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-                        <div className="flex-1">
-                          <p className="eyebrow mb-2">{t("svcPage.practiceArea")} {String(i + 1).padStart(2, "0")}</p>
-                          <h2 className="heading-serif text-2xl font-medium mb-3 text-foreground">{t(`svc.${sKey}.title`)}</h2>
-                          <GoldDivider className="mb-5" width="48px" />
-                          <p className="leading-relaxed">{t(`svc.${sKey}.desc`)}</p>
-                        </div>
-                        <div className="shrink-0">
-                          <Link to="/contact" className="btn-primary text-xs whitespace-nowrap">{t("svcPage.enquire")} <ArrowRight size={14} /></Link>
-                        </div>
+                      <p className="eyebrow mb-2">{t("svcPage.practiceArea")} {String(i + 1).padStart(2, "0")}</p>
+                      <h2 className="heading-serif text-2xl font-medium mb-3 text-foreground">{t(`svc.${sKey}.title`)}</h2>
+                      <GoldDivider className="mb-5" width="48px" />
+                      <p className="leading-relaxed mb-6">{t(`svc.${sKey}.desc`)}</p>
+                      <div className="flex justify-center md:justify-start">
+                        <Link to={`/contact?area=${areaParamMap[sKey]}#contact-form`} className="hidden md:inline text-xs font-semibold tracking-widest uppercase text-gold hover:opacity-80 transition-opacity">{t("svcPage.enquire")}</Link>
+                        <Link to={`/contact?area=${areaParamMap[sKey]}#contact-form`} className="md:hidden btn-primary text-xs whitespace-nowrap">{t("svcPage.enquire")} <ArrowRight size={14} /></Link>
                       </div>
                     </div>
                   </div>
