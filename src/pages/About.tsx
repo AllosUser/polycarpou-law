@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Shield, Target, Users, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { SectionReveal } from "@/components/SectionReveal";
 import { GoldDivider } from "@/components/GoldDivider";
 import { useI18n } from "@/lib/i18n";
 import founderImg from "@/assets/founder.jpg";
@@ -19,18 +20,21 @@ export default function About() {
     <>
       {/* ── PAGE HEADER ──────────────────────────────────── */}
       <section className="pt-36 pb-20 section-sm" style={{ background: "var(--gradient-navy)" }} aria-label="Page header">
-        <div className="container-law text-center">
-          <Reveal>
+        <SectionReveal>
+          <div className="container-law text-center">
+            <Reveal>
             <p className="eyebrow mb-4">{t("about.header.eyebrow")}</p>
             <h1 className="heading-serif font-light mb-4" style={{ color: "hsl(40 27% 97%)" }}>{t("about.header.title")}</h1>
             <GoldDivider className="mx-auto" width="60px" />
           </Reveal>
-        </div>
+          </div>
+        </SectionReveal>
       </section>
 
       {/* ── FIRM STORY + FOUNDER ─────────────────────────── */}
       <section className="section bg-background" aria-label="Firm story">
-        <div className="container-law">
+        <SectionReveal delay={0.05}>
+          <div className="container-law">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <Reveal direction="left">
               <div>
@@ -59,12 +63,14 @@ export default function About() {
               </div>
             </Reveal>
           </div>
-        </div>
+          </div>
+        </SectionReveal>
       </section>
 
       {/* ── MISSION / VISION ─────────────────────────────── */}
       <section className="section" style={{ background: "hsl(var(--secondary))" }} aria-label="Mission and vision">
-        <div className="container-law">
+        <SectionReveal delay={0.05}>
+          <div className="container-law">
           <Reveal>
             <div className="text-center mb-14">
               <p className="eyebrow mb-3">{t("about.mv.eyebrow")}</p>
@@ -93,12 +99,14 @@ export default function About() {
               </div>
             </Reveal>
           </div>
-        </div>
+          </div>
+        </SectionReveal>
       </section>
 
       {/* ── VALUES ───────────────────────────────────────── */}
       <section className="section bg-background" aria-label="Our values">
-        <div className="container-law">
+        <SectionReveal delay={0.05}>
+          <div className="container-law">
           <Reveal>
             <div className="text-center mb-14">
               <p className="eyebrow mb-3">{t("about.values.eyebrow")}</p>
@@ -124,18 +132,21 @@ export default function About() {
               );
             })}
           </div>
-        </div>
+          </div>
+        </SectionReveal>
       </section>
 
       {/* ── CTA ──────────────────────────────────────────── */}
       <section className="section-sm" style={{ background: "hsl(var(--secondary))" }} aria-label="Call to action">
-        <div className="container-law text-center">
+        <SectionReveal delay={0.1}>
+          <div className="container-law text-center">
           <Reveal>
             <h2 className="heading-serif mb-4">{t("about.values.cta.title")}</h2>
             <p className="text-base mb-8 max-w-md mx-auto">{t("about.values.cta.desc")}</p>
             <Link to="/contact" className="btn-primary">{t("about.values.cta.button")} <ArrowRight size={15} /></Link>
           </Reveal>
-        </div>
+          </div>
+        </SectionReveal>
       </section>
     </>
   );

@@ -36,10 +36,10 @@ const translations: Record<Lang, Record<string, string>> = {
     "home.hero.cta2": "Explore Services",
 
     // Trust
-    "trust.years": "Years of Experience",
-    "trust.cases": "Cases Handled",
-    "trust.languages": "Languages Spoken",
-    "trust.bar": "Cyprus Bar Association",
+    "trust.years": "Years Experience",
+    "trust.cases": "Cases Resolved",
+    "trust.success": "Success Rate",
+    "trust.response": "Client Response",
 
     // Services preview
     "services.eyebrow": "What We Do",
@@ -249,9 +249,9 @@ const translations: Record<Lang, Record<string, string>> = {
 
     // Trust
     "trust.years": "Χρόνια Εμπειρίας",
-    "trust.cases": "Υποθέσεις",
-    "trust.languages": "Γλώσσες",
-    "trust.bar": "Δικηγορικός Σύλλογος Κύπρου",
+    "trust.cases": "Υποθέσεις Διαλυμένες",
+    "trust.success": "Ποσοστό Επιτυχίας",
+    "trust.response": "Απάντηση Πελάτη",
 
     // Services preview
     "services.eyebrow": "Τι Προσφέρουμε",

@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   Briefcase, Scale, Building2, Heart, FileText,
-  ChevronRight, Award, Users, Clock, Globe,
-  CheckCircle, ArrowRight,
+  ChevronRight, Award, Target, Clock, CheckCircle, ArrowRight,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { GoldDivider } from "@/components/GoldDivider";
@@ -16,11 +15,11 @@ const iconMap: Record<string, React.ElementType> = {
   Briefcase, Scale, Building2, Heart, FileText,
 };
 
-const trustIcons = [Award, CheckCircle, Globe, Users];
+const trustIcons = [Award, Scale, Target, Clock];
 
 const svcKeys = ["corporate", "litigation", "realestate", "family", "contract"];
-const trustKeys = ["trust.years", "trust.cases", "trust.languages", "trust.bar"];
-const trustValues = ["15+", "500+", "4", "\u2713"];
+const trustKeys = ["trust.years", "trust.cases", "trust.success", "trust.response"];
+const trustValues = ["15+", "500+", "98%", "24h"];
 
 export default function Index() {
   const { t } = useI18n();
