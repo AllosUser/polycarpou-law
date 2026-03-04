@@ -10,6 +10,7 @@ import { GoldDivider } from "@/components/GoldDivider";
 import { services } from "@/lib/data";
 import { useI18n } from "@/lib/i18n";
 import heroBg from "@/assets/hero-bg.jpg";
+import heroBgMobile from "@/assets/hero-bg-mobile.png";
 
 const iconMap: Record<string, React.ElementType> = {
   Briefcase, Scale, Building2, Heart, FileText,
@@ -31,9 +32,10 @@ export default function Index() {
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
         aria-label="Hero"
       >
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }} />
+        <div className="absolute inset-0 bg-cover bg-center md:hidden" style={{ backgroundImage: `url(${heroBgMobile})` }} />
+        <div className="absolute inset-0 bg-cover bg-center hidden md:block" style={{ backgroundImage: `url(${heroBg})` }} />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-        <div className="absolute inset-0 texture-overlay opacity-40" />
+        <div className="absolute inset-0 texture-overlay opacity-20" />
         <div className="absolute bottom-0 left-0 right-0"><GoldDivider /></div>
 
         <div className="container-law relative z-10 text-center py-32">
