@@ -51,10 +51,10 @@ export function Header() {
       >
         <div className="container-law flex items-center justify-between h-[72px] md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group" aria-label="Polycarpou Law — Home">
-            <img src="/logo.png" alt="Polycarpou Law" className="h-9 w-auto" />
+          <Link to="/" className="flex items-center gap-2.5 group" aria-label="Polycarpou LLC — Home">
+            <img src="/logo.png" alt="Polycarpou LLC" className="h-9 w-auto" />
             <span className="heading-serif text-xl font-medium tracking-tight text-foreground">
-              Polycarpou <span className="text-gold">Law</span>
+              Polycarpou <span className="text-gold">LLC</span>
             </span>
           </Link>
 
@@ -111,9 +111,9 @@ export function Header() {
             >
               <div className="flex items-center justify-between p-6 border-b border-border">
                 <Link to="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
-                  <img src="/logo.png" alt="Polycarpou Law" className="h-8 w-auto" />
+                  <img src="/logo.png" alt="Polycarpou LLC" className="h-8 w-auto" />
                   <span className="heading-serif text-lg font-medium text-foreground">
-                    Polycarpou <span className="text-gold">Law</span>
+                    Polycarpou <span className="text-gold">LLC</span>
                   </span>
                 </Link>
                 <button
