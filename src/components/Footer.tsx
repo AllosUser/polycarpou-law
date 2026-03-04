@@ -17,7 +17,7 @@ export function Footer() {
   return (
     <footer className="bg-foreground text-primary-foreground" role="contentinfo">
       <div className="container-law pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_minmax(220px,1.3fr)] gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2.5 mb-4 inline-flex" aria-label="Polycarpou LLC — Home">
@@ -41,8 +41,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="text-sm transition-colors hover:text-gold"
-                    style={{ color: "hsl(0 0% 70%)" }}
+                    className="text-sm font-bold text-primary-foreground transition-colors hover:opacity-90"
                   >
                     {link.label}
                   </Link>
