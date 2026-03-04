@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Scale } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
@@ -52,12 +52,7 @@ export function Header() {
         <div className="container-law flex items-center justify-between h-[72px] md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 group" aria-label="Polycarpou Law — Home">
-            <span
-              className="w-8 h-8 rounded-sm flex items-center justify-center"
-              style={{ background: "var(--gradient-gold)" }}
-            >
-              <Scale size={16} color="hsl(222 47% 11%)" strokeWidth={2} />
-            </span>
+            <img src="/logo.png" alt="Polycarpou Law" className="h-9 w-auto" />
             <span className="heading-serif text-xl font-medium tracking-tight text-foreground">
               Polycarpou <span className="text-gold">Law</span>
             </span>
@@ -115,9 +110,12 @@ export function Header() {
               transition={{ type: "spring", damping: 28, stiffness: 280 }}
             >
               <div className="flex items-center justify-between p-6 border-b border-border">
-                <span className="heading-serif text-lg font-medium text-foreground">
-                  Polycarpou <span className="text-gold">Law</span>
-                </span>
+                <Link to="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
+                  <img src="/logo.png" alt="Polycarpou Law" className="h-8 w-auto" />
+                  <span className="heading-serif text-lg font-medium text-foreground">
+                    Polycarpou <span className="text-gold">Law</span>
+                  </span>
+                </Link>
                 <button
                   onClick={() => setMobileOpen(false)}
                   className="p-2 rounded-sm text-muted-foreground hover:text-foreground"
