@@ -62,7 +62,7 @@ export default function Index() {
 
           <motion.div className="flex flex-col sm:flex-row gap-4 justify-center" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}>
             <Link to="/contact" className="btn-primary">{t("home.hero.cta1")} <ArrowRight size={15} /></Link>
-            <Link to="/services" className="btn-secondary" style={{ color: "hsl(0 0% 90%)", borderColor: "hsl(0 0% 60%)" }}>{t("home.hero.cta2")}</Link>
+            <Link to="/services" className="btn-secondary" style={{ color: "hsl(0 0% 90%)", borderColor: "hsl(0 0% 60%)", background: "hsl(222 47% 11% / 0.5)" }}>{t("home.hero.cta2")}</Link>
           </motion.div>
         </div>
       </section>

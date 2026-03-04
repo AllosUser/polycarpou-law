@@ -226,6 +226,7 @@
   .btn-primary {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     padding: 0.875rem 2rem;
     font-family: var(--font-sans);
@@ -252,6 +253,7 @@
   .btn-secondary {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     padding: 0.875rem 2rem;
     font-family: var(--font-sans);
@@ -277,6 +279,7 @@
   .btn-outline-gold {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     padding: 0.875rem 2rem;
     font-family: var(--font-sans);
