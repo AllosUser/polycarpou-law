@@ -3,8 +3,10 @@ import { useSearchParams } from "react-router-dom";
 import { MapPin, Phone, Mail, Clock, CheckCircle, Send, AlertCircle } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { GoldDivider } from "@/components/GoldDivider";
+import { MapPreview } from "@/components/MapPreview";
 import { motion, AnimatePresence } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
+import { useMapsLink, PHONE, PHONE_HREF, EMAIL, EMAIL_HREF } from "@/lib/contact";
 
 interface FormState {
   name: string;
@@ -25,6 +27,7 @@ const VALID_AREAS = ["corporate", "litigation", "real-estate", "family", "contra
 export default function Contact() {
   const { t } = useI18n();
   const [searchParams] = useSearchParams();
+  const mapsLink = useMapsLink();
 
   const [form, setForm] = useState<FormState>({ name: "", email: "", phone: "", subject: "", message: "" });
   const [errors, setErrors] = useState<FormErrors>({});
@@ -77,22 +80,22 @@ export default function Contact() {
       </section>
 
       {/* ── CONTACT SECTION ──────────────────────────────── */}
-      <section className="section bg-background" aria-label="Contact information and form">
+      <section className="section bg-background pt-10 pb-20 md:pt-14 md:pb-28" aria-label="Contact information and form">
         <div className="container-law">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 lg:items-end">
             {/* Contact details */}
             <Reveal direction="left" className="lg:col-span-2">
               <div>
-                <p className="eyebrow mb-3">{t("contact.office")}</p>
-                <h2 className="heading-serif text-3xl font-medium mb-6 text-foreground">{t("contact.firmName")}</h2>
-                <GoldDivider className="mb-8" width="60px" />
+                <p className="eyebrow mb-2">{t("contact.office")}</p>
+                <h2 className="heading-serif text-2xl font-medium mb-4 text-foreground">{t("contact.firmName")}</h2>
+                <GoldDivider className="mb-6" width="60px" />
 
-                <div className="space-y-6">
+                <div className="space-y-5">
                   {[
-                    { icon: MapPin, label: t("contact.address.label"), content: t("contact.address.value") },
-                    { icon: Phone, label: t("contact.phone.label"), content: "+357 22 123 456", href: "tel:+35722123456" },
-                    { icon: Mail, label: t("contact.email.label"), content: "polucarpoullc@gmail.com", href: "mailto:polucarpoullc@gmail.com" },
-                  ].map(({ icon: Icon, label, content, href }) => (
+                    { icon: MapPin, label: t("contact.address.label"), content: t("contact.address.value"), href: mapsLink.href, external: mapsLink.external },
+                    { icon: Phone, label: t("contact.phone.label"), content: PHONE, href: PHONE_HREF },
+                    { icon: Mail, label: t("contact.email.label"), content: EMAIL, href: EMAIL_HREF },
+                  ].map(({ icon: Icon, label, content, href, external }) => (
                     <div key={label} className="flex gap-4">
                       <div className="w-10 h-10 rounded-sm flex items-center justify-center shrink-0" style={{ background: "hsl(var(--accent-light))" }}>
                         <Icon size={16} className="text-gold" />
@@ -100,7 +103,7 @@ export default function Contact() {
                       <div>
                         <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: "hsl(var(--accent))", fontFamily: "var(--font-sans)" }}>{label}</p>
                         {href ? (
-                          <a href={href} className="text-sm leading-relaxed text-foreground hover:text-gold transition-colors whitespace-pre-line" style={{ fontFamily: "var(--font-sans)" }}>{content}</a>
+                          <a href={href} {...(external && { target: "_blank", rel: "noopener noreferrer" })} className="text-sm leading-relaxed text-foreground hover:text-gold transition-colors whitespace-pre-line" style={{ fontFamily: "var(--font-sans)" }}>{content}</a>
                         ) : (
                           <p className="text-sm leading-relaxed text-foreground whitespace-pre-line" style={{ fontFamily: "var(--font-sans)" }}>{content}</p>
                         )}
@@ -129,24 +132,23 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Map placeholder */}
-                <div className="mt-8 rounded-sm overflow-hidden relative h-44" style={{ border: "1px solid hsl(var(--border))" }} aria-label="Office location map placeholder">
-                  <div className="absolute inset-0" style={{ background: "var(--gradient-navy)" }} />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-                    <MapPin size={28} className="text-gold" />
-                    <div className="text-center">
-                      <p className="text-xs font-semibold tracking-widest uppercase" style={{ color: "hsl(0 0% 60%)" }}>{t("contact.map.city")}</p>
-                      <p className="text-xs mt-1" style={{ color: "hsl(0 0% 45%)" }}>{t("contact.map.address")}</p>
+                {/* Map preview – interactive, pan/zoom inside iframe */}
+                <div className="mt-6 rounded-sm overflow-hidden" style={{ border: "1px solid hsl(var(--border))" }}>
+                  <MapPreview height="260px" className="rounded-t-sm" />
+                  <div className="flex items-center justify-between px-4 py-3" style={{ background: "hsl(222 47% 11%)", borderTop: "2px solid hsl(var(--accent))" }}>
+                    <div className="flex items-center gap-2">
+                      <MapPin size={14} className="text-gold shrink-0" />
+                      <span className="text-xs font-medium" style={{ color: "hsl(40 27% 97%)" }}>{t("contact.map.address")}</span>
                     </div>
+                    <a href={mapsLink.href} {...(mapsLink.external && { target: "_blank", rel: "noopener noreferrer" })} className="text-xs font-medium text-gold hover:opacity-90 transition-opacity" style={{ fontFamily: "var(--font-sans)" }}>{t("contact.map.openInMaps")}</a>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5" style={{ background: "var(--gradient-gold)" }} />
                 </div>
               </div>
             </Reveal>
 
             {/* Contact form */}
             <Reveal direction="right" delay={0.15} className="lg:col-span-3">
-              <div id="contact-form" className="rounded-sm p-8 md:p-10 scroll-mt-24" style={{ border: "1px solid hsl(var(--border))", boxShadow: "var(--shadow-md)", background: "hsl(var(--card))" }}>
+              <div id="contact-form" className="rounded-sm p-8 md:p-10 scroll-mt-24 lg:min-h-[420px]" style={{ border: "1px solid hsl(var(--border))", boxShadow: "var(--shadow-md)", background: "hsl(var(--card))" }}>
                 <AnimatePresence mode="wait">
                   {submitted ? (
                     <motion.div key="success" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} className="flex flex-col items-center justify-center text-center py-12 gap-5">

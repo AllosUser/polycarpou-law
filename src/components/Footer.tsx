@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { GoldDivider } from "./GoldDivider";
 import { useI18n } from "@/lib/i18n";
+import { useMapsLink, PHONE, PHONE_HREF, EMAIL, EMAIL_HREF } from "@/lib/contact";
 
 export function Footer() {
   const { t } = useI18n();
+  const mapsLink = useMapsLink();
 
   const footerLinks = [
     { href: "/", label: t("nav.home") },
@@ -56,18 +58,18 @@ export function Footer() {
               {t("footer.contact")}
             </h3>
             <ul className="space-y-3">
-              {[
-                { icon: MapPin, text: t("contact.address.value") },
-                { icon: Phone, text: "+357 22 123 456" },
-                { icon: Mail, text: "polucarpoullc@gmail.com" },
-              ].map(({ icon: Icon, text }) => (
-                <li key={text} className="flex items-start gap-2.5">
-                  <Icon size={14} className="text-gold shrink-0 mt-0.5" />
-                  <span className="text-sm whitespace-pre-line" style={{ color: "hsl(0 0% 70%)" }}>
-                    {text}
-                  </span>
-                </li>
-              ))}
+              <li className="flex items-start gap-2.5">
+                <MapPin size={14} className="text-gold shrink-0 mt-0.5" />
+                <a href={mapsLink.href} {...(mapsLink.external && { target: "_blank", rel: "noopener noreferrer" })} className="text-sm whitespace-pre-line transition-colors hover:text-gold" style={{ color: "hsl(0 0% 70%)" }}>{t("contact.address.value")}</a>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <Phone size={14} className="text-gold shrink-0 mt-0.5" />
+                <a href={PHONE_HREF} className="text-sm whitespace-pre-line transition-colors hover:text-gold" style={{ color: "hsl(0 0% 70%)" }}>{PHONE}</a>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <Mail size={14} className="text-gold shrink-0 mt-0.5" />
+                <a href={EMAIL_HREF} className="text-sm whitespace-pre-line transition-colors hover:text-gold" style={{ color: "hsl(0 0% 70%)" }}>{EMAIL}</a>
+              </li>
             </ul>
           </div>
 
