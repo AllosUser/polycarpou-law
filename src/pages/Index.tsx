@@ -9,7 +9,7 @@ import { GoldDivider } from "@/components/GoldDivider";
 import { services } from "@/lib/data";
 import { useI18n } from "@/lib/i18n";
 import heroBg from "@/assets/hero-bg.jpg";
-import heroBgMobile from "@/assets/hero-bg-mobile.png";
+import heroBgMobile from "@/assets/hero-mobile-bg.jpg";
 
 const iconMap: Record<string, React.ElementType> = {
   Briefcase, Scale, Building2, Heart, FileText,
@@ -28,7 +28,7 @@ export default function Index() {
     <>
       {/* ── HERO ─────────────────────────────────────────── */}
       <section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative min-h-screen flex items-start md:items-center justify-center overflow-hidden pt-20 md:pt-0"
         aria-label="Hero"
       >
         <div className="absolute inset-0 bg-cover bg-center md:hidden" style={{ backgroundImage: `url(${heroBgMobile})` }} />
@@ -37,7 +37,7 @@ export default function Index() {
         <div className="absolute inset-0 texture-overlay opacity-20" />
         <div className="absolute bottom-0 left-0 right-0"><GoldDivider /></div>
 
-        <div className="container-law relative z-10 text-center py-32">
+        <div className="container-law relative z-10 text-center pt-8 pb-20 md:py-32">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
             <p className="eyebrow mb-6">{t("home.hero.eyebrow")}</p>
           </motion.div>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { GraduationCap, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { SectionReveal } from "@/components/SectionReveal";
 import { GoldDivider } from "@/components/GoldDivider";
 import { team } from "@/lib/data";
 import { useI18n } from "@/lib/i18n";
@@ -16,22 +17,25 @@ export default function Team() {
     <>
       {/* ── PAGE HEADER ──────────────────────────────────── */}
       <section className="pt-36 pb-20 section-sm" style={{ background: "var(--gradient-navy)" }} aria-label="Page header">
-        <div className="container-law text-center">
-          <Reveal>
-            <p className="eyebrow mb-4">{t("team.eyebrow")}</p>
-            <h1 className="heading-serif font-light mb-4" style={{ color: "hsl(40 27% 97%)" }}>{t("team.title")}</h1>
-            <p className="text-base max-w-xl mx-auto mt-4" style={{ color: "hsl(0 0% 65%)", fontFamily: "var(--font-sans)" }}>{t("team.desc")}</p>
-            <GoldDivider className="mx-auto mt-8" width="60px" />
-          </Reveal>
-        </div>
+        <SectionReveal>
+          <div className="container-law text-center">
+            <Reveal>
+              <p className="eyebrow mb-4">{t("team.eyebrow")}</p>
+              <h1 className="heading-serif font-light mb-4" style={{ color: "hsl(40 27% 97%)" }}>{t("team.title")}</h1>
+              <p className="text-base max-w-xl mx-auto mt-4" style={{ color: "hsl(0 0% 65%)", fontFamily: "var(--font-sans)" }}>{t("team.desc")}</p>
+              <GoldDivider className="mx-auto mt-8" width="60px" />
+            </Reveal>
+          </div>
+        </SectionReveal>
       </section>
 
       {/* ── TEAM GRID ────────────────────────────────────── */}
       <section className="section bg-background" aria-label="Team members">
+        <SectionReveal delay={0.05}>
         <div className="container-law">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {team.map((member, i) => (
-              <Reveal key={member.id} delay={i * 0.1}>
+              <Reveal key={member.id} delay={i * 0.1} direction={i % 2 === 0 ? "left" : "right"}>
                 <article className="team-card bg-card" aria-label={`${member.name}, ${member.role}`}>
                   <div className="flex flex-col sm:flex-row">
                     <div className="sm:w-48 shrink-0 relative overflow-hidden">
@@ -62,13 +66,15 @@ export default function Team() {
             ))}
           </div>
         </div>
+        </SectionReveal>
       </section>
 
       {/* ── JOIN THE TEAM ─────────────────────────────────── */}
       <section className="section-sm" style={{ background: "hsl(var(--secondary))" }} aria-label="Join the team">
+        <SectionReveal delay={0.05}>
         <div className="container-law">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <Reveal>
+            <Reveal direction="left">
               <div>
                 <p className="eyebrow mb-3">{t("team.join.eyebrow")}</p>
                 <h2 className="heading-serif mb-4">{t("team.join.title")}</h2>
@@ -78,30 +84,35 @@ export default function Team() {
               </div>
             </Reveal>
 
-            <Reveal delay={0.15}>
+            <Reveal direction="right" delay={0.15}>
               <div className="space-y-4">
-                {benefits.map((benefit) => (
-                  <div key={benefit} className="flex items-center gap-3">
+                {benefits.map((benefit, i) => (
+                  <Reveal key={benefit} delay={0.2 + i * 0.06}>
+                  <div className="flex items-center gap-3">
                     <div className="w-4 h-4 rounded-full shrink-0 flex items-center justify-center" style={{ background: "var(--gradient-gold)" }}>
                       <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 4L3 6L7 2" stroke="hsl(222 47% 11%)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     </div>
                     <span className="text-sm font-medium text-foreground" style={{ fontFamily: "var(--font-sans)" }}>{benefit}</span>
                   </div>
+                  </Reveal>
                 ))}
               </div>
             </Reveal>
           </div>
         </div>
+        </SectionReveal>
       </section>
 
       {/* ── CTA ──────────────────────────────────────────── */}
       <section className="section-sm" style={{ background: "var(--gradient-navy)" }} aria-label="Call to action">
+        <SectionReveal delay={0.1}>
         <div className="container-law text-center">
           <Reveal>
             <h2 className="heading-serif font-light mb-4" style={{ color: "hsl(40 27% 97%)" }}>{t("team.cta.title")}</h2>
             <Link to="/contact" className="btn-primary mt-2">{t("team.cta.button")} <ArrowRight size={15} /></Link>
           </Reveal>
         </div>
+        </SectionReveal>
       </section>
     </>
   );
