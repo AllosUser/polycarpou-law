@@ -52,16 +52,11 @@ export function Header() {
         {/* ── MOBILE bar: 3-column grid — logo | centered title | hamburger ── */}
         <div className="md:hidden grid h-[72px] w-full items-center px-6" style={{ gridTemplateColumns: "1fr auto 1fr" }}>
           {/* Col 1: Logo icon only */}
-          <Link to="/" aria-label="Polycarpou LLC — Home" className="flex items-center">
-            <img src="/logo.png" alt="Polycarpou LLC" className="h-9 w-auto" />
+          <Link to="/" aria-label="Home" className="flex items-center">
+            <img src="/logo.png" alt="Polycarpou Law" className="h-9 w-auto" />
           </Link>
 
-          {/* Col 2: Centered brand name */}
-          <Link to="/" className="flex items-center justify-center" aria-label="Home">
-            <span className="heading-serif text-base font-medium tracking-tight text-foreground text-center leading-tight">
-              Andreas Polycarpou<br /><span className="text-gold">&amp; Co LLC</span>
-            </span>
-          </Link>
+          <div />
 
           {/* Col 3: Hamburger — right-aligned */}
           <div className="flex justify-end">
@@ -76,32 +71,50 @@ export function Header() {
           </div>
         </div>
 
-        {/* ── DESKTOP bar: unchanged flex layout ── */}
-        <div className="hidden md:flex items-center justify-between h-20 w-full px-6 md:px-10 lg:px-16 max-w-[1200px] mx-auto">
-          <Link to="/" className="flex items-center gap-2.5 group" aria-label="Polycarpou LLC — Home">
-            <img src="/logo.png" alt="Polycarpou LLC" className="h-9 w-auto" />
-            <span className="heading-serif text-xl font-medium tracking-tight text-foreground">
-              Polycarpou <span className="text-gold">LLC</span>
-            </span>
-          </Link>
+        {/* ── DESKTOP bar: 3-column balanced grid ── */}
+        <div className="hidden md:grid items-center h-24 w-full px-10 lg:px-16 mx-auto" 
+             style={{ gridTemplateColumns: "1fr auto 1fr", maxWidth: "1600px" }}>
+          
+          {/* Left Zone: Logo + Firm Name (Signature Style) */}
+          <div className="flex justify-start items-center">
+            <Link to="/" className="group flex items-center gap-5" aria-label="Home">
+              <img 
+                src="/logo.png" 
+                alt="Polycarpou Law" 
+                className="h-12 w-auto transition-transform duration-500 group-hover:scale-105" 
+              />
+              <div className="flex flex-col justify-center leading-[1.25] tracking-[0.18em] uppercase transition-opacity duration-300 opacity-80 group-hover:opacity-100">
+                <span className={`text-[8.5px] font-medium transition-colors duration-300 ${!scrolled ? "text-white/90" : "text-foreground/90"}`}>
+                  Andreas Polycarpou
+                </span>
+                <span className="text-[7.5px] font-medium text-gold/80">
+                  &amp; Co LLC
+                </span>
+              </div>
+            </Link>
+          </div>
 
-          <nav className="flex items-center gap-8" aria-label="Main navigation">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`nav-link ${isActive(link.href) ? "active" : ""}`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+          {/* Center Zone: Navigation Menu (Truly Centered to Viewport) */}
+          <div className="flex justify-center">
+            <nav className="flex items-center gap-10 lg:gap-14" aria-label="Main navigation">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={`nav-link text-[13px] font-semibold tracking-[0.15em] ${isActive(link.href) ? "active" : ""}`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
 
-          <div className="flex items-center gap-4">
-            <LanguageSwitcher />
-            <Link to="/contact" className="btn-primary text-xs">
+          {/* Right Zone: CTA + Language */}
+          <div className="flex items-center justify-end gap-10 lg:gap-14">
+            <Link to="/contact" className="btn-primary text-[10px] py-2 px-6 rounded-[10px] tracking-[0.15em] font-bold h-9 flex items-center shadow-none hover:brightness-105 hover:shadow-gold/20 transition-all duration-300">
               {t("nav.cta")}
             </Link>
+            <LanguageSwitcher />
           </div>
         </div>
       </motion.header>
@@ -125,11 +138,16 @@ export function Header() {
               transition={{ type: "spring", damping: 28, stiffness: 280 }}
             >
               <div className="flex items-center justify-between p-6 border-b border-border">
-                <Link to="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
-                  <img src="/logo.png" alt="Polycarpou LLC" className="h-8 w-auto" />
-                  <span className="heading-serif text-lg font-medium text-foreground">
-                    Polycarpou <span className="text-gold">LLC</span>
-                  </span>
+                <Link to="/" className="flex items-center gap-3" onClick={() => setMobileOpen(false)} aria-label="Home">
+                  <img src="/logo.png" alt="Polycarpou Law" className="h-8 w-auto" />
+                  <div className="flex flex-col justify-center leading-[1.25] tracking-[0.18em] uppercase">
+                    <span className="text-[9px] font-medium text-foreground/90">
+                      Andreas Polycarpou
+                    </span>
+                    <span className="text-[8px] font-medium text-gold/80">
+                      &amp; Co LLC
+                    </span>
+                  </div>
                 </Link>
                 <button
                   onClick={() => setMobileOpen(false)}
