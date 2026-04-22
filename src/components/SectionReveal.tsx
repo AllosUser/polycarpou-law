@@ -11,8 +11,8 @@ interface SectionRevealProps {
  * Wraps a section and animates it (fade + slide up) when it scrolls into view.
  */
 export function SectionReveal({ children, className = "", delay = 0 }: SectionRevealProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "100px" });
 
   return (
     <motion.div

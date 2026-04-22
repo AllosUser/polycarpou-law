@@ -33,7 +33,15 @@ export function PageTransition() {
 
     if (isNavigation) {
       prevPathRef.current = pathname;
-      if (!hash) window.scrollTo(0, 0);
+      
+      // Force scroll to top immediately on navigation
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      
+      if (!hash) {
+        // Double check scroll is at 0
+        window.scrollTo(0, 0);
+      }
+      
       setShowOverlay(true);
 
       const timer = setTimeout(() => {
@@ -52,12 +60,12 @@ export function PageTransition() {
     <AnimatePresence>
       {showOverlay && (
         <motion.div
-          key={`page-transition-${pathname}`}
-          className="fixed inset-0 z-[100] flex items-center justify-center"
+          key="page-transition-overlay"
+          className="fixed inset-0 z-[100] flex items-center justify-center p-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.12 }}
+          transition={{ duration: 0.15 }}
         >
           {/* Backdrop - matches page background */}
           <motion.div

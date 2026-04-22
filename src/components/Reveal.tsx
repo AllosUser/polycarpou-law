@@ -9,8 +9,8 @@ interface RevealProps {
 }
 
 export function Reveal({ children, delay = 0, className = "", direction = "up" }: RevealProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "50px" });
 
   const variants = {
     hidden: {
