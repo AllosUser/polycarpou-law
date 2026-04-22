@@ -396,4 +396,21 @@
     border-color: hsl(var(--accent));
     box-shadow: 0 0 0 3px hsl(var(--accent) / 0.12);
   }
+
+  /* Hero title language specific tweaks */
+  .hero-home-title {
+    max-width: 800px;
+  }
+
+  html[lang="el"] .hero-home-title {
+    font-size: clamp(2rem, 4.2vw, 3.8rem);
+    letter-spacing: -0.02em;
+    max-width: 1000px; /* Allow more width for Greek nowrap */
+  }
+
+  @media (min-width: 1024px) {
+    html[lang="el"] .hero-home-title {
+      white-space: nowrap;
+    }
+  }
 }

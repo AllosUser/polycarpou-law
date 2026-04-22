@@ -19,7 +19,7 @@ const trustIcons = [Award, Scale, Target, Clock];
 
 const svcKeys = ["corporate", "litigation", "realestate", "family", "contract"];
 const trustKeys = ["trust.years", "trust.cases", "trust.success", "trust.response"];
-const trustValues = ["15+", "500+", "98%", "24h"];
+const trustValues = ["20+", "500+", "98%", "24h"];
 
 export default function Index() {
   const { t } = useI18n();
@@ -43,8 +43,8 @@ export default function Index() {
           </motion.div>
 
           <motion.h1
-            className="heading-serif font-light mb-6 leading-none"
-            style={{ color: "hsl(40 27% 97%)", maxWidth: "800px", margin: "0 auto 1.5rem" }}
+            className="hero-home-title heading-serif font-light mb-6 leading-none"
+            style={{ color: "hsl(40 27% 97%)", margin: "0 auto 1.5rem" }}
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >

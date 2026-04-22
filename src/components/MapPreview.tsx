@@ -11,7 +11,7 @@ interface MapPreviewProps {
 export function MapPreview({ className = "", height = "445px" }: MapPreviewProps) {
   return (
     <iframe
-      title="Office location map — 28 Arch. Makarios III Avenue, Nicosia"
+      title="Office location map — Arch. Makarios III Avenue 1-7, MITSI BUILDING, Nicosia"
       src={GOOGLE_MAPS_EMBED}
       width="100%"
       className={className}

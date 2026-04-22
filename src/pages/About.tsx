@@ -45,6 +45,7 @@ export default function About() {
                   <p>{t("about.story.p1")}</p>
                   <p>{t("about.story.p2")}</p>
                   <p>{t("about.story.p3")}</p>
+                  <p>{t("about.story.p4")}</p>
                 </div>
                 <div className="mt-8">
                   <Link to="/team" className="btn-outline-gold">{t("about.story.cta")} <ArrowRight size={15} /></Link>

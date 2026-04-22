@@ -1,8 +1,8 @@
 {
-  "name": "golden-standard-law",
+  "name": "polycarpou-law-firm",
   "private": true,
   "version": "1.0.0",
-  "author": "BuildTomorrow LTD",
+  "author": "BuildTomorrowLTD",
   "type": "module",
   "scripts": {
     "dev": "vite",

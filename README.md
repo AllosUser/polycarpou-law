@@ -1,6 +1,6 @@
-# Golden Standard Law — Polycarpou Law Website
+# Polycarpou Law Firm
 
-**Built by BuildTomorrow LTD**
+**Built by BuildTomorrowLTD**
 
 ## Project overview
 
@@ -57,4 +57,4 @@ npm run preview
 
 ## License & attribution
 
-© BuildTomorrow LTD
+© BuildTomorrowLTD

@@ -17,7 +17,7 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
           aria-label={l === "en" ? "Switch to English" : "Αλλαγή σε Ελληνικά"}
           aria-pressed={lang === l}
         >
-          {l === "en" ? "EN" : "ΕΛ"}
+          {l === "en" ? "EN" : "EL"}
         </button>
       ))}
     </div>

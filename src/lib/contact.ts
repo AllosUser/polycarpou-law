@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-export const MAPS_ADDRESS = "28 Arch. Makarios III Avenue, Nicosia 1065, Cyprus";
-/** Coordinates for map embed (28 Arch. Makarios III Ave, Nicosia) */
-export const MAPS_LAT = 35.1747;
-export const MAPS_LNG = 33.3663;
+export const MAPS_ADDRESS = "Leoforos Archiepiskopou Makariou III 1-7, MITSI BUILDING, Office 201, 1065 Nicosia, Cyprus";
+/** Coordinates for map embed (MITSI Building, Makarios III 1-7, Nicosia) */
+export const MAPS_LAT = 35.1676;
+export const MAPS_LNG = 33.3616;
 /** geo: URI – opens system map app picker on mobile */
 export const MAPS_URL_GEO = `geo:0,0?q=${encodeURIComponent(MAPS_ADDRESS)}`;
 /** Google Maps – opens in new tab on desktop */
@@ -31,7 +31,8 @@ export function useMapsLink(): MapsLink {
   return link;
 }
 
-export const PHONE = "+357 22 123 456";
-export const PHONE_HREF = "tel:+35722123456";
-export const EMAIL = "polucarpoullc@gmail.com";
-export const EMAIL_HREF = "mailto:polucarpoullc@gmail.com";
+export const PHONE = "+357 22 755135";
+export const PHONE_HREF = "tel:+35722755135";
+export const FAX = "+357 22 003576";
+export const EMAIL = "info@polycarpoulaw.com";
+export const EMAIL_HREF = "mailto:info@polycarpoulaw.com";
