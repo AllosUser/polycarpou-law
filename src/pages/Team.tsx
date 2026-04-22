@@ -112,9 +112,13 @@ function MemberCard({
             {member.education[lang] && (
               <div className="flex items-start gap-2">
                 <GraduationCap size={14} className="text-gold shrink-0 mt-0.5" />
-                <span className="text-xs text-muted-foreground">
-                  {member.education[lang]}
-                </span>
+                <div className="text-xs text-muted-foreground">
+                  {member.education[lang].split(' · ').map((degree, i) => (
+                    <span key={i} className="block mb-1 last:mb-0">
+                      {degree}
+                    </span>
+                  ))}
+                </div>
               </div>
             )}
             {member.barNumber[lang] && (
@@ -155,9 +159,13 @@ function HeroMeta({ founder, lang }: { founder: Member; lang: L }) {
     <div className="space-y-3">
       <div className="flex items-start gap-2">
         <GraduationCap size={14} className="text-gold shrink-0 mt-0.5" />
-        <span className="text-xs" style={{ color: "hsl(0 0% 58%)" }}>
-          {founder.education[lang]}
-        </span>
+        <div className="text-xs" style={{ color: "hsl(0 0% 58%)" }}>
+          {founder.education[lang].split(' · ').map((degree, i) => (
+            <span key={i} className="block mb-1 last:mb-0">
+              {degree}
+            </span>
+          ))}
+        </div>
       </div>
       <div className="flex items-center gap-2">
         <span className="text-xs font-medium text-gold">Bar:</span>
