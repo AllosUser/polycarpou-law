@@ -48,19 +48,18 @@ function MemberCard({
           isRightCard && isExpanded ? "md:flex-row-reverse" : ""
         }`}
       >
-        <div 
-          className="shrink-0 relative overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]"
-          style={{
-            flexBasis: isExpanded ? "35%" : "12rem",
-            minWidth: isExpanded ? "280px" : "192px",
-          }}
+        {/* Image wrapper: team-card-img-wrap = 288px on mobile, auto on sm+ */}
+        <div
+          className={`team-card-img-wrap shrink-0 relative overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+            isExpanded ? "sm:basis-[35%] sm:min-w-[280px]" : "sm:basis-[12rem] sm:min-w-[192px]"
+          }`}
         >
-            <img
-              src={member.image}
-              alt={`${member.name[lang]} — ${member.role[lang]}`}
-              className="w-full h-64 sm:h-full object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]"
-              loading="lazy"
-            />
+          <img
+            src={member.image}
+            alt={`${member.name[lang]} — ${member.role[lang]}`}
+            className="w-full h-full object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]"
+            loading="lazy"
+          />
           <div
             className="absolute bottom-0 left-0 right-0 h-1"
             style={{ background: "var(--gradient-gold)" }}
@@ -193,9 +192,31 @@ export default function Team() {
 
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [profileOpen, setProfileOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(
+    typeof window !== "undefined" ? window.innerWidth >= 768 : true
+  );
 
-  const toggle = (id: string) =>
-    setExpandedId((prev) => (prev === id ? null : id));
+  const cardsRef = useRef<Record<string, HTMLDivElement | null>>({});
+
+  useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth >= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const toggle = (id: string) => {
+    const isExpanding = expandedId !== id;
+    setExpandedId(isExpanding ? id : null);
+
+    if (isExpanding) {
+      setTimeout(() => {
+        const el = cardsRef.current[id];
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 120);
+    }
+  };
 
   const readMoreLbl = lang === "el" ? "Περισσότερα →" : "Read more →";
   const readLessLbl = lang === "el" ? "Λιγότερα ←" : "Read less ←";
@@ -220,8 +241,16 @@ export default function Team() {
           <div className="container-law text-center">
             <Reveal>
               <p className="eyebrow mb-4">{t("team.eyebrow")}</p>
+              {/* Mobile title — shorter, always centered */}
               <h1
-                className="heading-serif font-light mb-4"
+                className="heading-serif font-light mb-4 sm:hidden text-center"
+                style={{ color: "hsl(40 27% 97%)" }}
+              >
+                {l === "el" ? "Η Ομάδα μας" : "Meet Our Team"}
+              </h1>
+              {/* Desktop title */}
+              <h1
+                className="heading-serif font-light mb-4 hidden sm:block"
                 style={{ color: "hsl(40 27% 97%)" }}
               >
                 {t("team.title")}
@@ -430,7 +459,7 @@ export default function Team() {
             <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch relative">
               {(() => {
                 let reordered = [...members];
-                if (expandedId) {
+                if (expandedId && isDesktop) {
                   const expandedIndex = members.findIndex((m) => m.id === expandedId);
                   if (expandedIndex !== -1) {
                     const parentRowStart = Math.floor(expandedIndex / 2) * 2;
@@ -453,11 +482,12 @@ export default function Team() {
 
                   return (
                     <motion.div
+                      ref={(el) => { cardsRef.current[member.id] = el; }}
                       layout
                       initial={{ borderRadius: 8 }}
                       transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
                       key={member.id}
-                      className={`h-full ${
+                      className={`h-full scroll-mt-24 md:scroll-mt-32 ${
                         isExpanded ? "md:col-span-2 z-10" : "md:col-span-1"
                       }`}
                     >

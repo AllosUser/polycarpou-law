@@ -222,6 +222,17 @@
     transform: translateY(-4px);
   }
 
+  /* Team card image wrapper — mobile-only fixed height */
+  .team-card-img-wrap {
+    height: 288px; /* mobile: match CEO card */
+  }
+
+  @media (min-width: 640px) {
+    .team-card-img-wrap {
+      height: auto; /* sm+: grow with flex-row */
+    }
+  }
+
   /* Btn styles */
   .btn-primary {
     display: inline-flex;

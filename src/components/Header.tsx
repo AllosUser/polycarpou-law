@@ -49,8 +49,35 @@ export function Header() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="container-law flex items-center justify-between h-[72px] md:h-20">
-          {/* Logo */}
+        {/* ── MOBILE bar: 3-column grid — logo | centered title | hamburger ── */}
+        <div className="md:hidden grid h-[72px] w-full items-center px-6" style={{ gridTemplateColumns: "1fr auto 1fr" }}>
+          {/* Col 1: Logo icon only */}
+          <Link to="/" aria-label="Polycarpou LLC — Home" className="flex items-center">
+            <img src="/logo.png" alt="Polycarpou LLC" className="h-9 w-auto" />
+          </Link>
+
+          {/* Col 2: Centered brand name */}
+          <Link to="/" className="flex items-center justify-center" aria-label="Home">
+            <span className="heading-serif text-base font-medium tracking-tight text-foreground text-center leading-tight">
+              Andreas Polycarpou<br /><span className="text-gold">&amp; Co LLC</span>
+            </span>
+          </Link>
+
+          {/* Col 3: Hamburger — right-aligned */}
+          <div className="flex justify-end">
+            <button
+              className="p-2 rounded-sm text-foreground transition-colors hover:bg-secondary"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+            >
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
+        </div>
+
+        {/* ── DESKTOP bar: unchanged flex layout ── */}
+        <div className="hidden md:flex items-center justify-between h-20 w-full px-6 md:px-10 lg:px-16 max-w-[1200px] mx-auto">
           <Link to="/" className="flex items-center gap-2.5 group" aria-label="Polycarpou LLC — Home">
             <img src="/logo.png" alt="Polycarpou LLC" className="h-9 w-auto" />
             <span className="heading-serif text-xl font-medium tracking-tight text-foreground">
@@ -58,8 +85,7 @@ export function Header() {
             </span>
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
+          <nav className="flex items-center gap-8" aria-label="Main navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -71,23 +97,12 @@ export function Header() {
             ))}
           </nav>
 
-          {/* CTA + Language */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="flex items-center gap-4">
             <LanguageSwitcher />
             <Link to="/contact" className="btn-primary text-xs">
               {t("nav.cta")}
             </Link>
           </div>
-
-          {/* Mobile toggle */}
-          <button
-            className="md:hidden p-2 rounded-sm text-foreground transition-colors hover:bg-secondary"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileOpen}
-          >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
         </div>
       </motion.header>
 
