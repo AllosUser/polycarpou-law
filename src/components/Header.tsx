@@ -49,16 +49,23 @@ export function Header() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
-        {/* ── MOBILE bar: 3-column grid — logo | centered title | hamburger ── */}
         <div className="md:hidden grid h-[72px] w-full items-center px-6" style={{ gridTemplateColumns: "1fr auto 1fr" }}>
-          {/* Col 1: Logo icon only */}
+          {/* Left: Logo only */}
           <Link to="/" aria-label="Home" className="flex items-center">
-            <img src="/logo.png" alt="Polycarpou Law" className="h-9 w-auto" />
+            <img src="/logo.png" alt="Polycarpou Law" className="h-8 w-auto" />
           </Link>
 
-          <div />
+          {/* Center: Text signature centered */}
+          <div className="flex flex-col items-center leading-none tracking-[0.05em] uppercase">
+            <span className={`text-[8.5px] font-medium transition-colors duration-300 ${!scrolled ? "text-white" : "text-foreground"}`}>
+              Andreas Polycarpou
+            </span>
+            <span className="text-[7.5px] font-medium text-gold/80 mt-0.5">
+              &amp; Co LLC
+            </span>
+          </div>
 
-          {/* Col 3: Hamburger — right-aligned */}
+          {/* Right: Hamburger — right-aligned */}
           <div className="flex justify-end">
             <button
               className="p-2 rounded-sm text-foreground transition-colors hover:bg-secondary"
@@ -137,25 +144,32 @@ export function Header() {
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 28, stiffness: 280 }}
             >
-              <div className="flex items-center justify-between p-6 border-b border-border">
-                <Link to="/" className="flex items-center gap-3" onClick={() => setMobileOpen(false)} aria-label="Home">
-                  <img src="/logo.png" alt="Polycarpou Law" className="h-8 w-auto" />
-                  <div className="flex flex-col justify-center leading-[1.25] tracking-[0.18em] uppercase">
-                    <span className="text-[9px] font-medium text-foreground/90">
-                      Andreas Polycarpou
-                    </span>
-                    <span className="text-[8px] font-medium text-gold/80">
-                      &amp; Co LLC
-                    </span>
-                  </div>
+              <div className="grid h-[72px] items-center px-6 border-b border-border" style={{ gridTemplateColumns: "1fr auto 1fr" }}>
+                {/* Left: Logo only */}
+                <Link to="/" className="flex items-center" onClick={() => setMobileOpen(false)} aria-label="Home">
+                  <img src="/logo.png" alt="Polycarpou Law" className="h-7 w-auto" />
                 </Link>
-                <button
-                  onClick={() => setMobileOpen(false)}
-                  className="p-2 rounded-sm text-muted-foreground hover:text-foreground"
-                  aria-label="Close menu"
-                >
-                  <X size={20} />
-                </button>
+                
+                {/* Center: Text signature centered */}
+                <div className="flex flex-col items-center leading-none tracking-[0.05em] uppercase">
+                  <span className="text-[8.5px] font-medium text-foreground">
+                    Andreas Polycarpou
+                  </span>
+                  <span className="text-[7.5px] font-medium text-gold/80 mt-0.5">
+                    &amp; Co LLC
+                  </span>
+                </div>
+
+                {/* Right: Close button — right-aligned */}
+                <div className="flex justify-end">
+                  <button
+                    onClick={() => setMobileOpen(false)}
+                    className="p-2 rounded-sm text-muted-foreground hover:text-foreground transition-colors"
+                    aria-label="Close menu"
+                  >
+                    <X size={20} />
+                  </button>
+                </div>
               </div>
 
               <nav className="flex flex-col gap-1 p-6 flex-1" aria-label="Mobile navigation">
