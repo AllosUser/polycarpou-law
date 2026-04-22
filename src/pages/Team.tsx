@@ -24,6 +24,7 @@ function MemberCard({
   readMoreLbl,
   readLessLbl,
   onToggle,
+  mobileContentRef,
   t,
 }: {
   member: Member;
@@ -33,6 +34,7 @@ function MemberCard({
   readMoreLbl: string;
   readLessLbl: string;
   onToggle: () => void;
+  mobileContentRef?: (el: HTMLDivElement | null) => void;
   t: (k: string) => string;
 }) {
   const bioText = member.bio[lang] || t("team.staff.sofia.desc");
@@ -65,7 +67,10 @@ function MemberCard({
             style={{ background: "var(--gradient-gold)" }}
           />
         </div>
-        <div className="p-7 flex flex-col justify-between flex-1 min-w-0">
+        <div 
+          className="p-7 flex flex-col justify-between flex-1 min-w-0 scroll-mt-[72px]"
+          ref={mobileContentRef}
+        >
           <div className="flex-1">
             <p className="eyebrow mb-1.5">{member.role[lang]}</p>
             <h2 className="heading-serif text-2xl font-medium mb-1 text-foreground">
@@ -190,13 +195,14 @@ export default function Team() {
   const founder = team[0];
   const members = team.slice(1);
 
-  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [expandedIds, setExpandedIds] = useState<string[]>([]);
   const [profileOpen, setProfileOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(
     typeof window !== "undefined" ? window.innerWidth >= 768 : true
   );
 
   const cardsRef = useRef<Record<string, HTMLDivElement | null>>({});
+  const mobileCardsRef = useRef<Record<string, HTMLDivElement | null>>({});
 
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth >= 768);
@@ -205,12 +211,19 @@ export default function Team() {
   }, []);
 
   const toggle = (id: string) => {
-    const isExpanding = expandedId !== id;
-    setExpandedId(isExpanding ? id : null);
+    const isExpanding = !expandedIds.includes(id);
+    
+    setExpandedIds((prev) => {
+      if (isDesktop) {
+        return prev.includes(id) ? [] : [id];
+      } else {
+        return prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id];
+      }
+    });
 
     if (isExpanding) {
       setTimeout(() => {
-        const el = cardsRef.current[id];
+        const el = isDesktop ? cardsRef.current[id] : mobileCardsRef.current[id];
         if (el) {
           el.scrollIntoView({ behavior: "smooth", block: "start" });
         }
@@ -459,8 +472,10 @@ export default function Team() {
             <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch relative">
               {(() => {
                 let reordered = [...members];
-                if (expandedId && isDesktop) {
-                  const expandedIndex = members.findIndex((m) => m.id === expandedId);
+                const activeDesktopId = expandedIds.length > 0 ? expandedIds[expandedIds.length - 1] : null;
+                
+                if (activeDesktopId && isDesktop) {
+                  const expandedIndex = members.findIndex((m) => m.id === activeDesktopId);
                   if (expandedIndex !== -1) {
                     const parentRowStart = Math.floor(expandedIndex / 2) * 2;
                     const expandedItem = members[expandedIndex];
@@ -476,7 +491,9 @@ export default function Team() {
                 }
 
                 return reordered.map((member) => {
-                  const isExpanded = expandedId === member.id;
+                  const isExpanded = isDesktop 
+                    ? activeDesktopId === member.id
+                    : expandedIds.includes(member.id);
                   const originalIndex = members.findIndex((m) => m.id === member.id);
                   const isRightColumn = originalIndex % 2 === 1;
 
@@ -504,6 +521,7 @@ export default function Team() {
                           readMoreLbl={readMoreLbl}
                           readLessLbl={readLessLbl}
                           onToggle={() => toggle(member.id)}
+                          mobileContentRef={(el) => { mobileCardsRef.current[member.id] = el; }}
                           t={t}
                         />
                       </Reveal>
