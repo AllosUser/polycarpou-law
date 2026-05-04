@@ -44,11 +44,10 @@ export function Header() {
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
-          solid
-            ? "bg-white/95 backdrop-blur-sm shadow-nav border-b border-border"
-            : "bg-transparent"
-        } ${!solid ? "header-transparent" : ""}`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${solid
+          ? "bg-white/95 backdrop-blur-sm shadow-nav border-b border-border"
+          : "bg-transparent"
+          } ${!solid ? "header-transparent" : ""}`}
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -64,9 +63,8 @@ export function Header() {
               style={{ background: "transparent" }}
             />
             <span
-              className={`hidden sm:block text-[8.5px] font-medium tracking-[0.13em] uppercase leading-none transition-colors duration-300 ${
-                !solid ? "text-white/90" : "text-foreground/90"
-              }`}
+              className={`hidden sm:block text-[8.5px] font-medium tracking-[0.13em] uppercase leading-none transition-colors duration-300 ${!solid ? "text-white/90" : "text-foreground/90"
+                }`}
             >
               ANDREAS POLYCARPOU & CO LLC
             </span>
@@ -74,9 +72,8 @@ export function Header() {
 
           {/* Right: Hamburger */}
           <button
-            className={`p-2 rounded-sm transition-colors hover:bg-secondary/20 ${
-              !solid ? "text-white" : "text-foreground"
-            }`}
+            className={`p-2 rounded-sm transition-colors hover:bg-secondary/20 ${!solid ? "text-white" : "text-foreground"
+              }`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -91,7 +88,7 @@ export function Header() {
           style={{ gridTemplateColumns: "1fr auto 1fr", maxWidth: "1600px" }}
         >
           {/* Left Zone: Logo icon + two-line brand text */}
-          <div className="flex justify-start items-center">
+          <div className="flex justify-start items-center -ml-1.5 lg:-ml-3">
             <Link to="/" className="group flex items-center gap-3.5" aria-label="Home">
               <img
                 src={apLogo}
@@ -101,16 +98,14 @@ export function Header() {
               />
               <div className="flex flex-col justify-center leading-[1.2] transition-opacity duration-300 opacity-90 group-hover:opacity-100">
                 <span
-                  className={`text-[10.5px] font-semibold tracking-[0.14em] uppercase transition-colors duration-300 ${
-                    !solid ? "text-white/95" : "text-foreground"
-                  }`}
+                  className={`text-[10.5px] font-semibold tracking-[0.14em] uppercase transition-colors duration-300 ${!solid ? "text-white/95" : "text-foreground"
+                    }`}
                 >
                   ANDREAS POLYCARPOU &amp; CO LLC
                 </span>
                 <span
-                  className={`text-[8.5px] font-light tracking-[0.06em] mt-[3px] transition-colors duration-300 ${
-                    !solid ? "text-white/55" : "text-muted-foreground"
-                  }`}
+                  className={`text-[8.5px] font-light tracking-[0.06em] mt-[3px] transition-colors duration-300 ${!solid ? "text-white/55" : "text-muted-foreground"
+                    }`}
                 >
                   Advocates &amp; Legal Consultants
                 </span>
@@ -202,11 +197,10 @@ export function Header() {
                   >
                     <Link
                       to={link.href}
-                      className={`flex items-center px-4 py-3 rounded-sm text-sm font-medium tracking-widest uppercase transition-colors ${
-                        isActive(link.href)
-                          ? "text-gold bg-accent-light"
-                          : "text-foreground hover:bg-secondary"
-                      }`}
+                      className={`flex items-center px-4 py-3 rounded-sm text-sm font-medium tracking-widest uppercase transition-colors ${isActive(link.href)
+                        ? "text-gold bg-accent-light"
+                        : "text-foreground hover:bg-secondary"
+                        }`}
                     >
                       {link.label}
                     </Link>
