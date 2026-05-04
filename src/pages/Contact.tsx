@@ -6,6 +6,7 @@ import { GoldDivider } from "@/components/GoldDivider";
 import { MapPreview } from "@/components/MapPreview";
 import { motion, AnimatePresence } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
+import { useSEO } from "@/hooks/useSEO";
 import { useMapsLink, PHONE, PHONE_HREF, EMAIL, EMAIL_HREF } from "@/lib/contact";
 
 interface FormState {
@@ -27,6 +28,12 @@ const VALID_AREAS = ["corporate", "litigation", "real-estate", "family", "contra
 export default function Contact() {
   const { t } = useI18n();
   const [searchParams] = useSearchParams();
+  useSEO({
+    title: "Contact Us | Law Firm in Nicosia, Cyprus | Polycarpou Law",
+    description:
+      "Contact Andreas Polycarpou & Co LLC. Schedule a confidential consultation with our lawyers in Nicosia, Cyprus. All enquiries handled with absolute discretion.",
+    canonical: "/contact",
+  });
   const mapsLink = useMapsLink();
 
   const [form, setForm] = useState<FormState>({ name: "", email: "", phone: "", subject: "", message: "" });

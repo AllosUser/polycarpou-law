@@ -4,6 +4,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionReveal } from "@/components/SectionReveal";
 import { GoldDivider } from "@/components/GoldDivider";
 import { useI18n } from "@/lib/i18n";
+import { useSEO } from "@/hooks/useSEO";
 import founderImg from "@/assets/founder.jpg";
 
 const iconMap: Record<string, React.ElementType> = { Shield, Target, Users };
@@ -15,6 +16,12 @@ const valueKeys = [
 
 export default function About() {
   const { t } = useI18n();
+  useSEO({
+    title: "About Us | Corporate & Civil Lawyers in Nicosia, Cyprus | Polycarpou Law",
+    description:
+      "Learn about Andreas Polycarpou & Co LLC — a boutique law firm in Nicosia, Cyprus, founded on integrity, precision, and over 20 years of legal experience.",
+    canonical: "/about",
+  });
 
   return (
     <>

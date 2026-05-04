@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useSEO } from "@/hooks/useSEO";
 import {
   Briefcase, Scale, Building2, Heart, FileText,
   ChevronRight, CheckCircle, ArrowRight,
@@ -18,19 +19,46 @@ const iconMap: Record<string, React.ElementType> = {
 const svcKeys = ["corporate", "litigation", "realestate", "family", "contract"];
 export default function Index() {
   const { t } = useI18n();
+  useSEO({
+    title: "Andreas Polycarpou & Co LLC | Law Firm in Nicosia, Cyprus",
+    description:
+      "Premier boutique law firm in Nicosia, Cyprus. Corporate law, civil litigation, real estate, family law and contract law — delivered with precision and integrity.",
+    canonical: "/",
+  });
 
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────── */}
       <section
-        className="relative min-h-screen flex items-start md:items-center justify-center overflow-hidden pt-20 md:pt-0"
+        className="relative min-h-screen flex items-start md:items-center justify-center overflow-hidden pt-20 md:pt-0 hero"
         aria-label="Hero"
       >
         <div className="absolute inset-0 bg-cover bg-center md:hidden" style={{ backgroundImage: `url(${heroBgMobile})` }} />
         <div className="absolute inset-0 bg-cover bg-center hidden md:block" style={{ backgroundImage: `url(${heroBg})` }} />
-        <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-        <div className="absolute inset-0 texture-overlay opacity-20" />
-        <div className="absolute bottom-0 left-0 right-0"><GoldDivider /></div>
+        <div className="absolute inset-0 bg-black/40 md:bg-black/30" />
+        
+        {/* Refined Background Elements */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          {/* Gold Lines - Geometric Flow */}
+          <svg className="absolute top-0 right-0 w-full h-full hero-gold-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="gold-line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="rgba(198,167,94,0.4)" />
+                <stop offset="100%" stopColor="rgba(198,167,94,0.1)" />
+              </linearGradient>
+            </defs>
+            <path d="M70,0 Q85,30 60,100" stroke="url(#gold-line-grad)" strokeWidth="0.08" fill="none" />
+            <path d="M85,0 Q100,50 80,100" stroke="url(#gold-line-grad)" strokeWidth="0.06" fill="none" />
+            <path d="M95,0 Q110,40 90,100" stroke="url(#gold-line-grad)" strokeWidth="0.12" fill="none" />
+          </svg>
+
+          {/* Lower Curve / Wave Element */}
+          <svg className="absolute bottom-0 left-0 w-full h-40 lg:h-64 hero-wave" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path fill="hsl(var(--accent))" fillOpacity="1" d="M0,192L120,208C240,224,480,256,720,256C960,256,1200,224,1320,208L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
+          </svg>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0 z-10"><GoldDivider /></div>
 
         <div className="container-law relative z-10 text-center pt-8 pb-20 md:py-32">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
@@ -49,7 +77,7 @@ export default function Index() {
 
           <motion.p
             className="text-lg font-light mb-12 leading-relaxed"
-            style={{ color: "hsl(0 0% 80%)", maxWidth: "520px", margin: "0 auto 3rem", fontFamily: "var(--font-sans)" }}
+            style={{ color: "hsl(0 0% 85%)", maxWidth: "520px", margin: "0 auto 3rem", fontFamily: "var(--font-sans)" }}
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }}
           >
             {t("home.hero.subtitle")}
@@ -172,6 +200,38 @@ export default function Index() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── LOCAL SEO — Nicosia / Cyprus ─────────────────── */}
+      <section className="section-sm" style={{ background: "hsl(var(--secondary))" }} aria-label="Law firm in Nicosia Cyprus">
+        <div className="container-law">
+          <Reveal>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="eyebrow mb-3">Nicosia · Cyprus</p>
+              <h2 className="heading-serif mb-5">Trusted Legal Services in Cyprus</h2>
+              <GoldDivider className="mx-auto mb-7" width="60px" />
+              <p className="text-base leading-relaxed mb-4">
+                Andreas Polycarpou &amp; Co LLC is a boutique law firm headquartered in central Nicosia, the capital of Cyprus. Our lawyers are registered members of the Cyprus Bar Association with over two decades of experience representing individuals and businesses across Cyprus and internationally.
+              </p>
+              <p className="text-base leading-relaxed mb-10">
+                Whether you need a <Link to="/corporate-law-cyprus" className="text-gold hover:underline">corporate lawyer in Cyprus</Link> for company formation or M&amp;A, a <Link to="/real-estate-lawyer-cyprus" className="text-gold hover:underline">property lawyer</Link> for a Nicosia real estate transaction, or expert <Link to="/litigation-lawyer-cyprus" className="text-gold hover:underline">litigation representation</Link> in the Cyprus courts, our team delivers clear, effective legal counsel grounded in Cypriot law.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                {([
+                  ["20+", "Years in Cyprus Law"],
+                  ["Cyprus Bar", "Licensed & Regulated"],
+                  ["Nicosia", "City Centre Office"],
+                  ["EN · EL", "Bilingual Service"],
+                ] as const).map(([stat, label]) => (
+                  <div key={label} className="text-center p-4 rounded-sm" style={{ border: "1px solid hsl(var(--border))" }}>
+                    <p className="heading-serif text-xl font-medium text-gold mb-1">{stat}</p>
+                    <p className="text-[11px] uppercase tracking-wider" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "var(--font-sans)" }}>{label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 

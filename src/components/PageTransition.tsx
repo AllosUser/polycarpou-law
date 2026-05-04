@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import apLogo from "@/assets/Logo/ap_notext_gold.svg";
 
 const OVERLAY_DURATION_MS = 700;
 
@@ -94,13 +95,18 @@ export function PageTransition() {
             }}
           >
             <img
-              src="/logo.png"
+              src={apLogo}
               alt="Andreas Polycarpou & Co LLC"
-              className="h-16 w-auto md:h-20"
+              className="h-16 w-auto md:h-20 mb-6"
             />
-            <span className="heading-serif mt-2 text-xl font-medium tracking-tight text-foreground md:text-2xl">
-              Polycarpou <span className="text-gold">Law</span>
-            </span>
+            <div className="flex flex-col items-center text-center">
+              <span className="text-[14px] md:text-[18px] font-semibold tracking-[0.14em] uppercase text-foreground leading-tight">
+                ANDREAS POLYCARPOU &amp; CO LLC
+              </span>
+              <span className="text-[10px] md:text-[12px] font-light tracking-[0.06em] mt-1.5 text-muted-foreground">
+                Advocates &amp; Legal Consultants
+              </span>
+            </div>
           </motion.div>
         </motion.div>
       )}

@@ -7,6 +7,7 @@ import { Reveal } from "@/components/Reveal";
 import { GoldDivider } from "@/components/GoldDivider";
 import { services } from "@/lib/data";
 import { useI18n } from "@/lib/i18n";
+import { useSEO } from "@/hooks/useSEO";
 
 const iconMap: Record<string, React.ElementType> = {
   Briefcase, Scale, Building2, Heart, FileText,
@@ -19,6 +20,12 @@ const timelineIcons = [MessageSquare, Search, FileText, Handshake, CheckCircle];
 
 export default function Services() {
   const { t } = useI18n();
+  useSEO({
+    title: "Practice Areas | Legal Services in Cyprus | Polycarpou Law",
+    description:
+      "Specialist legal services in Cyprus: corporate law, civil litigation, real estate, family law and contract law — delivered by experienced Nicosia lawyers.",
+    canonical: "/services",
+  });
 
   return (
     <>

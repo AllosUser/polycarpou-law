@@ -38,14 +38,18 @@ export function Header() {
   const isActive = (href: string) =>
     href === "/" ? location.pathname === "/" : location.pathname.startsWith(href);
 
+  // List of legal/static pages that require a solid light navbar from the start
+  const lightBgPages = ["/privacy-policy", "/cookie-policy", "/terms-and-conditions"];
+  const isLightPage = lightBgPages.includes(location.pathname) || location.pathname.startsWith("/our-people");
+
   // Pages without a hero section need the solid white navbar from the start
-  const solid = scrolled || location.pathname.startsWith("/our-people");
+  const solid = scrolled || isLightPage;
 
   return (
     <>
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${solid
-          ? "bg-white/95 backdrop-blur-sm shadow-nav border-b border-border"
+          ? "bg-background/95 backdrop-blur-md shadow-nav border-b border-black/5"
           : "bg-transparent"
           } ${!solid ? "header-transparent" : ""}`}
         initial={{ y: -80, opacity: 0 }}

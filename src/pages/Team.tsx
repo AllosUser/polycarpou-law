@@ -5,12 +5,19 @@ import { SectionReveal } from "@/components/SectionReveal";
 import { GoldDivider } from "@/components/GoldDivider";
 import { team } from "@/data/team";
 import { useI18n } from "@/lib/i18n";
+import { useSEO } from "@/hooks/useSEO";
 
 type L = "en" | "el";
 
 export default function Team() {
   const { t, lang } = useI18n();
   const l = lang as L;
+  useSEO({
+    title: "Our People | Lawyers in Nicosia, Cyprus | Polycarpou Law",
+    description:
+      "Meet the legal team at Andreas Polycarpou & Co LLC — experienced lawyers and legal professionals based in Nicosia, Cyprus.",
+    canonical: "/team",
+  });
 
   const benefits = [
     t("team.join.b1"),

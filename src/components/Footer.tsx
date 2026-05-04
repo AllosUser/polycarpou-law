@@ -3,11 +3,13 @@ import { MapPin, Phone, Mail } from "lucide-react";
 import { GoldDivider } from "./GoldDivider";
 import { useI18n } from "@/lib/i18n";
 import { useMapsLink, PHONE, PHONE_HREF, EMAIL, EMAIL_HREF } from "@/lib/contact";
+import { useCookieConsent } from "@/lib/cookieConsent";
 import apLogo from "@/assets/Logo/ap_notext_gold.svg";
 
 export function Footer() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const mapsLink = useMapsLink();
+  const { reopen } = useCookieConsent();
 
   const footerLinks = [
     { href: "/", label: t("nav.home") },
@@ -103,11 +105,68 @@ export function Footer() {
           </div>
         </div>
 
-        <GoldDivider className="mb-6" />
+        <GoldDivider className="mb-8" />
 
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-xs" style={{ color: "hsl(0 0% 50%)" }}>
-          <p>&copy; {new Date().getFullYear()} {t("footer.copyright")}</p>
-          <p>{t("footer.regulated")}</p>
+        {/* Bottom Bar: Copyright, Legal Links, Developer Credit */}
+        <div className="flex flex-col items-center gap-3 text-[11px] tracking-[0.03em] text-muted-foreground/60" style={{ fontFamily: "var(--font-sans)" }}>
+          {/* Line 1: Copyright */}
+          <div className="text-center">
+            <p>{t("footer.copyright")}</p>
+          </div>
+
+          {/* Line 2: Legal Links */}
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+            <Link
+              to="/privacy-policy"
+              className="transition-colors duration-200 hover:text-gold"
+            >
+              {t("footer.privacyPolicy")}
+            </Link>
+
+            <span className="opacity-30">·</span>
+
+            {/* Consolidated Cookie Item */}
+            <div className="flex items-center gap-1">
+              <Link
+                to="/cookie-policy"
+                className="transition-colors duration-200 hover:text-gold"
+              >
+                {lang === "en" ? "Cookie Policy" : "Πολιτική"}
+              </Link>
+              <span className="opacity-30">&amp;</span>
+              <button
+                onClick={reopen}
+                className="transition-colors duration-200 hover:text-gold cursor-pointer bg-transparent border-0 p-0 font-[inherit] text-[inherit] tracking-[inherit]"
+              >
+                {lang === "en" ? "Settings" : "Ρυθμίσεις Cookies"}
+              </button>
+            </div>
+
+            <span className="opacity-30">·</span>
+
+            <Link
+              to="/terms-and-conditions"
+              className="transition-colors duration-200 hover:text-gold"
+            >
+              {t("footer.terms")}
+            </Link>
+          </div>
+
+          {/* Line 3: Developer Credit */}
+          <div className="text-center">
+            <p>
+              {t("footer.creditPrefix")}{" "}
+              <a
+                href="https://buildtomorrow.today"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium transition-colors duration-300 hover:text-gold"
+                style={{ color: "hsl(0 0% 50%)" }}
+              >
+                BuildTomorrow
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
