@@ -222,6 +222,39 @@
     transform: translateY(-4px);
   }
 
+  /* People listing card — clickable grid cards on /team */
+  .people-card {
+    @apply rounded-sm overflow-hidden bg-card transition-all duration-300;
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    display: block;
+    text-decoration: none;
+  }
+
+  .people-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .people-card:hover::after {
+    transform: scaleX(1);
+  }
+
+  .people-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    border-color: hsl(var(--border-gold));
+  }
+
   /* Team card image wrapper — mobile-only fixed height */
   .team-card-img-wrap {
     height: 288px; /* mobile: match CEO card */

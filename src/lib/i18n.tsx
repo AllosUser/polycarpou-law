@@ -208,6 +208,13 @@ const translations: Translations = {
     "contact.form.optContract": "Contract Law",
     "contact.form.optOther": "Other / Unsure",
 
+    // People profile page
+    "people.backTo": "Back to People",
+    "people.education": "Education",
+    "people.bar": "Bar Admission",
+    "people.languages": "Languages Spoken",
+    "people.email": "Email",
+
     // Footer
     "footer.desc": "Comprehensive, commercially astute legal services in Cyprus. We deliver outcomes through rigorous precision and unyielding advocacy.",
     "footer.quickLinks": "Explore",
@@ -424,6 +431,13 @@ const translations: Translations = {
     "contact.form.optContract": "Συμβάσεις / Ενοχικό Δίκαιο",
     "contact.form.optOther": "Άλλο / Δεν Είμαι Σίγουρος",
 
+    // People profile page
+    "people.backTo": "Πίσω στην Ομάδα",
+    "people.education": "Εκπαίδευση",
+    "people.bar": "Δικηγορικός Σύλλογος",
+    "people.languages": "Γλώσσες",
+    "people.email": "Email",
+
     // Footer
     "footer.desc": "Ολοκληρωμένες νομικές υπηρεσίες με επαγγελματική ακεραιότητα, στρατηγική προσέγγιση και αποτελεσματική δικαστηριακή εκπροσώπηση.",
     "footer.quickLinks": "Χρήσιμοι Σύνδεσμοι",
@@ -431,7 +445,7 @@ const translations: Translations = {
     "footer.contact": "Επικοινωνία",
     "footer.hours": "Ώρες Λειτουργίας",
     "footer.copyright": "Andreas Polycarpou & Co LLC. Με την επιφύλαξη παντός δικαιώματος.",
-    "footer.regulated": "Μέλος του Παγκύπριου Δικηγορικού Συλλόγου",
+    "footer.regulated": "Μέλος του Π.Δ.Σ.",
     "footer.monFri": "Δευτέρα – Παρασκευή",
     "footer.sat": "Σάββατο",
     "footer.sun": "Κυριακή",

@@ -38,14 +38,17 @@ export function Header() {
   const isActive = (href: string) =>
     href === "/" ? location.pathname === "/" : location.pathname.startsWith(href);
 
+  // Pages without a hero section need the solid white navbar from the start
+  const solid = scrolled || location.pathname.startsWith("/our-people");
+
   return (
     <>
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
-          scrolled
+          solid
             ? "bg-white/95 backdrop-blur-sm shadow-nav border-b border-border"
             : "bg-transparent"
-        } ${!scrolled ? "header-transparent" : ""}`}
+        } ${!solid ? "header-transparent" : ""}`}
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -62,7 +65,7 @@ export function Header() {
             />
             <span
               className={`hidden sm:block text-[8.5px] font-medium tracking-[0.13em] uppercase leading-none transition-colors duration-300 ${
-                !scrolled ? "text-white/90" : "text-foreground/90"
+                !solid ? "text-white/90" : "text-foreground/90"
               }`}
             >
               ANDREAS POLYCARPOU & CO LLC
@@ -72,7 +75,7 @@ export function Header() {
           {/* Right: Hamburger */}
           <button
             className={`p-2 rounded-sm transition-colors hover:bg-secondary/20 ${
-              !scrolled ? "text-white" : "text-foreground"
+              !solid ? "text-white" : "text-foreground"
             }`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -99,14 +102,14 @@ export function Header() {
               <div className="flex flex-col justify-center leading-[1.2] transition-opacity duration-300 opacity-90 group-hover:opacity-100">
                 <span
                   className={`text-[10.5px] font-semibold tracking-[0.14em] uppercase transition-colors duration-300 ${
-                    !scrolled ? "text-white/95" : "text-foreground"
+                    !solid ? "text-white/95" : "text-foreground"
                   }`}
                 >
                   ANDREAS POLYCARPOU &amp; CO LLC
                 </span>
                 <span
                   className={`text-[8.5px] font-light tracking-[0.06em] mt-[3px] transition-colors duration-300 ${
-                    !scrolled ? "text-white/55" : "text-muted-foreground"
+                    !solid ? "text-white/55" : "text-muted-foreground"
                   }`}
                 >
                   Advocates &amp; Legal Consultants

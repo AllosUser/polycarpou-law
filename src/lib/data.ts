@@ -73,7 +73,7 @@ export const team = [
     },
     barNumber: {
       en: "Cyprus Bar · Admitted 2006",
-      el: "Μέλος του Παγκύπριου Δικηγορικού Συλλόγου από το 2006"
+      el: "Μέλος του Π.Δ.Σ. από το 2006"
     },
     email: "apolycarpou@polycarpoulaw.com",
     languages: {
@@ -102,7 +102,7 @@ export const team = [
     },
     barNumber: {
       en: "Cyprus Bar · Admitted 2018",
-      el: "Μέλος του Παγκύπριου Δικηγορικού Συλλόγου από το 2018"
+      el: "Μέλος του Π.Δ.Σ. από το 2018"
     },
     email: "mariantina@polycarpoulaw.com",
     languages: {
@@ -123,7 +123,7 @@ export const team = [
     image: team1,
     bio: {
       en: "Renée Marie Markou is an experienced lawyer and member of the Cyprus Bar Association since 2016. She is a graduate of the School of Law of the University of Nicosia and joined our team in 2024.\n\nShe is actively engaged in a broad range of legal cases, with specialisation in Administrative Law, Civil Law, Labour Disputes, Family Law, Inheritance Law, as well as Criminal Law. In parallel, she provides comprehensive legal services and representation in matters of corporate and commercial law, including the drafting, review and negotiation of contracts, as well as the management of corporate affairs.\n\nShe also has significant experience in handling banking matters, including financing and restructuring issues, as well as in negotiating with clients and financial institutions, with a view to safeguarding the optimal legal and business interests of clients.\n\nAdditionally, she serves as Vice President of the philanthropic G. Pyrishis Foundation, which actively contributes to the support of vulnerable social groups.",
-      el: "Η Ρενέ Μαρί Μάρκου είναι έμπειρη δικηγόρος και μέλος του Παγκύπριου Δικηγορικού Συλλόγου από το 2016. Είναι απόφοιτος της Νομικής Σχολής του Πανεπιστημίου Λευκωσίας και εντάχθηκε στην ομάδα μας το 2024.\n\nΔραστηριοποιείται ενεργά σε ευρύ φάσμα νομικών υποθέσεων, με εξειδίκευση στο Διοικητικό Δίκαιο, Αστικό Δίκαιο, τις Εργατικές Διαφορές, το Οικογενειακό Δίκαιο, το Κληρονομικό Δίκαιο, καθώς και στο Ποινικό Δίκαιο. Παράλληλα, παρέχει ολοκληρωμένες νομικές υπηρεσίες και εκπροσώπηση σε ζητήματα εταιρικού και εμπορικού δικαίου, συμπεριλαμβανομένης της σύνταξης, αναθεώρησης και διαπραγμάτευσης συμβάσεων, καθώς και της διαχείρισης εταιρικών υποθέσεων.\n\nΔιαθέτει επίσης σημαντική εμπειρία στον χειρισμό τραπεζικών υποθέσεων, περιλαμβανομένων θεμάτων χρηματοδοτήσεων και αναδιαρθρώσεων, καθώς και στη διαπραγμάτευση με πελάτες και χρηματοπιστωτικά ιδρύματα, με γνώμονα τη διασφάλιση των βέλτιστων νομικών και επιχειρηματικών συμφερόντων των πελατών.\n\nΕπιπρόσθετα, διατελεί Αντιπρόεδρος του φιλανθρωπικού ιδρύματος G. Pyrishis Foundation, το οποίο συμβάλλει ενεργά στη στήριξη ευπαθών κοινωνικών ομάδων."
+      el: "Η Ρενέ Μαρί Μάρκου είναι έμπειρη δικηγόρος και μέλος του Π.Δ.Σ. από το 2016. Είναι απόφοιτος της Νομικής Σχολής του Πανεπιστημίου Λευκωσίας και εντάχθηκε στην ομάδα μας το 2024.\n\nΔραστηριοποιείται ενεργά σε ευρύ φάσμα νομικών υποθέσεων, με εξειδίκευση στο Διοικητικό Δίκαιο, Αστικό Δίκαιο, τις Εργατικές Διαφορές, το Οικογενειακό Δίκαιο, το Κληρονομικό Δίκαιο, καθώς και στο Ποινικό Δίκαιο. Παράλληλα, παρέχει ολοκληρωμένες νομικές υπηρεσίες και εκπροσώπηση σε ζητήματα εταιρικού και εμπορικού δικαίου, συμπεριλαμβανομένης της σύνταξης, αναθεώρησης και διαπραγμάτευσης συμβάσεων, καθώς και της διαχείρισης εταιρικών υποθέσεων.\n\nΔιαθέτει επίσης σημαντική εμπειρία στον χειρισμό τραπεζικών υποθέσεων, περιλαμβανομένων θεμάτων χρηματοδοτήσεων και αναδιαρθρώσεων, καθώς και στη διαπραγμάτευση με πελάτες και χρηματοπιστωτικά ιδρύματα, με γνώμονα τη διασφάλιση των βέλτιστων νομικών και επιχειρηματικών συμφερόντων των πελατών.\n\nΕπιπρόσθετα, διατελεί Αντιπρόεδρος του φιλανθρωπικού ιδρύματος G. Pyrishis Foundation, το οποίο συμβάλλει ενεργά στη στήριξη ευπαθών κοινωνικών ομάδων."
     },
     education: {
       en: "LLB, School of Law, University of Nicosia",
@@ -131,7 +131,7 @@ export const team = [
     },
     barNumber: {
       en: "Cyprus Bar · Admitted 2016",
-      el: "Μέλος του Παγκύπριου Δικηγορικού Συλλόγου από το 2016"
+      el: "Μέλος του Π.Δ.Σ. από το 2016"
     },
     email: "renee.marcou@polycarpoulaw.com",
     languages: {
@@ -160,7 +160,7 @@ export const team = [
     },
     barNumber: {
       en: "Cyprus Bar · Member",
-      el: "Μέλος του Παγκύπριου Δικηγορικού Συλλόγου"
+      el: "Μέλος του Π.Δ.Σ."
     },
     email: "j.solomou@polycarpoulaw.com",
     languages: {
