@@ -349,11 +349,11 @@
   .nav-link {
     position: relative;
     font-family: var(--font-sans);
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
+    font-size: 0.97rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
-    color: hsl(var(--foreground));
+    color: hsl(var(--foreground) / 0.7);
     text-decoration: none;
     transition: color 0.2s ease;
   }
@@ -382,7 +382,7 @@
 
   /* Transparent header: light text on dark hero */
   .header-transparent .nav-link {
-    color: hsl(40 27% 85%);
+    color: hsl(0 0% 100% / 0.7);
   }
 
   .header-transparent .nav-link:hover {

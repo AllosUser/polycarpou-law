@@ -168,7 +168,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "team.join.b4": "Flexible working arrangements",
     "team.join.b5": "Continuing professional development",
     "team.cta.title": "Ready to speak with our team?",
-    "team.cta.button": "Schedule a Consultation",
+    "team.cta.button": "SCHEDULE CONSULTATION",
 
     // Contact page
     "contact.eyebrow": "Get in Touch",

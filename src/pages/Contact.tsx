@@ -119,9 +119,8 @@ export default function Contact() {
                     <div>
                       <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "hsl(var(--accent))", fontFamily: "var(--font-sans)" }}>{t("contact.hours.label")}</p>
                       {[
-                        [t("contact.hours.mf"), "09:00 – 18:00"],
-                        [t("contact.hours.sat"), "10:00 – 14:00"],
-                        [t("contact.hours.sun"), t("contact.hours.closed")],
+                        [t("contact.hours.mf"), "08:30 – 17:30"],
+                        [t("contact.hours.weekends"), t("contact.hours.closed")],
                       ].map(([day, hours]) => (
                         <div key={day} className="flex justify-between gap-6 mb-1">
                           <span className="text-sm text-muted-foreground" style={{ fontFamily: "var(--font-sans)" }}>{day}</span>

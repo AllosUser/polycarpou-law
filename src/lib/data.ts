@@ -64,8 +64,8 @@ export const team = [
     },
     image: founder,
     bio: {
-      en: "Andreas Polycarpou is the founder and Managing Director of the law firm Andreas Polycarpou & Co LLC, with a presence in the legal field spanning over 20 years. In 2006, he joined the law office Markou – Polycarpou (later Markou & Polycarpou LLC), and in 2021 he founded the law firm Andreas Polycarpou & Co LLC.\n\nHe graduated from the School of Law of the Aristotle University of Thessaloniki (2001–2005) and was admitted to the Cyprus Bar in 2006. Since then, he has developed extensive experience across a broad range of legal fields, including civil, criminal, commercial, corporate, labour and family law. Throughout his professional career, he has handled a large number of cases both at judicial and extrajudicial level, representing domestic and international clients. He is distinguished for his strategic approach, effectiveness and dedication to finding substantive and practical solutions tailored to each client's needs.\n\nHe has extensive experience in handling insurance law cases, having served as external legal counsel for Atlantic Insurance. He has represented both insurance companies and individuals, acquiring significant knowledge in a wide range of compensation and insurance claims matters, both for and against insurance organisations.\n\nAlongside his legal practice, he maintains significant entrepreneurial activity in Cyprus and abroad, whether as a natural person or through participation in commercial and consultancy companies. Among other positions, he is a Director of Saviomega Foods Ltd and Pyripol Ltd, while he actively participates in the boards of companies such as Bet on Alfa Ltd, where he currently serves as Chief Executive Officer (CEO), as well as the Ayd Group of Companies, where he holds the position of Managing Director with operations both in Cyprus and internationally.\n\nFurthermore, he participated as a keynote speaker in a series of lectures and seminars organised by the Konstantios Foundation for Studies, delivering lectures focused on significant legal issues, including the evidential value of DNA as evidence, as well as matters relating to the application of the Protection of Minor Children of Convicted or Suspected Mothers Law of 2005. In parallel, he participated as a speaker/advisor in activities and events concerning the protection of vulnerable groups, in collaboration with SPAVO (Association for the Prevention and Handling of Violence in the Family), a recognised non-governmental organisation in Cyprus, developing topics related to the legal protection of victims, women's rights and the management of domestic violence cases.\n\nAdditionally, he serves as President of the philanthropic G. Pyrishis Foundation, a foundation that actively contributes to the support of vulnerable groups.\n\nWith professionalism, years of experience and multifaceted activity, Andreas Polycarpou is an experienced lawyer, legal and business advisor who combines legal training with business acumen and social sensitivity.",
-      el: "Ο Ανδρέας Πολυκάρπου είναι ιδρυτής και Διευθύνων Σύμβουλος της δικηγορικής εταιρείας Andreas Polycarpou & Co LLC, με παρουσία στον νομικό χώρο που εκτείνεται σε πέραν των 20 ετών. Το 2006 μετείχε στο δικηγορικό γραφείο Μάρκου – Πολυκάρπου ( μετέπειτα Markou & Polycarpou LLC ) ενώ από το 2021 ίδρυσε το δικηγορικό γραφείο Andreas Polycarpou & Co LLC.\n\nΑποφοίτησε από τη Νομική Σχολή του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης (2001–2005) και απέκτησε την άδεια άσκησης επαγγέλματος το 2006. Έκτοτε, έχει αναπτύξει εκτενή εμπειρία σε ευρύ φάσμα τομέων δικαίου, περιλαμβανομένων του αστικού, ποινικού, εμπορικού, εταιρικού, εργατικού και οικογενειακού δικαίου.\n\nΚατά τη διάρκεια της επαγγελματικής του πορείας, έχει χειριστεί μεγάλο αριθμό υποθέσεων τόσο σε δικαστηριακό όσο και σε εξωδικαστηριακό επίπεδο, εκπροσωπώντας εγχώριους και διεθνείς πελάτες. Διακρίνεται για τη στρατηγική του προσέγγιση, την αποτελεσματικότητα και την αφοσίωσή του στην εξεύρεση ουσιαστικών και πρακτικών λύσεων, προσαρμοσμένων στις ανάγκες κάθε πελάτη.\n\nΔιαθέτει εκτενή εμπειρία στον χειρισμό υποθέσεων ασφαλιστικού δικαίου, έχοντας συνεργαστεί ως εξωτερικός νομικός σύμβουλος της Atlantic Insurance. Έχει εκπροσωπήσει τόσο ασφαλιστικές εταιρείες όσο και ιδιώτες, αποκτώντας σημαντική γνώση σε πληθώρα ζητημάτων αποζημιώσεων και ασφαλιστικών απαιτήσεων, τόσο υπέρ όσο και εναντίον ασφαλιστικών οργανισμών.\n\nΠαράλληλα με τη δικηγορική του δραστηριότητα, αναπτύσσει έντονη επιχειρηματική δράση στην Κύπρο και στο εξωτερικό, είτε ως φυσικό πρόσωπο είτε μέσω συμμετοχής του σε εμπορικές και συμβουλευτικές εταιρείες. Μεταξύ άλλων, είναι διευθυντής της Saviomega Foods Ltd και της Pyripol Ltd, ενώ συμμετέχει ενεργά σε διοικητικά συμβούλια εταιρειών όπως η Bet on Alfa Ltd, όπου ασκεί σήμερα τα καθήκοντα του Εκτελεστικού Διευθυντή (Chief Executive Officer), καθώς και στην Ayd Group of Companies, στην οποία κατέχει θέση ενός εκ των Διευθυνόντων Συμβούλων (Manager Director) με δραστηριότητες τόσο στην Κύπρο όσο και στο εξωτερικό.\n\nΕπιπλέον, συμμετείχε ως κύριος ομιλητής σε σειρά διαλέξεων και σεμιναρίων που διοργανώθηκαν από το Κωνστάντιο Ίδρυμα Μελετών, όπου παραχώρησε διαλέξεις επικεντρωμένες σε σημαντικά νομικά ζητήματα, όπως μεταξύ άλλων, η αποδεικτική αξία του DNA ως μαρτυρία, καθώς και θέματα που αφορούν στην εφαρμογή του περί της Προστασίας Ανήλικων Τέκνων Καταδικασθεισών ή Ύποπτων Μητέρων Νόμο του 2005. Παράλληλα, συμμετείχε ως ομιλητής/σύμβουλος σε δράσεις και εκδηλώσεις που αφορούσαν την προστασία ευάλωτων ομάδων, σε συνεργασία με τον ΣΠΑΒΟ (Σύνδεσμος για την Πρόληψη και Αντιμετώπιση της Βίας στην Οικογένεια), έναν αναγνωρισμένο μη κυβερνητικό οργανισμό στην Κύπρο, αναπτύσσοντας θεματολογία σχετικά με τη νομική προστασία θυμάτων, τα δικαιώματα των γυναικών και τη διαχείριση υποθέσεων οικογενειακής βίας.\n\nΕπιπρόσθετα διατελεί Πρόεδρος του φιλανθρωπικού ιδρύματος G. Pyrishis Foundation, ίδρυμα το οποίο συμβάλλει ενεργά στη στήριξη ευπαθών ομάδων.\n\nΜε επαγγελματισμό, πολυετή εμπειρία και πολυδιάστατη δραστηριότητα, ο Ανδρέας Πολυκάρπου αποτελεί έναν έμπειρο δικηγόρο/νομικό και επιχειρηματικό σύμβουλο που συνδυάζει τη νομική κατάρτιση με επιχειρηματική αντίληψη και κοινωνική ευαισθησία."
+      en: "Andreas Polycarpou is the founder and Managing Director of the law firm Andreas Polycarpou & Co LLC, with a presence in the legal field spanning over 20 years. In 2006, he joined the law office Marcou – Polycarpou (later Marcou & Polycarpou LLC), and he later established the law firm Andreas Polycarpou, which has been operating as Andreas Polycarpou & Co LLC since 2021.\n\nHe graduated from the School of Law of the Aristotle University of Thessaloniki (2001–2005) and was admitted to the Cyprus Bar in 2006. Since then, he has developed extensive experience across a broad range of legal fields, including civil, criminal, commercial, corporate, labour and family law. Throughout his professional career, he has handled a large number of cases both at judicial and extrajudicial level, representing domestic and international clients. He is distinguished for his strategic approach, effectiveness and dedication to finding substantive and practical solutions tailored to each client's needs.\n\nHe has extensive experience in handling insurance law cases, having served as external legal counsel for Atlantic Insurance. He has represented both insurance companies and individuals, acquiring significant knowledge in a wide range of compensation and insurance claims matters, both for and against insurance organisations.\n\nAlongside his legal practice, he maintains significant entrepreneurial activity in Cyprus and abroad, whether as a natural person or through participation in commercial and consultancy companies. Among other positions, he is a Director of Saviomega Foods Ltd and Pyripol Ltd, while he actively participates in the boards of companies such as Bet on Alfa Ltd, where he currently serves as Chief Executive Officer (CEO), as well as the Ayd Group of Companies, where he holds the position of Managing Director with operations both in Cyprus and internationally.\n\nFurthermore, he participated as a keynote speaker in a series of lectures and seminars organised by the Konstantios Foundation for Studies, delivering lectures focused on significant legal issues, including the evidential value of DNA as evidence, as well as matters relating to the application of the Protection of Minor Children of Convicted or Suspected Mothers Law of 2005. In parallel, he participated as a speaker/advisor in activities and events concerning the protection of vulnerable groups, in collaboration with SPAVO (Association for the Prevention and Handling of Violence in the Family), a recognised non-governmental organisation in Cyprus, developing topics related to the legal protection of victims, women's rights and the management of domestic violence cases.\n\nAdditionally, he serves as President of the philanthropic G. Pyrishis Foundation, a foundation that actively contributes to the support of vulnerable groups.\n\nWith professionalism, years of experience and multifaceted activity, Andreas Polycarpou is an experienced lawyer, legal and business advisor who combines legal training with business acumen and social sensitivity.",
+      el: "Ο Ανδρέας Πολυκάρπου είναι ιδρυτής και Διευθύνων Σύμβουλος της δικηγορικής εταιρείας Andreas Polycarpou & Co LLC, με παρουσία στον νομικό χώρο που εκτείνεται σε πέραν των 20 ετών. Το 2006 μετείχε στο δικηγορικό γραφείο Μάρκου – Πολυκάρπου ( μετέπειτα Marcou & Polycarpou LLC ) ενώ στη συνέχεια ίδρυσε το δικηγορικό γραφέιο Andreas Polycarpou που από το 2021 λειτουργεί ως Andreas Polycarpou & Co LLC.\n\nΑποφοίτησε από τη Νομική Σχολή του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης (2001–2005) και απέκτησε την άδεια άσκησης επαγγέλματος το 2006. Έκτοτε, έχει αναπτύξει εκτενή εμπειρία σε ευρύ φάσμα τομέων δικαίου, περιλαμβανομένων του αστικού, ποινικού, εμπορικού, εταιρικού, εργατικού και οικογενειακού δικαίου.\n\nΚατά τη διάρκεια της επαγγελματικής του πορείας, έχει χειριστεί μεγάλο αριθμό υποθέσεων τόσο σε δικαστηριακό όσο και σε εξωδικαστηριακό επίπεδο, εκπροσωπώντας εγχώριους και διεθνείς πελάτες. Διακρίνεται για τη στρατηγική του προσέγγιση, την αποτελεσματικότητα και την αφοσίωσή του στην εξεύρεση ουσιαστικών και πρακτικών λύσεων, προσαρμοσμένων στις ανάγκες κάθε πελάτη.\n\nΔιαθέτει εκτενή εμπειρία στον χειρισμό υποθέσεων ασφαλιστικού δικαίου, έχοντας συνεργαστεί ως εξωτερικός νομικός σύμβουλος της Atlantic Insurance. Έχει εκπροσωπήσει τόσο ασφαλιστικές εταιρείες όσο και ιδιώτες, αποκτώντας σημαντική γνώση σε πληθώρα ζητημάτων αποζημιώσεων και ασφαλιστικών απαιτήσεων, τόσο υπέρ όσο και εναντίον ασφαλιστικών οργανισμών.\n\nΠαράλληλα με τη δικηγορική του δραστηριότητα, αναπτύσσει έντονη επιχειρηματική δράση στην Κύπρο και στο εξωτερικό, είτε ως φυσικό πρόσωπο είτε μέσω συμμετοχής του σε εμπορικές και συμβουλευτικές εταιρείες. Μεταξύ άλλων, είναι διευθυντής της Saviomega Foods Ltd και της Pyripol Ltd, ενώ συμμετέχει ενεργά σε διοικητικά συμβούλια εταιρειών όπως η Bet on Alfa Ltd, όπου ασκεί σήμερα τα καθήκοντα του Εκτελεστικού Διευθυντή (Chief Executive Officer), καθώς και στην Ayd Group of Companies, στην οποία κατέχει θέση ενός εκ των Διευθυνόντων Συμβούλων (Manager Director) με δραστηριότητες τόσο στην Κύπρο όσο και στο εξωτερικό.\n\nΕπιπλέον, συμμετείχε ως κύριος ομιλητής σε σειρά διαλέξεων και σεμιναρίων που διοργανώθηκαν από το Κωνστάντιο Ίδρυμα Μελετών, όπου παραχώρησε διαλέξεις επικεντρωμένες σε σημαντικά νομικά ζητήματα, όπως μεταξύ άλλων, η αποδεικτική αξία του DNA ως μαρτυρία, καθώς και θέματα που αφορούν στην εφαρμογή του περί της Προστασίας Ανήλικων Τέκνων Καταδικασθεισών ή Ύποπτων Μητέρων Νόμο του 2005. Παράλληλα, συμμετείχε ως ομιλητής/σύμβουλος σε δράσεις και εκδηλώσεις που αφορούσαν την προστασία ευάλωτων ομάδων, σε συνεργασία με τον ΣΠΑΒΟ (Σύνδεσμος για την Πρόληψη και Αντιμετώπιση της Βίας στην Οικογένεια), έναν αναγνωρισμένο μη κυβερνητικό οργανισμό στην Κύπρο, αναπτύσσοντας θεματολογία σχετικά με τη νομική προστασία θυμάτων, τα δικαιώματα των γυναικών και τη διαχείριση υποθέσεων οικογενειακής βίας.\n\nΕπιπρόσθετα διατελεί Πρόεδρος του φιλανθρωπικού ιδρύματος G. Pyrishis Foundation, ίδρυμα το οποίο συμβάλλει ενεργά στη στήριξη ευπαθών ομάδων.\n\nΜε επαγγελματισμό, πολυετή εμπειρία και πολυδιάστατη δραστηριότητα, ο Ανδρέας Πολυκάρπου αποτελεί έναν έμπειρο δικηγόρο/νομικό και επιχειρηματικό σύμβουλο που συνδυάζει τη νομική κατάρτιση με επιχειρηματική αντίληψη και κοινωνική ευαισθησία."
     },
     education: {
       en: "LLB, School of Law, Aristotle University of Thessaloniki (2001–2005)",
@@ -76,6 +76,64 @@ export const team = [
       el: "Μέλος του Π.Δ.Σ. από το 2006"
     },
     email: "apolycarpou@polycarpoulaw.com",
+    languages: {
+      en: "Greek, English",
+      el: "Ελληνικά, Αγγλικά"
+    }
+  },
+  {
+    id: "renee-marie-Marcou",
+    name: {
+      en: "Renee Marie Marcou",
+      el: "Ρενέ Μαρί Μάρκου"
+    },
+    role: {
+      en: "Lawyer",
+      el: "Δικηγόρος"
+    },
+    image: team1,
+    bio: {
+      en: "Renee Marie Marcou is an experienced lawyer and member of the Cyprus Bar Association since 2016. She is a graduate of the School of Law of the University of Nicosia and joined our team in 2024.\n\nShe is actively engaged in a broad range of legal cases, with specialisation in Administrative Law, Civil Law, Labour Disputes, Family Law, Inheritance Law, as well as Criminal Law. In parallel, she provides comprehensive legal services and representation in matters of corporate and commercial law, including the drafting, review and negotiation of contracts, as well as the management of corporate affairs.\n\nShe also has significant experience in handling banking matters, including financing and restructuring issues, as well as in negotiating with clients and financial institutions, with a view to safeguarding the optimal legal and business interests of clients.\n\nAdditionally, she serves as Vice President of the philanthropic G. Pyrishis Foundation, which actively contributes to the support of vulnerable social groups.",
+      el: "Η Ρενέ Μαρί Μάρκου είναι έμπειρη δικηγόρος και μέλος του Π.Δ.Σ. από το 2016. Είναι απόφοιτος της Νομικής Σχολής του Πανεπιστημίου Λευκωσίας και εντάχθηκε στην ομάδα μας το 2024.\n\nΔραστηριοποιείται ενεργά σε ευρύ φάσμα νομικών υποθέσεων, με εξειδίκευση στο Διοικητικό Δίκαιο, Αστικό Δίκαιο, τις Εργατικές Διαφορές, το Οικογενειακό Δίκαιο, το Κληρονομικό Δίκαιο, καθώς και στο Ποινικό Δίκαιο. Παράλληλα, παρέχει ολοκληρωμένες νομικές υπηρεσίες και εκπροσώπηση σε ζητήματα εταιρικού και εμπορικού δικαίου, συμπεριλαμβανομένης της σύνταξης, αναθεώρησης και διαπραγμάτευσης συμβάσεων, καθώς και της διαχείρισης εταιρικών υποθέσεων.\n\nΔιαθέτει επίσης σημαντική εμπειρία στον χειρισμό τραπεζικών υποθέσεων, περιλαμβανομένων θεμάτων χρηματοδοτήσεων και αναδιαρθρώσεων, καθώς και στη διαπραγμάτευση με πελάτες και χρηματοπιστωτικά ιδρύματα, με γνώμονα τη διασφάλιση των βέλτιστων νομικών και επιχειρηματικών συμφερόντων των πελατών.\n\nΕπιπρόσθετα, διατελεί Αντιπρόεδρος του φιλανθρωπικού ιδρύματος G. Pyrishis Foundation, το οποίο συμβάλλει ενεργά στη στήριξη ευπαθών κοινωνικών ομάδων."
+    },
+    education: {
+      en: "LLB, School of Law, University of Nicosia",
+      el: "Πτυχίο Νομικής, Πανεπιστήμιο Λευκωσίας"
+    },
+    barNumber: {
+      en: "Cyprus Bar · Admitted 2016",
+      el: "Μέλος του Π.Δ.Σ. από το 2016"
+    },
+    email: "renee.marcou@polycarpoulaw.com",
+    languages: {
+      en: "Greek, English",
+      el: "Ελληνικά, Αγγλικά"
+    }
+  },
+  {
+    id: "Josephin-solomou",
+    name: {
+      en: "Josephin Solomou",
+      el: "Τζιόζεφιν Σολωμού"
+    },
+    role: {
+      en: "Lawyer",
+      el: "Δικηγόρος"
+    },
+    image: team1,
+    bio: {
+      en: "Josephin Solomou graduated from the Law Department of the Democritus University of Thrace. She joined the firm as a lawyer in September 2025. At the same time, she is pursuing her LL.M. in International Commercial Law at European University Cyprus. She handles matters across various areas of law according to the needs of the firm and is committed to providing diligent and reliable legal services. Josephin approaches her work with professionalism and a strong dedication to continuous learning and development.",
+      el: "Η Josephin Solomou αποφοίτησε από το τμήμα Νομικής του Δημοκρίτειου Πανεπιστημίου Θράκης. Εντάχθηκε στο γραφείο μας ως δικηγόρος τον Σεπτέμβριο του 2025. Παράλληλα, συνεχίζει τις σπουδές της για την απόκτηση μεταπτυχιακού τίτλου (LL.M.) στο Διεθνές Εμπορικό Δίκαιο στο Ευρωπαϊκό Πανεπιστήμιο Κύπρου. Ασχολείται με υποθέσεις που καλύπτουν διάφορους τομείς του δικαίου σύμφωνα με τις ανάγκες του γραφείου και δεσμεύεται να παρέχει επιμελείς και αξιόπιστες νομικές υπηρεσίες. Αντιμετωπίζει την εργασία της με επαγγελματισμό και ισχυρή προσήλωση στη συνεχή μάθηση και εξέλιξη."
+    },
+    education: {
+      en: "LLB Law, Democritus University of Thrace",
+      el: "Δημοκρίτειο Πανεπιστήμιο Θράκης (LLB)"
+    },
+    barNumber: {
+      en: "Cyprus Bar · Admitted 2025",
+      el: "Μέλος του Π.Δ.Σ. από το 2025"
+    },
+    email: "j.solomou@polycarpoulaw.com",
     languages: {
       en: "Greek, English",
       el: "Ελληνικά, Αγγλικά"
@@ -105,64 +163,6 @@ export const team = [
       el: "Μέλος του Π.Δ.Σ. από το 2018"
     },
     email: "mariantina@polycarpoulaw.com",
-    languages: {
-      en: "Greek, English",
-      el: "Ελληνικά, Αγγλικά"
-    }
-  },
-  {
-    id: "renee-marie-markou",
-    name: {
-      en: "Renée Marie Markou",
-      el: "Ρενέ Μαρί Μάρκου"
-    },
-    role: {
-      en: "Lawyer",
-      el: "Δικηγόρος"
-    },
-    image: team1,
-    bio: {
-      en: "Renée Marie Markou is an experienced lawyer and member of the Cyprus Bar Association since 2016. She is a graduate of the School of Law of the University of Nicosia and joined our team in 2024.\n\nShe is actively engaged in a broad range of legal cases, with specialisation in Administrative Law, Civil Law, Labour Disputes, Family Law, Inheritance Law, as well as Criminal Law. In parallel, she provides comprehensive legal services and representation in matters of corporate and commercial law, including the drafting, review and negotiation of contracts, as well as the management of corporate affairs.\n\nShe also has significant experience in handling banking matters, including financing and restructuring issues, as well as in negotiating with clients and financial institutions, with a view to safeguarding the optimal legal and business interests of clients.\n\nAdditionally, she serves as Vice President of the philanthropic G. Pyrishis Foundation, which actively contributes to the support of vulnerable social groups.",
-      el: "Η Ρενέ Μαρί Μάρκου είναι έμπειρη δικηγόρος και μέλος του Π.Δ.Σ. από το 2016. Είναι απόφοιτος της Νομικής Σχολής του Πανεπιστημίου Λευκωσίας και εντάχθηκε στην ομάδα μας το 2024.\n\nΔραστηριοποιείται ενεργά σε ευρύ φάσμα νομικών υποθέσεων, με εξειδίκευση στο Διοικητικό Δίκαιο, Αστικό Δίκαιο, τις Εργατικές Διαφορές, το Οικογενειακό Δίκαιο, το Κληρονομικό Δίκαιο, καθώς και στο Ποινικό Δίκαιο. Παράλληλα, παρέχει ολοκληρωμένες νομικές υπηρεσίες και εκπροσώπηση σε ζητήματα εταιρικού και εμπορικού δικαίου, συμπεριλαμβανομένης της σύνταξης, αναθεώρησης και διαπραγμάτευσης συμβάσεων, καθώς και της διαχείρισης εταιρικών υποθέσεων.\n\nΔιαθέτει επίσης σημαντική εμπειρία στον χειρισμό τραπεζικών υποθέσεων, περιλαμβανομένων θεμάτων χρηματοδοτήσεων και αναδιαρθρώσεων, καθώς και στη διαπραγμάτευση με πελάτες και χρηματοπιστωτικά ιδρύματα, με γνώμονα τη διασφάλιση των βέλτιστων νομικών και επιχειρηματικών συμφερόντων των πελατών.\n\nΕπιπρόσθετα, διατελεί Αντιπρόεδρος του φιλανθρωπικού ιδρύματος G. Pyrishis Foundation, το οποίο συμβάλλει ενεργά στη στήριξη ευπαθών κοινωνικών ομάδων."
-    },
-    education: {
-      en: "LLB, School of Law, University of Nicosia",
-      el: "Πτυχίο Νομικής, Πανεπιστήμιο Λευκωσίας"
-    },
-    barNumber: {
-      en: "Cyprus Bar · Admitted 2016",
-      el: "Μέλος του Π.Δ.Σ. από το 2016"
-    },
-    email: "renee.marcou@polycarpoulaw.com",
-    languages: {
-      en: "Greek, English",
-      el: "Ελληνικά, Αγγλικά"
-    }
-  },
-  {
-    id: "josephine-solomou",
-    name: {
-      en: "Josephine Solomou",
-      el: "Τζόσεφιν Σολωμού"
-    },
-    role: {
-      en: "Lawyer",
-      el: "Δικηγόρος"
-    },
-    image: team1,
-    bio: {
-      en: "Josephine Solomou graduated from the Law Department of the Democritus University of Thrace. She joined the firm as a lawyer in September 2025. At the same time, she is pursuing her LL.M. in International Commercial Law at European University Cyprus. She handles matters across various areas of law according to the needs of the firm and is committed to providing diligent and reliable legal services. Josephine approaches her work with professionalism and a strong dedication to continuous learning and development.",
-      el: "Η Josephine Solomou αποφοίτησε από το τμήμα Νομικής του Δημοκρίτειου Πανεπιστημίου Θράκης. Εντάχθηκε στο γραφείο μας ως δικηγόρος τον Σεπτέμβριο του 2025. Παράλληλα, συνεχίζει τις σπουδές της για την απόκτηση μεταπτυχιακού τίτλου (LL.M.) στο Διεθνές Εμπορικό Δίκαιο στο Ευρωπαϊκό Πανεπιστήμιο Κύπρου. Ασχολείται με υποθέσεις που καλύπτουν διάφορους τομείς του δικαίου σύμφωνα με τις ανάγκες του γραφείου και δεσμεύεται να παρέχει επιμελείς και αξιόπιστες νομικές υπηρεσίες. Αντιμετωπίζει την εργασία της με επαγγελματισμό και ισχυρή προσήλωση στη συνεχή μάθηση και εξέλιξη."
-    },
-    education: {
-      en: "LLB Law, Democritus University of Thrace · LLM International Commercial Law, European University of Cyprus",
-      el: "Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών · Δημοκρίτειο Πανεπιστήμιο Θράκης (LLB)"
-    },
-    barNumber: {
-      en: "Cyprus Bar · Member",
-      el: "Μέλος του Π.Δ.Σ."
-    },
-    email: "j.solomou@polycarpoulaw.com",
     languages: {
       en: "Greek, English",
       el: "Ελληνικά, Αγγλικά"

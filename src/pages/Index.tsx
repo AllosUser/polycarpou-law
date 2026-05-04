@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   Briefcase, Scale, Building2, Heart, FileText,
-  ChevronRight, Award, Target, Clock, CheckCircle, ArrowRight,
+  ChevronRight, CheckCircle, ArrowRight,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { GoldDivider } from "@/components/GoldDivider";
@@ -15,12 +15,7 @@ const iconMap: Record<string, React.ElementType> = {
   Briefcase, Scale, Building2, Heart, FileText,
 };
 
-const trustIcons = [Award, Scale, Target, Clock];
-
 const svcKeys = ["corporate", "litigation", "realestate", "family", "contract"];
-const trustKeys = ["trust.years", "trust.cases", "trust.success", "trust.response"];
-const trustValues = ["20+", "500+", "98%", "24h"];
-
 export default function Index() {
   const { t } = useI18n();
 
@@ -67,27 +62,9 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── TRUST INDICATORS ─────────────────────────────── */}
-      <section className="bg-foreground section-sm" aria-label="Trust indicators">
-        <div className="container-law">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {trustKeys.map((key, i) => {
-              const Icon = trustIcons[i];
-              return (
-                <Reveal key={key} delay={i * 0.1}>
-                  <div className="text-center">
-                    <Icon size={20} className="text-gold mx-auto mb-3" />
-                    <div className="heading-serif text-3xl font-semibold text-gold mb-1">{trustValues[i]}</div>
-                    <div className="text-xs tracking-widest uppercase" style={{ color: "hsl(0 0% 60%)", fontFamily: "var(--font-sans)" }}>{t(key)}</div>
-                  </div>
-                </Reveal>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* ── SERVICES PREVIEW ─────────────────────────────── */}
+
       <section className="section bg-background" aria-label="Services preview">
         <div className="container-law">
           <Reveal>

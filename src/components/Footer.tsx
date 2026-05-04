@@ -91,9 +91,8 @@ export function Footer() {
             </h3>
             <ul className="space-y-2.5">
               {[
-                { day: t("footer.monFri"), hours: "9:00 – 18:00" },
-                { day: t("footer.sat"), hours: "10:00 – 14:00" },
-                { day: t("footer.sun"), hours: t("footer.closed") },
+                { day: t("footer.monFri"), hours: "08:30 – 17:30" },
+                { day: t("footer.weekends"), hours: t("footer.closed") },
               ].map(({ day, hours }) => (
                 <li key={day} className="flex justify-between gap-4">
                   <span className="text-sm" style={{ color: "hsl(0 0% 70%)" }}>{day}</span>

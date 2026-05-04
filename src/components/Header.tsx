@@ -87,7 +87,7 @@ export function Header() {
 
         {/* ── DESKTOP bar: 3-column balanced grid ── */}
         <div
-          className="hidden md:grid items-center h-24 w-full px-10 lg:px-16 mx-auto"
+          className="hidden md:grid items-center h-24 w-full px-8 lg:px-12 mx-auto"
           style={{ gridTemplateColumns: "1fr auto 1fr", maxWidth: "1600px" }}
         >
           {/* Left Zone: Logo icon + two-line brand text */}
@@ -120,12 +120,12 @@ export function Header() {
 
           {/* Center Zone: Navigation Menu */}
           <div className="flex justify-center">
-            <nav className="flex items-center gap-10 lg:gap-14" aria-label="Main navigation">
+            <nav className="flex items-center gap-6 lg:gap-8" aria-label="Main navigation">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`nav-link text-[13px] font-semibold tracking-[0.15em] ${isActive(link.href) ? "active" : ""}`}
+                  className={`nav-link text-[15.5px] font-semibold tracking-[0.07em] ${isActive(link.href) ? "active" : ""}`}
                 >
                   {link.label}
                 </Link>
@@ -134,14 +134,14 @@ export function Header() {
           </div>
 
           {/* Right Zone: CTA + Language */}
-          <div className="flex items-center justify-end gap-10 lg:gap-14">
+          <div className="flex items-center justify-end gap-6 lg:gap-8">
             <Link
               to="/contact"
-              className="btn-primary text-[10px] py-2 px-6 rounded-[10px] tracking-[0.15em] font-bold h-9 flex items-center shadow-none hover:brightness-105 hover:shadow-gold/20 transition-all duration-300"
+              className="btn-primary text-[10px] py-2 px-6 rounded-[10px] tracking-[0.1em] font-bold h-9 flex items-center shadow-none hover:brightness-105 hover:shadow-gold/20 transition-all duration-300"
             >
               {t("nav.cta")}
             </Link>
-            <LanguageSwitcher />
+            <LanguageSwitcher solid={solid} />
           </div>
         </div>
       </motion.header>
@@ -215,7 +215,7 @@ export function Header() {
               </nav>
 
               <div className="p-6 border-t border-border space-y-4">
-                <LanguageSwitcher className="justify-center" />
+                <LanguageSwitcher className="justify-center" solid />
                 <Link to="/contact" className="btn-primary w-full justify-center text-xs">
                   {t("nav.cta")}
                 </Link>
