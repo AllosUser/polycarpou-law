@@ -1,10 +1,10 @@
-# Polycarpou Law Firm
+# Andreas Polycarpou & Co LLC Firm
 
 **Built by BuildTomorrowLTD**
 
 ## Project overview
 
-Boutique law firm website for Polycarpou Law, specializing in corporate law, civil litigation, real estate, family law, and contract law in Cyprus.
+Boutique law firm website for Andreas Polycarpou & Co LLC, specializing in corporate law, civil litigation, real estate, family law, and contract law in Cyprus.
 
 ## Getting started
 

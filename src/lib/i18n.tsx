@@ -34,7 +34,7 @@ const translations: Translations = {
     "services.learnMore": "Learn More",
 
     // Why choose us
-    "why.eyebrow": "Why Polycarpou Law",
+    "why.eyebrow": "Why Andreas Polycarpou & Co LLC",
     "why.title": "A Firm Cultivated on Trust & Resolute Outcomes",
     "why.bullet1.title": "Client-centric strategy",
     "why.bullet1.desc": "Every decision we take is oriented strictly around your commercial and personal objectives.",
@@ -66,7 +66,7 @@ const translations: Translations = {
 
     // About page
     "about.header.eyebrow": "Our Firm",
-    "about.header.title": "About Polycarpou Law",
+    "about.header.title": "About Andreas Polycarpou & Co LLC",
     "about.story.eyebrow": "Our Story",
     "about.story.title": "Founded on Principle. Built for Results.",
     "about.story.p1": "Our law firm is a modern and dynamically growing law practice based in Nicosia. Since 2015, it has been providing comprehensive legal services guided by professional integrity, a strategic approach and effective representation of its clients.",
@@ -148,7 +148,7 @@ const translations: Translations = {
     "team.desc": "Highly experienced attorneys and a dedicated administration, ensuring immediate responsiveness and substantive support across every mandate.",
     "team.join.eyebrow": "Join Us",
     "team.join.title": "We Are Always Seeking Exceptional Talent",
-    "team.join.desc": "Polycarpou Law offers a highly collaborative, intellectually stimulating environment for attorneys passionate about securing the finest outcomes for their clients.",
+    "team.join.desc": "Andreas Polycarpou & Co LLC offers a highly collaborative, intellectually stimulating environment for attorneys passionate about securing the finest outcomes for their clients.",
     "team.join.cta": "Submit Your CV",
     "team.join.b1": "Extremely competitive remuneration",
     "team.join.b2": "Direct mentorship from senior practitioners",
@@ -373,7 +373,7 @@ const translations: Translations = {
     "team.desc": "Έμπειροι δικηγόροι και αφοσιωμένο διοικητικό προσωπικό με κοινό στόχο την παροχή ταχύτατης και ποιοτικής νομικής υποστήριξης σε κάθε υφιστάμενο ή νέο πελάτη.",
     "team.join.eyebrow": "ΚΑΡΙΕΡΑ",
     "team.join.title": "Αναζητούμε Ταλέντα Υψηλού Επιπέδου",
-    "team.join.desc": "Στην Polycarpou Law καλλιεργούμε ένα συνεργατικό και υψηλού επιπέδου περιβάλλον για νομικούς που επιδιώκουν εξέλιξη, καθοδήγηση και ουσιαστική επαγγελματική διάκριση.",
+    "team.join.desc": "Στην Andreas Polycarpou & Co LLC καλλιεργούμε ένα συνεργατικό και υψηλού επιπέδου περιβάλλον για νομικούς που επιδιώκουν εξέλιξη, καθοδήγηση και ουσιαστική επαγγελματική διάκριση.",
     "team.join.cta": "ΥΠΟΒΟΛΗ ΒΙΟΓΡΑΦΙΚΟΥ",
     "team.join.b1": "Εξαιρετικά ανταγωνιστικές απολαβές",
     "team.join.b2": "Καθοδήγηση από έμπειρους συνεργάτες",

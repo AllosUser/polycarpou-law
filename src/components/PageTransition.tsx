@@ -33,15 +33,15 @@ export function PageTransition() {
 
     if (isNavigation) {
       prevPathRef.current = pathname;
-      
+
       // Force scroll to top immediately on navigation
       window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-      
+
       if (!hash) {
         // Double check scroll is at 0
         window.scrollTo(0, 0);
       }
-      
+
       setShowOverlay(true);
 
       const timer = setTimeout(() => {
@@ -95,7 +95,7 @@ export function PageTransition() {
           >
             <img
               src="/logo.png"
-              alt="Polycarpou Law"
+              alt="Andreas Polycarpou & Co LLC"
               className="h-16 w-auto md:h-20"
             />
             <span className="heading-serif mt-2 text-xl font-medium tracking-tight text-foreground md:text-2xl">

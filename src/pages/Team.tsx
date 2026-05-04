@@ -69,7 +69,7 @@ export default function Team() {
                     aria-label={`${member.name[l]}, ${member.role[l]}`}
                   >
                     {/* Portrait photo */}
-                    <div className="aspect-[4/5] overflow-hidden">
+                    <div className="aspect-[4/3.75] sm:aspect-[4/5] overflow-hidden">
                       <img
                         src={member.image}
                         alt={member.name[l]}

@@ -18,7 +18,7 @@ export default function OurPeopleMember() {
   useEffect(() => {
     if (!member) return;
     const prev = document.title;
-    document.title = `${member.name[l]} — Polycarpou Law`;
+    document.title = `${member.name[l]} — Andreas Polycarpou & Co LLC`;
     return () => { document.title = prev; };
   }, [member, l]);
 

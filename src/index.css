@@ -5,15 +5,17 @@
 @tailwind utilities;
 
 /* =============================================
-   POLYCARPOU LAW — PREMIUM DESIGN SYSTEM
+   Andreas Polycarpou & Co LLC — PREMIUM DESIGN SYSTEM
    All colors in HSL. Minimal luxury aesthetic.
    ============================================= */
 
 @layer base {
   :root {
     /* Core palette */
-    --background: 40 27% 97%;          /* warm off-white #F9F7F2 */
-    --foreground: 222 47% 11%;         /* deep navy #0F172A */
+    --background: 40 27% 97%;
+    /* warm off-white #F9F7F2 */
+    --foreground: 222 47% 11%;
+    /* deep navy #0F172A */
 
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
@@ -30,7 +32,8 @@
     --secondary-foreground: 222 47% 11%;
 
     /* Accent = soft gold */
-    --accent: 42 52% 57%;              /* #C6A75E */
+    --accent: 42 52% 57%;
+    /* #C6A75E */
     --accent-foreground: 222 47% 11%;
     --accent-light: 42 52% 90%;
     --accent-dark: 42 52% 42%;
@@ -99,17 +102,37 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-serif);
     line-height: 1.2;
     letter-spacing: -0.01em;
     color: hsl(var(--foreground));
   }
 
-  h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 500; }
-  h2 { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 500; }
-  h3 { font-size: clamp(1.4rem, 2.5vw, 1.875rem); font-weight: 500; }
-  h4 { font-size: 1.25rem; font-weight: 500; }
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 500;
+  }
+
+  h3 {
+    font-size: clamp(1.4rem, 2.5vw, 1.875rem);
+    font-weight: 500;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
 
   p {
     font-family: var(--font-sans);
@@ -130,6 +153,7 @@
 }
 
 @layer components {
+
   /* Gold divider */
   .gold-divider {
     height: 1px;
@@ -257,12 +281,14 @@
 
   /* Team card image wrapper — mobile-only fixed height */
   .team-card-img-wrap {
-    height: 288px; /* mobile: match CEO card */
+    height: 288px;
+    /* mobile: match CEO card */
   }
 
   @media (min-width: 640px) {
     .team-card-img-wrap {
-      height: auto; /* sm+: grow with flex-row */
+      height: auto;
+      /* sm+: grow with flex-row */
     }
   }
 
@@ -449,7 +475,8 @@
   html[lang="el"] .hero-home-title {
     font-size: clamp(2rem, 4.2vw, 3.8rem);
     letter-spacing: -0.02em;
-    max-width: 1000px; /* Allow more width for Greek nowrap */
+    max-width: 1000px;
+    /* Allow more width for Greek nowrap */
   }
 
   @media (min-width: 1024px) {
