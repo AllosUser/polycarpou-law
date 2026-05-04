@@ -5,7 +5,9 @@
       "Bash(python3 -c ':*)",
       "Bash(python -c ':*)",
       "Bash(npx tsc:*)",
-      "Bash(npx vite:*)"
+      "Bash(npx vite:*)",
+      "Bash(powershell -Command \"\\(Get-Content 'src\\\\assets\\\\Logo\\\\ap_notext_gold.svg' -Raw\\).Substring\\(0, 300\\)\")",
+      "Bash(powershell -Command \"Select-String -Path 'src\\\\assets\\\\Logo\\\\ap_notext_gold.svg' -Pattern 'fill=\\\\\"'\")"
     ]
   }
 }

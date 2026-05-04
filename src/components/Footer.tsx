@@ -3,6 +3,7 @@ import { MapPin, Phone, Mail } from "lucide-react";
 import { GoldDivider } from "./GoldDivider";
 import { useI18n } from "@/lib/i18n";
 import { useMapsLink, PHONE, PHONE_HREF, EMAIL, EMAIL_HREF } from "@/lib/contact";
+import apLogo from "@/assets/Logo/ap_notext_gold.svg";
 
 export function Footer() {
   const { t } = useI18n();
@@ -22,11 +23,21 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_minmax(220px,1.3fr)] gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2.5 mb-4 inline-flex" aria-label="Polycarpou LLC — Home">
-              <img src="/logo.png" alt="Polycarpou LLC" className="h-9 w-auto" />
-              <span className="heading-serif text-xl font-medium text-primary-foreground">
-                Polycarpou <span className="text-gold">LLC</span>
-              </span>
+            <Link to="/" className="inline-flex items-center gap-3 mb-4" aria-label="Andreas Polycarpou & Co LLC — Home">
+              <img
+                src={apLogo}
+                alt="AP"
+                className="h-9 w-auto flex-shrink-0"
+                style={{ background: "transparent" }}
+              />
+              <div className="flex flex-col justify-center leading-[1.2]">
+                <span className="text-[10px] font-semibold tracking-[0.13em] uppercase text-primary-foreground">
+                  ANDREAS POLYCARPOU &amp; CO LLC
+                </span>
+                <span className="text-[8.5px] font-light tracking-[0.05em] mt-[3px]" style={{ color: "hsl(0 0% 60%)" }}>
+                  Advocates &amp; Legal Consultants
+                </span>
+              </div>
             </Link>
             <p className="text-sm leading-relaxed" style={{ color: "hsl(0 0% 70%)" }}>
               {t("footer.desc")}
