@@ -7,7 +7,20 @@
       "Bash(npx tsc:*)",
       "Bash(npx vite:*)",
       "Bash(powershell -Command \"\\(Get-Content 'src\\\\assets\\\\Logo\\\\ap_notext_gold.svg' -Raw\\).Substring\\(0, 300\\)\")",
-      "Bash(powershell -Command \"Select-String -Path 'src\\\\assets\\\\Logo\\\\ap_notext_gold.svg' -Pattern 'fill=\\\\\"'\")"
+      "Bash(powershell -Command \"Select-String -Path 'src\\\\assets\\\\Logo\\\\ap_notext_gold.svg' -Pattern 'fill=\\\\\"'\")",
+      "Bash(node -e ' *)",
+      "Bash(convert --version)",
+      "Bash(node -e \"try{require\\('canvas'\\);console.log\\('canvas OK'\\)}catch\\(e\\){console.log\\('no canvas'\\)}\")",
+      "Bash(ls node_modules/.bin/playwright)",
+      "Bash(node -e \"try{require\\('@resvg/resvg-js'\\);console.log\\('resvg OK'\\)}catch\\(e\\){console.log\\('no resvg'\\)}\")",
+      "Bash(npm install *)",
+      "Bash(node -e \"require\\('jimp'\\); console.log\\('jimp OK'\\)\")",
+      "Bash(node -e \"const Jimp = require\\('jimp'\\); console.log\\(Object.keys\\(Jimp\\).slice\\(0,15\\)\\); console.log\\(Jimp.Jimp ? 'has Jimp.Jimp' : 'no Jimp.Jimp'\\); console.log\\(typeof Jimp.fromBuffer, typeof Jimp.create\\);\")",
+      "Bash(node -e \"const {Jimp} = require\\('jimp'\\); console.log\\(Object.getOwnPropertyNames\\(Jimp\\).slice\\(0,10\\)\\); const j = new Jimp\\({width:2,height:2}\\); console.log\\(Object.getOwnPropertyNames\\(Object.getPrototypeOf\\(j\\)\\).filter\\(k=>!k.startsWith\\('_'\\)\\).slice\\(0,15\\)\\);\")",
+      "Bash(node -e \"const {Jimp} = require\\('jimp'\\); const j = new Jimp\\({width:2,height:2}\\); const all = []; let p = Object.getPrototypeOf\\(j\\); while\\(p\\){ all.push\\(...Object.getOwnPropertyNames\\(p\\)\\); p=Object.getPrototypeOf\\(p\\);} console.log\\(all.filter\\(k=>!k.startsWith\\('_'\\)\\).join\\(' '\\)\\)\")",
+      "Bash(node -e \"const Jimp = require\\('jimp'\\); console.log\\('v3 Jimp.read:', typeof Jimp.read\\); const j = {resize:'?'}; const J = require\\('jimp'\\); J.read\\('src/assets/Logo/ap_notext.png'\\).then\\(i=>console.log\\('read OK', i.getWidth\\(\\)+'x'+i.getHeight\\(\\), 'has resize:', typeof i.resize\\)\\).catch\\(e=>console.error\\(e.message\\)\\);\")",
+      "Bash(node -e \"const Jimp = require\\('jimp'\\); console.log\\(typeof Jimp.read\\);\")",
+      "Bash(npm uninstall *)"
     ]
   }
 }
