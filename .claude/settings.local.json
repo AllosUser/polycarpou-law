@@ -20,7 +20,9 @@
       "Bash(node -e \"const {Jimp} = require\\('jimp'\\); const j = new Jimp\\({width:2,height:2}\\); const all = []; let p = Object.getPrototypeOf\\(j\\); while\\(p\\){ all.push\\(...Object.getOwnPropertyNames\\(p\\)\\); p=Object.getPrototypeOf\\(p\\);} console.log\\(all.filter\\(k=>!k.startsWith\\('_'\\)\\).join\\(' '\\)\\)\")",
       "Bash(node -e \"const Jimp = require\\('jimp'\\); console.log\\('v3 Jimp.read:', typeof Jimp.read\\); const j = {resize:'?'}; const J = require\\('jimp'\\); J.read\\('src/assets/Logo/ap_notext.png'\\).then\\(i=>console.log\\('read OK', i.getWidth\\(\\)+'x'+i.getHeight\\(\\), 'has resize:', typeof i.resize\\)\\).catch\\(e=>console.error\\(e.message\\)\\);\")",
       "Bash(node -e \"const Jimp = require\\('jimp'\\); console.log\\(typeof Jimp.read\\);\")",
-      "Bash(npm uninstall *)"
+      "Bash(npm uninstall *)",
+      "Bash(git log *)",
+      "Bash(xargs wc -l)"
     ]
   }
 }

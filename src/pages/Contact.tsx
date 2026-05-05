@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
 import { useSEO } from "@/hooks/useSEO";
 import { useMapsLink, PHONE, PHONE_HREF, EMAIL, EMAIL_HREF } from "@/lib/contact";
+import { sendContactEmail } from "@/lib/emailService";
 
 interface FormState {
   name: string;
@@ -55,6 +56,7 @@ export default function Contact() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   useEffect(() => {
     const area = searchParams.get("area");
@@ -82,9 +84,16 @@ export default function Contact() {
     const errs = validate(form);
     if (Object.keys(errs).length > 0) { setErrors(errs); return; }
     setLoading(true);
-    await new Promise((res) => setTimeout(res, 1200));
-    setLoading(false);
-    setSubmitted(true);
+    setSubmitError(false);
+    try {
+      await sendContactEmail(form);
+      setSubmitted(true);
+    } catch (err) {
+      console.error("[ContactForm] sendContactEmail failed:", err);
+      setSubmitError(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -245,6 +254,11 @@ export default function Contact() {
                           <>{t("contact.form.submit")} <Send size={15} /></>
                         )}
                       </button>
+                      {submitError && (
+                        <p className="flex items-center gap-1 text-xs mt-3" style={{ color: "hsl(var(--destructive))", fontFamily: "var(--font-sans)" }}>
+                          <AlertCircle size={12} /> {t("contact.form.error.submit")}
+                        </p>
+                      )}
                     </motion.form>
                   )}
                 </AnimatePresence>
