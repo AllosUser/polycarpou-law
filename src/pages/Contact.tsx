@@ -33,6 +33,21 @@ export default function Contact() {
     description:
       "Contact Andreas Polycarpou & Co LLC. Schedule a confidential consultation with our lawyers in Nicosia, Cyprus. All enquiries handled with absolute discretion.",
     canonical: "/contact",
+    schema: [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://andreaspolycarpou.com.cy/" },
+          { "@type": "ListItem", position: 2, name: "Contact", item: "https://andreaspolycarpou.com.cy/contact" },
+        ],
+      },
+      {
+        "@type": "ContactPage",
+        name: "Contact Andreas Polycarpou & Co LLC",
+        description: "Schedule a confidential consultation with our lawyers in Nicosia, Cyprus.",
+        url: "https://andreaspolycarpou.com.cy/contact",
+      },
+    ],
   });
   const mapsLink = useMapsLink();
 

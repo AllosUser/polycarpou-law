@@ -217,12 +217,12 @@ const translations: Translations = {
     "people.email": "Email",
 
     // Footer
-    "footer.desc": "Comprehensive, commercially astute legal services in Cyprus. We deliver outcomes through rigorous precision and unyielding advocacy.",
-    "footer.quickLinks": "Explore",
+    "footer.desc": "Strategic legal counsel in Cyprus.\nPrecision. Integrity. Results.",
+    "footer.quickLinks": "Firm",
     "footer.ourTeam": "Our People",
     "footer.contact": "Contact",
     "footer.hours": "Office Hours",
-    "footer.copyright": "© 2026 Andreas Polycarpou & Co LLC. All rights reserved.",
+    "footer.copyright": "Andreas Polycarpou & Co LLC. All rights reserved.",
     "footer.regulated": "Member of the Cyprus Bar Association · Regulated by the CBA",
     "footer.monFri": "Monday – Friday",
     "footer.weekends": "Weekends",
@@ -230,9 +230,10 @@ const translations: Translations = {
     "footer.sun": "Sunday",
     "footer.closed": "Closed",
     "footer.privacyPolicy": "Privacy Policy",
-    "footer.cookieCombined": "Cookie Policy & Settings",
+    "footer.cookiePolicy": "Cookie Policy",
+    "footer.cookieSettingsShort": "Settings",
     "footer.terms": "Terms & Conditions",
-    "footer.creditPrefix": "Designed & Developed by",
+    "footer.creditPrefix": "Designed & developed by",
 
     // Legal pages
     "legal.lastUpdated": "Last updated",
@@ -301,6 +302,26 @@ const translations: Translations = {
     "cookieBanner.mapBlockedSub": "Accept cookies to view our interactive office location.",
     "cookieBanner.acceptCookies": "Accept Cookies",
     "cookieBanner.cookieSettings": "Cookie Settings",
+
+    // Home - Local SEO Section
+    "home.trust.kicker": "NICOSIA · CYPRUS",
+    "home.trust.title": "Trusted Legal Services in Cyprus",
+    "home.trust.p1": "Andreas Polycarpou & Co LLC is a boutique law firm headquartered in central Nicosia, the capital of Cyprus. Our lawyers are registered members of the Cyprus Bar Association with over two decades of experience representing individuals and businesses across Cyprus and internationally.",
+    "home.trust.p2.part1": "Whether you need a ",
+    "home.trust.p2.link1": "corporate lawyer in Cyprus",
+    "home.trust.p2.part2": " for company formation or M&A, a ",
+    "home.trust.p2.link2": "property lawyer",
+    "home.trust.p2.part3": " for a Nicosia real estate transaction, or expert ",
+    "home.trust.p2.link3": "litigation representation",
+    "home.trust.p2.part4": " in the Cyprus courts, our team delivers clear, effective legal counsel grounded in Cypriot law.",
+    "home.trust.stat1.title": "20+",
+    "home.trust.stat1.subtitle": "YEARS IN CYPRUS LAW",
+    "home.trust.stat2.title": "Cyprus Bar",
+    "home.trust.stat2.subtitle": "LICENSED & REGULATED",
+    "home.trust.stat3.title": "Nicosia",
+    "home.trust.stat3.subtitle": "CITY CENTRE OFFICE",
+    "home.trust.stat4.title": "EN · EL",
+    "home.trust.stat4.subtitle": "BILINGUAL SERVICE",
   },
   el: {
     // Nav
@@ -514,12 +535,12 @@ const translations: Translations = {
     "people.email": "Email",
 
     // Footer
-    "footer.desc": "Ολοκληρωμένες νομικές υπηρεσίες με επαγγελματική ακεραιότητα, στρατηγική προσέγγιση και αποτελεσματική δικαστηριακή εκπροσώπηση.",
-    "footer.quickLinks": "Πλοήγηση",
+    "footer.desc": "Στρατηγική νομική καθοδήγηση στην Κύπρο.\nΑκρίβεια. Ακεραιότητα. Αποτελέσματα.",
+    "footer.quickLinks": "Το Γραφείο",
     "footer.ourTeam": "Η ΟΜΑΔΑ ΜΑΣ",
     "footer.contact": "Επικοινωνία",
     "footer.hours": "Ώρες Λειτουργίας",
-    "footer.copyright": "© 2026 Andreas Polycarpou & Co LLC. Με επιφύλαξη παντός δικαιώματος.",
+    "footer.copyright": "Andreas Polycarpou & Co LLC. \n\nΜε επιφύλαξη κάθε νόμιμου δικαιώματος.",
     "footer.regulated": "Μέλος του Π.Δ.Σ.",
     "footer.monFri": "Δευτέρα – Παρασκευή",
     "footer.weekends": "Σαββατοκύριακα",
@@ -527,9 +548,10 @@ const translations: Translations = {
     "footer.sun": "Κυριακή",
     "footer.closed": "Κλειστά",
     "footer.privacyPolicy": "Πολιτική Απορρήτου",
-    "footer.cookieCombined": "Πολιτική & Ρυθμίσεις Cookies",
+    "footer.cookiePolicy": "Πολιτική Cookies",
+    "footer.cookieSettingsShort": "Ρυθμίσεις",
     "footer.terms": "Όροι & Προϋποθέσεις",
-    "footer.creditPrefix": "Σχεδιασμός & Ανάπτυξη από",
+    "footer.creditPrefix": "Σχεδιασμός & Ανάπτυξη από ",
 
     // Legal pages
     "legal.lastUpdated": "Τελευταία ενημέρωση",
@@ -598,6 +620,26 @@ const translations: Translations = {
     "cookieBanner.mapBlockedSub": "Αποδεχτείτε τα cookies για να δείτε τη διαδραστική τοποθεσία του γραφείου μας.",
     "cookieBanner.acceptCookies": "Αποδοχή Cookies",
     "cookieBanner.cookieSettings": "Ρυθμίσεις Cookies",
+
+    // Home - Local SEO Section
+    "home.trust.kicker": "ΛΕΥΚΩΣΙΑ · ΚΥΠΡΟΣ",
+    "home.trust.title": "Αξιόπιστες Νομικές Υπηρεσίες στην Κύπρο",
+    "home.trust.p1": "Η Ανδρέας Πολυκάρπου & Σία Δ.Ε.Π.Ε. είναι ένα boutique δικηγορικό γραφείο με έδρα το κέντρο της Λευκωσίας, της πρωτεύουσας της Κύπρου. Οι δικηγόροι μας είναι εγγεγραμμένα μέλη του Παγκύπριου Δικηγορικού Συλλόγου, με πάνω από δύο δεκαετίες εμπειρίας στην εκπροσώπηση ιδιωτών και επιχειρήσεων σε όλη την Κύπρο και διεθνώς.",
+    "home.trust.p2.part1": "Είτε χρειάζεστε ",
+    "home.trust.p2.link1": "εταιρικό δικηγόρο στην Κύπρο",
+    "home.trust.p2.part2": " για σύσταση εταιρείας ή συγχωνεύσεις και εξαγορές (M&A), ",
+    "home.trust.p2.link2": "δικηγόρο ακινήτων",
+    "home.trust.p2.part3": " για κτηματομεσιτική συναλλαγή στη Λευκωσία, είτε εξειδικευμένη ",
+    "home.trust.p2.link3": "εκπροσώπηση σε δικαστικές διαφορές",
+    "home.trust.p2.part4": " ενώπιον των κυπριακών δικαστηρίων, η ομάδα μας παρέχει σαφείς και αποτελεσματικές νομικές συμβουλές, θεμελιωμένες στο Κυπριακό δίκαιο.",
+    "home.trust.stat1.title": "20+",
+    "home.trust.stat1.subtitle": "ΕΤΗ ΕΜΠΕΙΡΙΑΣ ΣΤΟ ΚΥΠΡΙΑΚΟ ΔΙΚΑΙΟ",
+    "home.trust.stat2.title": "Παγκύπριος Δικηγορικός Σύλλογος",
+    "home.trust.stat2.subtitle": "ΑΔΕΙΟΔΟΤΗΜΕΝΟΙ & ΕΠΟΠΤΕΥΟΜΕΝΟΙ",
+    "home.trust.stat3.title": "Λευκωσία",
+    "home.trust.stat3.subtitle": "ΓΡΑΦΕΙΟ ΣΤΟ ΚΕΝΤΡΟ ΤΗΣ ΠΟΛΗΣ",
+    "home.trust.stat4.title": "EN · EL",
+    "home.trust.stat4.subtitle": "ΔΙΓΛΩΣΣΗ ΕΞΥΠΗΡΕΤΗΣΗ",
   }
 };
 

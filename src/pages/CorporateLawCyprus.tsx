@@ -11,13 +11,13 @@ const SCHEMA = {
   serviceType: "Corporate Law",
   description:
     "Expert corporate legal services in Cyprus including company formation, M&A advisory, shareholder agreements, and corporate governance from our Nicosia office.",
-  url: "https://polycarpoulaw.cy/corporate-law-cyprus",
+  url: "https://andreaspolycarpou.com.cy/corporate-law-cyprus",
   provider: {
     "@type": "LegalService",
     name: "Andreas Polycarpou & Co LLC",
-    url: "https://polycarpoulaw.cy",
-    telephone: "+357-22-123-456",
-    email: "apolycarpou@polycarpoulaw.com",
+    url: "https://andreaspolycarpou.com.cy",
+    telephone: "+35722755135",
+    email: "info@polycarpoulaw.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Arch. Makarios III Avenue 1-7, Office 201",

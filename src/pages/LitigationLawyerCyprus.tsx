@@ -11,13 +11,13 @@ const SCHEMA = {
   serviceType: "Civil Litigation",
   description:
     "Expert civil litigation lawyers in Cyprus. Courtroom representation, dispute resolution, debt recovery and commercial litigation at all levels of the Cypriot judiciary.",
-  url: "https://polycarpoulaw.cy/litigation-lawyer-cyprus",
+  url: "https://andreaspolycarpou.com.cy/litigation-lawyer-cyprus",
   provider: {
     "@type": "LegalService",
     name: "Andreas Polycarpou & Co LLC",
-    url: "https://polycarpoulaw.cy",
-    telephone: "+357-22-123-456",
-    email: "apolycarpou@polycarpoulaw.com",
+    url: "https://andreaspolycarpou.com.cy",
+    telephone: "+35722755135",
+    email: "info@polycarpoulaw.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Arch. Makarios III Avenue 1-7, Office 201",

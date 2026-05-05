@@ -24,6 +24,14 @@ export default function Index() {
     description:
       "Premier boutique law firm in Nicosia, Cyprus. Corporate law, civil litigation, real estate, family law and contract law — delivered with precision and integrity.",
     canonical: "/",
+    schema: [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://andreaspolycarpou.com.cy/" },
+        ],
+      },
+    ],
   });
 
   return (
@@ -208,25 +216,32 @@ export default function Index() {
         <div className="container-law">
           <Reveal>
             <div className="max-w-3xl mx-auto text-center">
-              <p className="eyebrow mb-3">Nicosia · Cyprus</p>
-              <h2 className="heading-serif mb-5">Trusted Legal Services in Cyprus</h2>
+              <p className="eyebrow mb-3">{t("home.trust.kicker")}</p>
+              <h2 className="heading-serif mb-5">{t("home.trust.title")}</h2>
               <GoldDivider className="mx-auto mb-7" width="60px" />
               <p className="text-base leading-relaxed mb-4">
-                Andreas Polycarpou &amp; Co LLC is a boutique law firm headquartered in central Nicosia, the capital of Cyprus. Our lawyers are registered members of the Cyprus Bar Association with over two decades of experience representing individuals and businesses across Cyprus and internationally.
+                {t("home.trust.p1")}
               </p>
               <p className="text-base leading-relaxed mb-10">
-                Whether you need a <Link to="/corporate-law-cyprus" className="text-gold hover:underline">corporate lawyer in Cyprus</Link> for company formation or M&amp;A, a <Link to="/real-estate-lawyer-cyprus" className="text-gold hover:underline">property lawyer</Link> for a Nicosia real estate transaction, or expert <Link to="/litigation-lawyer-cyprus" className="text-gold hover:underline">litigation representation</Link> in the Cyprus courts, our team delivers clear, effective legal counsel grounded in Cypriot law.
+                {t("home.trust.p2.part1")}
+                <Link to="/corporate-law-cyprus" className="text-gold hover:underline">
+                  {t("home.trust.p2.link1")}
+                </Link>
+                {t("home.trust.p2.part2")}
+                <Link to="/real-estate-lawyer-cyprus" className="text-gold hover:underline">
+                  {t("home.trust.p2.link2")}
+                </Link>
+                {t("home.trust.p2.part3")}
+                <Link to="/litigation-lawyer-cyprus" className="text-gold hover:underline">
+                  {t("home.trust.p2.link3")}
+                </Link>
+                {t("home.trust.p2.part4")}
               </p>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                {([
-                  ["20+", "Years in Cyprus Law"],
-                  ["Cyprus Bar", "Licensed & Regulated"],
-                  ["Nicosia", "City Centre Office"],
-                  ["EN · EL", "Bilingual Service"],
-                ] as const).map(([stat, label]) => (
-                  <div key={label} className="text-center p-4 rounded-sm" style={{ border: "1px solid hsl(var(--border))" }}>
-                    <p className="heading-serif text-xl font-medium text-gold mb-1">{stat}</p>
-                    <p className="text-[11px] uppercase tracking-wider" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "var(--font-sans)" }}>{label}</p>
+                {[1, 2, 3, 4].map((n) => (
+                  <div key={n} className="text-center p-4 rounded-sm" style={{ border: "1px solid hsl(var(--border))" }}>
+                    <p className="heading-serif text-xl font-medium text-gold mb-1">{t(`home.trust.stat${n}.title`)}</p>
+                    <p className="text-[11px] uppercase tracking-wider" style={{ color: "hsl(var(--muted-foreground))", fontFamily: "var(--font-sans)" }}>{t(`home.trust.stat${n}.subtitle`)}</p>
                   </div>
                 ))}
               </div>

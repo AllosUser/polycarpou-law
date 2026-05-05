@@ -11,13 +11,13 @@ const SCHEMA = {
   serviceType: "Real Estate Law",
   description:
     "Expert property lawyers in Cyprus. We assist buyers, sellers, developers and investors with real estate transactions, title deed transfers, and property disputes in Nicosia.",
-  url: "https://polycarpoulaw.cy/real-estate-lawyer-cyprus",
+  url: "https://andreaspolycarpou.com.cy/real-estate-lawyer-cyprus",
   provider: {
     "@type": "LegalService",
     name: "Andreas Polycarpou & Co LLC",
-    url: "https://polycarpoulaw.cy",
-    telephone: "+357-22-123-456",
-    email: "apolycarpou@polycarpoulaw.com",
+    url: "https://andreaspolycarpou.com.cy",
+    telephone: "+35722755135",
+    email: "info@polycarpoulaw.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Arch. Makarios III Avenue 1-7, Office 201",

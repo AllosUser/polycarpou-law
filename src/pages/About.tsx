@@ -21,6 +21,21 @@ export default function About() {
     description:
       "Learn about Andreas Polycarpou & Co LLC — a boutique law firm in Nicosia, Cyprus, founded on integrity, precision, and over 20 years of legal experience.",
     canonical: "/about",
+    schema: [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://andreaspolycarpou.com.cy/" },
+          { "@type": "ListItem", position: 2, name: "Our Firm", item: "https://andreaspolycarpou.com.cy/about" },
+        ],
+      },
+      {
+        "@type": "AboutPage",
+        name: "About Andreas Polycarpou & Co LLC",
+        description: "Boutique law firm in Nicosia, Cyprus, founded in 2015. Providing corporate law, civil litigation, real estate, family law, immigration and contract law services.",
+        url: "https://andreaspolycarpou.com.cy/about",
+      },
+    ],
   });
 
   return (

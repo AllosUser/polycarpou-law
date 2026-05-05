@@ -1,10 +1,10 @@
 import { useParams, Navigate, Link } from "react-router-dom";
-import { useEffect } from "react";
 import { ArrowLeft, ArrowRight, Mail, Globe, Scale, GraduationCap } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { GoldDivider } from "@/components/GoldDivider";
 import { team } from "@/data/team";
 import { useI18n } from "@/lib/i18n";
+import { useSEO, SITE_URL } from "@/hooks/useSEO";
 
 type L = "en" | "el";
 
@@ -15,12 +15,56 @@ export default function OurPeopleMember() {
 
   const member = team.find((m) => m.id === slug);
 
-  useEffect(() => {
-    if (!member) return;
-    const prev = document.title;
-    document.title = `${member.name[l]} — Andreas Polycarpou & Co LLC`;
-    return () => { document.title = prev; };
-  }, [member, l]);
+  // Build SEO data regardless of member existence — hooks must be called unconditionally
+  const memberTitle = member
+    ? `${member.name.en} — Lawyer in Cyprus | Andreas Polycarpou & Co LLC`
+    : "Our People | Andreas Polycarpou & Co LLC";
+  const memberDesc = member
+    ? `${member.name.en} is ${member.role.en} at Andreas Polycarpou & Co LLC in Nicosia, Cyprus. ${member.bio.en.split("\n\n")[0].slice(0, 160)}...`
+    : "Meet the legal team at Andreas Polycarpou & Co LLC — experienced lawyers in Nicosia, Cyprus.";
+  const memberCanonical = member ? `/our-people/${member.id}` : "/team";
+
+  const personSchema = member
+    ? [
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+            { "@type": "ListItem", position: 2, name: "Our People", item: `${SITE_URL}/team` },
+            { "@type": "ListItem", position: 3, name: member.name.en, item: `${SITE_URL}/our-people/${member.id}` },
+          ],
+        },
+        {
+          "@type": "Person",
+          name: member.name.en,
+          jobTitle: member.role.en,
+          email: member.email,
+          url: `${SITE_URL}/our-people/${member.id}`,
+          description: member.bio.en.split("\n\n")[0].slice(0, 300),
+          worksFor: {
+            "@type": "LegalService",
+            name: "ANDREAS POLYCARPOU & CO LLC",
+            url: SITE_URL,
+          },
+          knowsLanguage: member.languages.en.split(", "),
+          ...(member.education.en
+            ? {
+                alumniOf: member.education.en.split(" · ").map((edu) => ({
+                  "@type": "EducationalOrganization",
+                  name: edu.trim(),
+                })),
+              }
+            : {}),
+        },
+      ]
+    : undefined;
+
+  useSEO({
+    title: memberTitle,
+    description: memberDesc,
+    canonical: memberCanonical,
+    schema: personSchema,
+  });
 
   if (!member) return <Navigate to="/team" replace />;
 

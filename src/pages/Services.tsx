@@ -25,6 +25,27 @@ export default function Services() {
     description:
       "Specialist legal services in Cyprus: corporate law, civil litigation, real estate, family law and contract law — delivered by experienced Nicosia lawyers.",
     canonical: "/services",
+    schema: [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://andreaspolycarpou.com.cy/" },
+          { "@type": "ListItem", position: 2, name: "Practice Areas", item: "https://andreaspolycarpou.com.cy/services" },
+        ],
+      },
+      {
+        "@type": "ItemList",
+        name: "Legal Services — Andreas Polycarpou & Co LLC",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Corporate Law", url: "https://andreaspolycarpou.com.cy/corporate-law-cyprus" },
+          { "@type": "ListItem", position: 2, name: "Civil Litigation", url: "https://andreaspolycarpou.com.cy/litigation-lawyer-cyprus" },
+          { "@type": "ListItem", position: 3, name: "Real Estate Law", url: "https://andreaspolycarpou.com.cy/real-estate-lawyer-cyprus" },
+          { "@type": "ListItem", position: 4, name: "Immigration Law", url: "https://andreaspolycarpou.com.cy/immigration-lawyer-cyprus" },
+          { "@type": "ListItem", position: 5, name: "Family Law", item: "https://andreaspolycarpou.com.cy/services" },
+          { "@type": "ListItem", position: 6, name: "Contract Law", item: "https://andreaspolycarpou.com.cy/services" },
+        ],
+      },
+    ],
   });
 
   return (

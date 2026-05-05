@@ -11,13 +11,13 @@ const SCHEMA = {
   serviceType: "Immigration Law",
   description:
     "Immigration and residency legal advice in Cyprus. Assistance with residence permits, work permits, EU free movement rights, and corporate immigration from our Nicosia office.",
-  url: "https://polycarpoulaw.cy/immigration-lawyer-cyprus",
+  url: "https://andreaspolycarpou.com.cy/immigration-lawyer-cyprus",
   provider: {
     "@type": "LegalService",
     name: "Andreas Polycarpou & Co LLC",
-    url: "https://polycarpoulaw.cy",
-    telephone: "+357-22-123-456",
-    email: "apolycarpou@polycarpoulaw.com",
+    url: "https://andreaspolycarpou.com.cy",
+    telephone: "+35722755135",
+    email: "info@polycarpoulaw.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Arch. Makarios III Avenue 1-7, Office 201",

@@ -17,6 +17,15 @@ export default function Team() {
     description:
       "Meet the legal team at Andreas Polycarpou & Co LLC — experienced lawyers and legal professionals based in Nicosia, Cyprus.",
     canonical: "/team",
+    schema: [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://andreaspolycarpou.com.cy/" },
+          { "@type": "ListItem", position: 2, name: "Our People", item: "https://andreaspolycarpou.com.cy/team" },
+        ],
+      },
+    ],
   });
 
   const benefits = [

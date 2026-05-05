@@ -6,25 +6,137 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Andreas Polycarpou & Co LLC — Premier Legal Services in Cyprus</title>
+
+  <!-- Primary meta — overridden per-page by useSEO hook -->
+  <title>Andreas Polycarpou &amp; Co LLC — Strategic Legal Excellence in Cyprus</title>
   <meta name="description"
-    content="Andreas Polycarpou & Co LLC is a boutique law firm in Nicosia, Cyprus, specialising in corporate law, civil litigation, real estate, family law, and contract law." />
-  <meta name="author" content="Andreas Polycarpou & Co LLC" />
+    content="Andreas Polycarpou &amp; Co LLC is a boutique law firm in Nicosia, Cyprus, specialising in corporate law, civil litigation, real estate, family law, immigration, and contract law." />
+  <meta name="author" content="Andreas Polycarpou &amp; Co LLC" />
   <meta name="robots" content="index, follow" />
+  <meta name="keywords"
+    content="law firm Cyprus, lawyer Cyprus, Nicosia lawyer, legal services Cyprus, corporate law Cyprus, civil litigation Cyprus, real estate lawyer Cyprus, family law Cyprus, immigration lawyer Cyprus, advocates Cyprus, legal consultants Cyprus" />
 
+  <!-- Canonical (homepage default; per-page canonical injected by useSEO) -->
+  <link rel="canonical" href="https://andreaspolycarpou.com.cy/" />
+
+  <!-- Hreflang — same URL serves both EN and EL (language switched client-side) -->
+  <link rel="alternate" hreflang="en" href="https://andreaspolycarpou.com.cy/" />
+  <link rel="alternate" hreflang="el" href="https://andreaspolycarpou.com.cy/" />
+  <link rel="alternate" hreflang="x-default" href="https://andreaspolycarpou.com.cy/" />
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://polycarpoulaw.cy" />
-  <meta property="og:title" content="Andreas Polycarpou & Co LLC — Premier Legal Services in Cyprus" />
-  <meta property="og:description" content="Boutique legal services in Cyprus delivered with integrity and precision." />
-  <meta property="og:site_name" content="Andreas Polycarpou & Co LLC" />
+  <meta property="og:url" content="https://andreaspolycarpou.com.cy/" />
+  <meta property="og:title" content="Andreas Polycarpou &amp; Co LLC — Strategic Legal Excellence in Cyprus" />
+  <meta property="og:description"
+    content="Strategic legal counsel in Cyprus — corporate law, civil litigation, real estate, family law, and immigration. Delivered with precision and integrity from our Nicosia office." />
+  <meta property="og:site_name" content="Andreas Polycarpou &amp; Co LLC" />
+  <meta property="og:image" content="https://andreaspolycarpou.com.cy/og-image.jpg" />
+  <meta property="og:image:secure_url" content="https://andreaspolycarpou.com.cy/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Andreas Polycarpou &amp; Co LLC - Advocates &amp; Legal Consultants" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="el_CY" />
 
+  <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Andreas Polycarpou & Co LLC — Strategic Legal Excellence in Cyprus" />
-  <meta name="twitter:description" content="Premier boutique law firm in Nicosia, Cyprus." />
+  <meta name="twitter:title" content="Andreas Polycarpou &amp; Co LLC — Law Firm in Cyprus" />
+  <meta name="twitter:description"
+    content="Strategic legal counsel in Cyprus. Corporate law, civil litigation, real estate, family law and immigration — from our Nicosia office." />
+  <meta name="twitter:image" content="https://andreaspolycarpou.com.cy/og-image.jpg" />
 
+  <!-- Global structured data (@graph combines WebSite + Organization + LegalService) -->
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"LegalService","name":"Andreas Polycarpou & Co LLC","url":"https://polycarpoulaw.cy","description":"Boutique legal services in Cyprus.","address":{"@type":"PostalAddress","streetAddress":"28 Arch. Makarios III Avenue","addressLocality":"Nicosia","postalCode":"1065","addressCountry":"CY"},"telephone":"+357-22-123-456","email":"polucarpoullc@gmail.com","areaServed":"Cyprus"}
-    </script>
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://andreaspolycarpou.com.cy/#website",
+        "url": "https://andreaspolycarpou.com.cy",
+        "name": "Andreas Polycarpou & Co LLC",
+        "description": "Law firm in Nicosia, Cyprus",
+        "inLanguage": ["en", "el"],
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://andreaspolycarpou.com.cy/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": ["LegalService", "LocalBusiness"],
+        "@id": "https://andreaspolycarpou.com.cy/#firm",
+        "name": "ANDREAS POLYCARPOU & CO LLC",
+        "legalName": "ANDREAS POLYCARPOU & CO LLC",
+        "alternateName": "Polycarpou Law",
+        "description": "Boutique law firm in Nicosia, Cyprus, specialising in corporate law, civil litigation, real estate, family law, immigration, and contract law. Serving individuals and businesses across Cyprus since 2015.",
+        "url": "https://andreaspolycarpou.com.cy",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://andreaspolycarpou.com.cy/logo.png",
+          "width": 400,
+          "height": 400
+        },
+        "image": "https://andreaspolycarpou.com.cy/og-image.jpg",
+        "telephone": "+35722755135",
+        "email": "info@polycarpoulaw.com",
+        "faxNumber": "+35722003576",
+        "foundingDate": "2015",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Arch. Makarios III Avenue 1-7, Office 201, MITSI BUILDING 3",
+          "addressLocality": "Nicosia",
+          "addressRegion": "Nicosia District",
+          "postalCode": "1065",
+          "addressCountry": "CY"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 35.1681003,
+          "longitude": 33.3595300
+        },
+        "hasMap": "https://maps.google.com/maps?q=35.1681003,33.3595300",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:30",
+            "closes": "17:30"
+          }
+        ],
+        "areaServed": [
+          { "@type": "Country", "name": "Cyprus" },
+          { "@type": "City", "name": "Nicosia" },
+          { "@type": "City", "name": "Limassol" },
+          { "@type": "City", "name": "Larnaca" }
+        ],
+        "serviceType": [
+          "Corporate Law",
+          "Civil Litigation",
+          "Real Estate Law",
+          "Family Law",
+          "Immigration Law",
+          "Contract Law"
+        ],
+        "currenciesAccepted": "EUR",
+        "priceRange": "€€€",
+        "memberOf": {
+          "@type": "Organization",
+          "name": "Cyprus Bar Association",
+          "url": "https://www.cyprusbarassociation.org"
+        },
+        "sameAs": [
+          "https://andreaspolycarpou.com.cy"
+        ]
+      }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
