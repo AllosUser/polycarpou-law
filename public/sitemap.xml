@@ -111,14 +111,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Team: Sofia Koumpou -->
-  <url>
-    <loc>https://andreaspolycarpou.com.cy/our-people/sofia-koumpou</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://andreaspolycarpou.com.cy/our-people/sofia-koumpou"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://andreaspolycarpou.com.cy/our-people/sofia-koumpou"/>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
 
   <!-- Contact -->
   <url>

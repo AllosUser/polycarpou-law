@@ -168,6 +168,7 @@ export const team = [
       el: "Ελληνικά, Αγγλικά"
     }
   },
+/*
   {
     id: "sofia-koumpou",
     name: {
@@ -194,6 +195,7 @@ export const team = [
       el: "Ελληνικά, Αγγλικά, Ισπανικά"
     }
   }
+  */
 ];
 
 export const values = [
