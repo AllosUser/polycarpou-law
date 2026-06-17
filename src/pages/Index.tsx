@@ -1,24 +1,27 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useSEO } from "@/hooks/useSEO";
+import * as LucideIcons from "lucide-react";
 import {
-  Briefcase, Scale, Building2, Heart, FileText,
-  ChevronRight, CheckCircle, ArrowRight,
+  ChevronRight, CheckCircle, ArrowRight, Scale
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { GoldDivider } from "@/components/GoldDivider";
-import { services } from "@/lib/data";
+import { practiceAreas } from "@/lib/practiceAreas";
 import { useI18n } from "@/lib/i18n";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroBgMobile from "@/assets/hero-mobile-bg.jpg";
 
-const iconMap: Record<string, React.ElementType> = {
-  Briefcase, Scale, Building2, Heart, FileText,
-};
-
-const svcKeys = ["corporate", "litigation", "realestate", "family", "contract"];
+const featuredAreaSlugs = [
+  "corporate-commercial-law",
+  "civil-law",
+  "real-estate-property-law",
+  "family-law",
+  "criminal-law",
+  "immigration-law"
+];
 export default function Index() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   useSEO({
     title: "Andreas Polycarpou & Co LLC | Law Firm in Nicosia, Cyprus",
     description:
@@ -112,24 +115,29 @@ export default function Index() {
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => {
-              const Icon = iconMap[service.icon];
-              const sKey = svcKeys[i];
+            {featuredAreaSlugs.map((slug, i) => {
+              const area = practiceAreas.find(a => a.id === slug);
+              if (!area) return null;
+              // @ts-expect-error dynamic map
+              const Icon = LucideIcons[area.icon] || Scale;
               return (
-                <Reveal key={service.id} delay={i * 0.08}>
-                  <Link to="/services" className="service-card block group no-underline">
-                    <div className="w-10 h-10 rounded-sm flex items-center justify-center mb-5" style={{ background: "hsl(var(--accent-light))" }}>
+                <Reveal key={area.id} delay={i * 0.08}>
+                  <Link to={`/services#${area.id}`} className="service-card block group no-underline h-full flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-gold" style={{ outlineOffset: "2px" }}>
+                    <div className="w-10 h-10 rounded-sm flex items-center justify-center mb-5 shrink-0" style={{ background: "hsl(var(--accent-light))" }}>
                       <Icon size={18} className="text-gold" />
                     </div>
-                    <h3 className="heading-serif text-xl font-medium mb-2 text-foreground">{t(`svc.${sKey}.title`)}</h3>
-                    <p className="text-sm leading-relaxed mb-4">{t(`svc.${sKey}.short`)}</p>
-                    <span className="inline-flex items-center gap-1.5 text-xs font-medium tracking-widest uppercase text-gold transition-gap group-hover:gap-2.5" style={{ fontFamily: "var(--font-sans)" }}>
-                      {t("services.learnMore")} <ChevronRight size={13} />
-                    </span>
+                    <h3 className="heading-serif text-xl font-medium mb-2 text-foreground">{area.title[lang]}</h3>
+                    <p className="text-sm leading-relaxed line-clamp-4 md:line-clamp-3 mb-0 text-foreground/80">{area.desc[lang]}</p>
                   </Link>
                 </Reveal>
               );
             })}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link to="/services" className="btn-outline-gold inline-flex items-center gap-2">
+              {t("home.services.viewAll")}
+            </Link>
           </div>
         </div>
       </section>

@@ -13,7 +13,7 @@ export function PracticeAreaCard({ area, index }: { area: PracticeArea; index: n
   const title = area.title[lang];
   const desc = area.desc[lang];
   
-  // @ts-expect-error
+  // @ts-expect-error dynamic map
   const IconComponent = LucideIcons[area.icon] || LucideIcons.Scale;
   
   const paddedIndex = String(index + 1).padStart(2, "0");

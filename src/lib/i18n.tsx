@@ -327,6 +327,7 @@ const translations: Translations = {
     "home.trust.stat3.subtitle": "CITY CENTRE OFFICE",
     "home.trust.stat4.title": "EN · EL",
     "home.trust.stat4.subtitle": "BILINGUAL SERVICE",
+    "home.services.viewAll": "VIEW ALL PRACTICE AREAS",
   },
   el: {
     // Nav
@@ -422,6 +423,9 @@ const translations: Translations = {
     "value.precision.desc": "Η νομική υπεροχή απαιτεί σχολαστική προσοχή στη λεπτομέρεια. Αξιολογούμε κάθε δεδομένο και προνοούμε για κάθε κίνδυνο, μην αφήνοντας τίποτα στην τύχη.",
     "value.commitment": "Αφοσίωση",
     "value.commitment.desc": "Οι στόχοι σας είναι και δικοί μας. Εμβαθύνουμε στις ανάγκες κάθε πελάτη ξεχωριστά, παρέχοντας πρακτικές και αποφασιστικές λύσεις απόλυτα προσαρμοσμένες στα δεδομένα του.",
+
+    // Home services
+    "home.services.viewAll": "ΔΕΙΤΕ ΟΛΟΥΣ ΤΟΥΣ ΤΟΜΕΙΣ",
 
     // Services page
     "svcPage.eyebrow": "Η Εξειδίκευσή μας",
