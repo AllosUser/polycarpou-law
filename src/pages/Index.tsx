@@ -25,7 +25,7 @@ export default function Index() {
   useSEO({
     title: "Andreas Polycarpou & Co LLC | Law Firm in Nicosia, Cyprus",
     description:
-      "Premier boutique law firm in Nicosia, Cyprus. Corporate law, civil litigation, real estate, family law and contract law — delivered with precision and integrity.",
+      "Boutique law firm in Nicosia, Cyprus, providing strategic legal advice to individuals and businesses across a broad range of practice areas.",
     canonical: "/",
     schema: [
       {
