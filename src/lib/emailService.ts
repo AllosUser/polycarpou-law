@@ -4,6 +4,8 @@ const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
 
+import { practiceAreas } from "@/lib/practiceAreas";
+
 export interface ContactFormData {
   name: string;
   email: string;
@@ -12,14 +14,10 @@ export interface ContactFormData {
   message: string;
 }
 
-const AREA_LABELS: Record<string, string> = {
-  corporate: "Corporate Law",
-  litigation: "Civil Litigation",
-  "real-estate": "Real Estate Law",
-  family: "Family Law",
-  contract: "Contract Law",
-  other: "Other",
-};
+const AREA_LABELS: Record<string, string> = practiceAreas.reduce((acc, area) => {
+  acc[area.id] = `${area.title.en} [${area.id}]`;
+  return acc;
+}, {} as Record<string, string>);
 
 function buildHtml(data: ContactFormData): string {
   const area = data.subject ? (AREA_LABELS[data.subject] ?? data.subject) : "Not specified";

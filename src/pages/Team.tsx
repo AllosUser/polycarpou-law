@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Scale, Globe, Mail } from "lucide-react";
+import { ArrowRight, Scale, Globe, Mail, CalendarDays, Phone } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionReveal } from "@/components/SectionReveal";
 import { GoldDivider } from "@/components/GoldDivider";
@@ -84,12 +84,12 @@ export default function Team() {
                     className="people-card block group"
                     aria-label={`${member.name[l]}, ${member.role[l]}`}
                   >
-                    {/* Portrait photo */}
-                    <div className="aspect-[4/3.75] sm:aspect-[4/5] overflow-hidden">
+                    {/* Portrait photo — full 2:3 portrait, shown in full (no crop) */}
+                    <div className="aspect-[2/3] overflow-hidden bg-secondary">
                       <img
                         src={member.image}
                         alt={member.name[l]}
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
                       />
                     </div>
@@ -113,6 +113,15 @@ export default function Team() {
                           </div>
                         )}
 
+                        {member.joined[l] && (
+                          <div className="flex items-center gap-2">
+                            <CalendarDays size={11} className="text-gold shrink-0" />
+                            <span className="text-[11px] text-muted-foreground leading-snug line-clamp-1">
+                              {t("people.withFirmSince")} {member.joined[l].match(/\d{4}/)?.[0] ?? member.joined[l]}
+                            </span>
+                          </div>
+                        )}
+
                         <div className="flex items-center gap-2">
                           <Globe size={11} className="text-gold shrink-0" />
                           <span className="text-[11px] text-muted-foreground leading-snug">
@@ -126,6 +135,15 @@ export default function Team() {
                             {member.email}
                           </span>
                         </div>
+
+                        {member.phone && (
+                          <div className="flex items-center gap-2">
+                            <Phone size={11} className="text-gold shrink-0" />
+                            <span className="text-[11px] text-muted-foreground leading-snug truncate">
+                              {member.phone}
+                            </span>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </Link>

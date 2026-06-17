@@ -1,5 +1,5 @@
 import { useParams, Navigate, Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Mail, Globe, Scale, GraduationCap } from "lucide-react";
+import { ArrowLeft, ArrowRight, Mail, Globe, Scale, GraduationCap, Briefcase, CalendarDays, Phone } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { GoldDivider } from "@/components/GoldDivider";
 import { team } from "@/data/team";
@@ -15,12 +15,16 @@ export default function OurPeopleMember() {
 
   const member = team.find((m) => m.id === slug);
 
+  // Helper to safely get bio string or array
+  const getBioString = (bio: string | string[]) => Array.isArray(bio) ? bio.join("\n\n") : bio;
+  const getBioArray = (bio: string | string[]) => Array.isArray(bio) ? bio : bio.split("\n\n").filter(Boolean);
+
   // Build SEO data regardless of member existence — hooks must be called unconditionally
   const memberTitle = member
-    ? `${member.name.en} — Lawyer in Cyprus | Andreas Polycarpou & Co LLC`
+    ? `${member.name.en} — ${member.role.en} | Andreas Polycarpou & Co LLC`
     : "Our People | Andreas Polycarpou & Co LLC";
   const memberDesc = member
-    ? `${member.name.en} is ${member.role.en} at Andreas Polycarpou & Co LLC in Nicosia, Cyprus. ${member.bio.en.split("\n\n")[0].slice(0, 160)}...`
+    ? `${member.name.en} is ${member.role.en} at Andreas Polycarpou & Co LLC in Nicosia, Cyprus. ${getBioString(member.bio.en).split("\n\n")[0].slice(0, 160)}...`
     : "Meet the legal team at Andreas Polycarpou & Co LLC — experienced lawyers in Nicosia, Cyprus.";
   const memberCanonical = member ? `/our-people/${member.id}` : "/team";
 
@@ -40,7 +44,7 @@ export default function OurPeopleMember() {
           jobTitle: member.role.en,
           email: member.email,
           url: `${SITE_URL}/our-people/${member.id}`,
-          description: member.bio.en.split("\n\n")[0].slice(0, 300),
+          description: getBioString(member.bio.en).split("\n\n")[0].slice(0, 300),
           worksFor: {
             "@type": "LegalService",
             name: "ANDREAS POLYCARPOU & CO LLC",
@@ -68,7 +72,7 @@ export default function OurPeopleMember() {
 
   if (!member) return <Navigate to="/team" replace />;
 
-  const bioParagraphs = member.bio[l].split("\n\n").filter(Boolean);
+  const bioParagraphs = getBioArray(member.bio[l]);
   const degrees = member.education[l]
     .split(" · ")
     .map((d) => d.trim())
@@ -132,8 +136,8 @@ export default function OurPeopleMember() {
                   <img
                     src={member.image}
                     alt={member.name[l]}
-                    className="w-full object-cover object-top block"
-                    style={{ aspectRatio: "3/4" }}
+                    className="w-full object-contain block bg-secondary"
+                    style={{ aspectRatio: "2/3" }}
                     loading="eager"
                   />
                   <div className="h-0.5" style={{ background: "var(--gradient-gold)" }} />
@@ -143,14 +147,25 @@ export default function OurPeopleMember() {
               {/* Unified info card — compact professional panel */}
               <Reveal direction="left" delay={0.08}>
                 <div
-                  className="rounded-sm p-4"
+                  className="rounded-sm p-4 [&>*]:border-t [&>*]:border-border/40 [&>*]:mt-3 [&>*]:pt-3 [&>*:first-child]:border-t-0 [&>*:first-child]:mt-0 [&>*:first-child]:pt-0"
                   style={{
                     background: "hsl(var(--card))",
                     border: "1px solid hsl(var(--border))",
                     boxShadow: "var(--shadow-sm)",
                   }}
                 >
-                  {/* Education — first: no leading divider */}
+                  {/* Role — shown for non-lawyer staff (no education/bar) */}
+                  {!degrees.length && !member.barNumber[l] && (
+                    <div>
+                      <p className="eyebrow text-[0.55rem] mb-1">{t("people.role")}</p>
+                      <div className="flex items-start gap-1.5">
+                        <Briefcase size={11} className="text-gold shrink-0 mt-[2px]" />
+                        <p className="text-xs text-foreground leading-snug">{member.role[l]}</p>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Education */}
                   {degrees.length > 0 && (
                     <div>
                       <p className="eyebrow text-[0.55rem] mb-1">{t("people.education")}</p>
@@ -167,7 +182,7 @@ export default function OurPeopleMember() {
 
                   {/* Bar Admission */}
                   {member.barNumber[l] && (
-                    <div className="border-t border-border/40 mt-3 pt-3">
+                    <div>
                       <p className="eyebrow text-[0.55rem] mb-1">{t("people.bar")}</p>
                       <div className="flex items-start gap-1.5">
                         <Scale size={11} className="text-gold shrink-0 mt-[2px]" />
@@ -178,8 +193,19 @@ export default function OurPeopleMember() {
                     </div>
                   )}
 
+                  {/* With our firm since */}
+                  {member.joined[l] && (
+                    <div>
+                      <p className="eyebrow text-[0.55rem] mb-1">{t("people.joined")}</p>
+                      <div className="flex items-start gap-1.5">
+                        <CalendarDays size={11} className="text-gold shrink-0 mt-[2px]" />
+                        <p className="text-xs text-foreground leading-snug">{member.joined[l]}</p>
+                      </div>
+                    </div>
+                  )}
+
                   {/* Languages */}
-                  <div className="border-t border-border/40 mt-3 pt-3">
+                  <div>
                     <p className="eyebrow text-[0.55rem] mb-1">{t("people.languages")}</p>
                     <div className="flex items-center gap-1.5">
                       <Globe size={11} className="text-gold shrink-0" />
@@ -187,8 +213,24 @@ export default function OurPeopleMember() {
                     </div>
                   </div>
 
+                  {/* Telephone */}
+                  {member.phone && (
+                    <div>
+                      <p className="eyebrow text-[0.55rem] mb-1">{t("people.phone")}</p>
+                      <div className="flex items-center gap-1.5">
+                        <Phone size={11} className="text-gold shrink-0" />
+                        <a
+                          href={`tel:${member.phone}`}
+                          className="text-xs text-foreground font-medium hover:text-gold hover:underline transition-colors duration-200 leading-snug"
+                        >
+                          {member.phone}
+                        </a>
+                      </div>
+                    </div>
+                  )}
+
                   {/* Email — last: slightly more prominent */}
-                  <div className="border-t border-border/40 mt-3 pt-3">
+                  <div>
                     <p className="eyebrow text-[0.55rem] mb-1">{t("people.email")}</p>
                     <div className="flex items-center gap-1.5">
                       <Mail size={11} className="text-gold shrink-0" />

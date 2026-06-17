@@ -9,6 +9,7 @@ import { useI18n } from "@/lib/i18n";
 import { useSEO } from "@/hooks/useSEO";
 import { useMapsLink, PHONE, PHONE_HREF, EMAIL, EMAIL_HREF } from "@/lib/contact";
 import { sendContactEmail } from "@/lib/emailService";
+import { practiceAreas } from "@/lib/practiceAreas";
 
 interface FormState {
   name: string;
@@ -24,10 +25,10 @@ interface FormErrors {
   message?: string;
 }
 
-const VALID_AREAS = ["corporate", "litigation", "real-estate", "family", "contract", "other"];
+const VALID_AREAS = practiceAreas.map(area => area.id);
 
 export default function Contact() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const [searchParams] = useSearchParams();
   useSEO({
     title: "Contact Us | Law Firm in Nicosia, Cyprus | Polycarpou Law",
@@ -224,13 +225,12 @@ export default function Contact() {
                             {t("contact.form.area")}
                           </label>
                           <select id="subject" name="subject" value={form.subject} onChange={handleChange} className="form-input">
-                            <option value="">{t("contact.form.areaPlaceholder")}</option>
-                            <option value="corporate">{t("contact.form.optCorporate")}</option>
-                            <option value="litigation">{t("contact.form.optLitigation")}</option>
-                            <option value="real-estate">{t("contact.form.optRealEstate")}</option>
-                            <option value="family">{t("contact.form.optFamily")}</option>
-                            <option value="contract">{t("contact.form.optContract")}</option>
-                            <option value="other">{t("contact.form.optOther")}</option>
+                            <option value="" disabled>{t("contact.form.areaPlaceholder")}</option>
+                            {practiceAreas.map(area => (
+                              <option key={area.id} value={area.id}>
+                                {area.title[lang]}
+                              </option>
+                            ))}
                           </select>
                         </div>
                       </div>

@@ -5,7 +5,7 @@ import { SectionReveal } from "@/components/SectionReveal";
 import { GoldDivider } from "@/components/GoldDivider";
 import { useI18n } from "@/lib/i18n";
 import { useSEO } from "@/hooks/useSEO";
-import founderImg from "@/assets/founder.jpg";
+import founderImg from "@/assets/mrPolycarpouPhoto.jpg";
 
 const iconMap: Record<string, React.ElementType> = { Shield, Target, Users };
 const valueKeys = [
@@ -76,12 +76,14 @@ export default function About() {
             </Reveal>
 
             <Reveal direction="right" delay={0.15}>
-              <div className="relative">
-                <div className="absolute -top-4 -left-4 w-full h-full rounded-sm" style={{ border: "1px solid hsl(var(--border-gold))", opacity: 0.5 }} />
-                <img src={founderImg} alt={t("about.founder.name")} className="relative rounded-sm object-cover w-full" style={{ maxHeight: "500px", objectPosition: "top", boxShadow: "var(--shadow-lg)" }} />
-                <div className="absolute bottom-6 left-6 right-6 rounded-sm p-4" style={{ background: "hsl(222 47% 11% / 0.92)", backdropFilter: "blur(8px)", borderTop: "2px solid hsl(var(--accent))" }}>
-                  <p className="heading-serif text-lg font-medium" style={{ color: "hsl(40 27% 97%)" }}>{t("about.founder.name")}</p>
-                  <p className="text-xs tracking-widest uppercase mt-0.5" style={{ color: "hsl(var(--accent))" }}>{t("about.founder.role")}</p>
+              <div className="w-full max-w-[400px] mx-auto lg:ml-auto lg:mr-4 flex flex-col">
+                <div className="relative mb-6">
+                  <div className="absolute top-4 -left-4 lg:top-5 lg:-left-5 w-full h-full rounded-md" style={{ border: "1px solid hsl(var(--border-gold))", opacity: 0.5 }} />
+                  <img src={founderImg} alt={t("about.founder.name")} className="relative rounded-md object-cover w-full aspect-[4/5] shadow-md" style={{ objectPosition: "center" }} />
+                </div>
+                <div className="text-left mt-1">
+                  <p className="heading-serif text-2xl font-medium">{t("about.founder.name")}</p>
+                  <p className="text-xs tracking-widest uppercase mt-2" style={{ color: "hsl(var(--accent))", whiteSpace: "pre-wrap", lineHeight: 1.6 }}>{t("about.founder.role")}</p>
                 </div>
               </div>
             </Reveal>

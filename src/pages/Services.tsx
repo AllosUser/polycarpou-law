@@ -1,25 +1,16 @@
 import { Link } from "react-router-dom";
-import {
-  Briefcase, Scale, Building2, Heart, FileText,
-  ArrowRight, CheckCircle, Search, MessageSquare, Handshake,
-} from "lucide-react";
+import { ArrowRight, CheckCircle, Search, MessageSquare, Handshake, FileText } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { GoldDivider } from "@/components/GoldDivider";
-import { services } from "@/lib/data";
 import { useI18n } from "@/lib/i18n";
 import { useSEO } from "@/hooks/useSEO";
-
-const iconMap: Record<string, React.ElementType> = {
-  Briefcase, Scale, Building2, Heart, FileText,
-};
-
-const svcKeys = ["corporate", "litigation", "realestate", "family", "contract"];
-const areaParamMap: Record<string, string> = { corporate: "corporate", litigation: "litigation", realestate: "real-estate", family: "family", contract: "contract" };
+import { practiceAreas } from "@/lib/practiceAreas";
+import { PracticeAreaCard } from "@/components/PracticeAreaCard";
 
 const timelineIcons = [MessageSquare, Search, FileText, Handshake, CheckCircle];
 
 export default function Services() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   useSEO({
     title: "Practice Areas | Legal Services in Cyprus | Polycarpou Law",
     description:
@@ -36,14 +27,12 @@ export default function Services() {
       {
         "@type": "ItemList",
         name: "Legal Services — Andreas Polycarpou & Co LLC",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Corporate Law", url: "https://andreaspolycarpou.com.cy/corporate-law-cyprus" },
-          { "@type": "ListItem", position: 2, name: "Civil Litigation", url: "https://andreaspolycarpou.com.cy/litigation-lawyer-cyprus" },
-          { "@type": "ListItem", position: 3, name: "Real Estate Law", url: "https://andreaspolycarpou.com.cy/real-estate-lawyer-cyprus" },
-          { "@type": "ListItem", position: 4, name: "Immigration Law", url: "https://andreaspolycarpou.com.cy/immigration-lawyer-cyprus" },
-          { "@type": "ListItem", position: 5, name: "Family Law", item: "https://andreaspolycarpou.com.cy/services" },
-          { "@type": "ListItem", position: 6, name: "Contract Law", item: "https://andreaspolycarpou.com.cy/services" },
-        ],
+        itemListElement: practiceAreas.map((area, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: area.title.en,
+          url: `https://andreaspolycarpou.com.cy/services#${area.id}`
+        })),
       },
     ],
   });
@@ -65,36 +54,31 @@ export default function Services() {
       {/* ── SERVICES GRID ────────────────────────────────── */}
       <section className="section bg-background" aria-label="Services">
         <div className="container-law">
-          <div className="space-y-6">
-            {services.map((service, i) => {
-              const Icon = iconMap[service.icon];
-              const isEven = i % 2 === 1;
-              const sKey = svcKeys[i];
-              return (
-                <Reveal key={service.id} delay={i * 0.05}>
-                  <div
-                    id={service.anchor}
-                    className={`grid grid-cols-1 md:grid-cols-12 gap-0 rounded-sm overflow-hidden`}
-                    style={{ border: "1px solid hsl(var(--border))", boxShadow: "var(--shadow-sm)" }}
-                  >
-                    <div className={`md:col-span-2 flex items-center justify-center p-8 ${isEven ? "md:order-last" : ""}`} style={{ background: "var(--gradient-navy)" }}>
-                      <Icon size={40} className="text-gold" strokeWidth={1.25} />
-                    </div>
-                    <div className="md:col-span-10 p-8 md:p-10 bg-card">
-                      <p className="eyebrow mb-2">{t("svcPage.practiceArea")} {String(i + 1).padStart(2, "0")}</p>
-                      <h2 className="heading-serif text-2xl font-medium mb-3 text-foreground">{t(`svc.${sKey}.title`)}</h2>
-                      <GoldDivider className="mb-5" width="48px" />
-                      <p className="leading-relaxed mb-6">{t(`svc.${sKey}.desc`)}</p>
-                      <div className="flex justify-center md:justify-start">
-                        <Link to={`/contact?area=${areaParamMap[sKey]}#contact-form`} className="hidden md:inline text-xs font-semibold tracking-widest uppercase text-gold hover:opacity-80 transition-opacity">{t("svcPage.enquire")}</Link>
-                        <Link to={`/contact?area=${areaParamMap[sKey]}#contact-form`} className="md:hidden btn-primary text-xs whitespace-nowrap">{t("svcPage.enquire")} <ArrowRight size={14} /></Link>
-                      </div>
-                    </div>
-                  </div>
-                </Reveal>
-              );
-            })}
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {practiceAreas.map((area, i) => (
+              <Reveal key={area.id} delay={i * 0.05} className="h-full">
+                <PracticeAreaCard area={area} index={i} />
+              </Reveal>
+            ))}
           </div>
+
+          {/* Consultation Block */}
+          <Reveal delay={0.2}>
+            <div className="mt-14 md:mt-20 bg-muted/30 border border-border/50 rounded-sm p-6 md:p-8 flex flex-col md:flex-row items-center md:justify-between gap-6 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-1 h-full" style={{ background: "hsl(var(--gold))" }} />
+              <div className="flex-1 text-center md:text-left">
+                <h3 className="heading-serif text-xl font-medium text-navy mb-2">
+                  {lang === "en" ? "Need guidance regarding your legal matter?" : "Χρειάζεστε καθοδήγηση για την υπόθεσή σας;"}
+                </h3>
+                <p className="text-sm text-muted-foreground max-w-2xl">
+                  {lang === "en" ? "Contact us to discuss your requirements and allow our team to guide you to the appropriate area of law." : "Επικοινωνήστε μαζί μας για να συζητήσουμε τις ανάγκες σας και να σας καθοδηγήσουμε στον κατάλληλο τομέα δικαίου."}
+                </p>
+              </div>
+              <Link to="/contact#contact-form" className="btn-primary text-xs shrink-0 w-full md:w-auto text-center justify-center">
+                {lang === "en" ? "REQUEST A CONSULTATION" : "ΖΗΤΗΣΤΕ ΣΥΝΑΝΤΗΣΗ"} <ArrowRight size={14} />
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 

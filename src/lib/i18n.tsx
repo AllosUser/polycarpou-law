@@ -75,7 +75,7 @@ const translations: Translations = {
     "about.story.p4": "The firm operates across all primary areas of law, providing legal advisory services and courtroom representation to individuals and businesses. We approach every case with attention to detail, confidentiality and clear strategic planning, aiming to achieve the best possible outcomes.",
     "about.story.cta": "Meet the Team",
     "about.founder.name": "Andreas Polycarpou",
-    "about.founder.role": "Founder & Managing Director · Cyprus Bar, Admitted 2006",
+    "about.founder.role": "Founder & Managing Director",
 
     "about.mv.eyebrow": "What Drives Us",
     "about.mv.title": "Mission & Vision",
@@ -215,6 +215,10 @@ const translations: Translations = {
     "people.education": "Education",
     "people.bar": "Bar Admission",
     "people.languages": "Languages Spoken",
+    "people.role": "Role",
+    "people.joined": "With our firm since",
+    "people.phone": "Telephone",
+    "people.withFirmSince": "With our firm since",
     "people.email": "Email",
 
     // Footer
@@ -394,7 +398,7 @@ const translations: Translations = {
     "about.story.p4": "Το γραφείο δραστηριοποιείται σε όλους τους βασικούς τομείς του δικαίου, παρέχοντας νομική συμβουλευτική και δικαστηριακή εκπροσώπηση σε ιδιώτες και επιχειρήσεις. Προσεγγίζουμε κάθε υπόθεση με προσοχή στη λεπτομέρεια, εμπιστευτικότητα και σαφή στρατηγικό σχεδιασμό, με στόχο την επίτευξη των βέλτιστων δυνατών αποτελεσμάτων.",
     "about.story.cta": "Η Ομάδα μας",
     "about.founder.name": "Ανδρέας Πολυκάρπου",
-    "about.founder.role": "Ιδρυτής & Διευθύνων Σύμβουλος · Μέλος του Π.Δ.Σ. από το 2006",
+    "about.founder.role": "Ιδρυτής & Διευθύνων Σύμβουλος",
 
     "about.mv.eyebrow": "Στόχοι & Φιλοδοξία",
     "about.mv.title": "Αποστολή & Όραμα",
@@ -534,6 +538,10 @@ const translations: Translations = {
     "people.education": "Εκπαίδευση",
     "people.bar": "Δικηγορικός Σύλλογος",
     "people.languages": "Γλώσσες",
+    "people.role": "Ρόλος",
+    "people.joined": "Στο γραφείο μας από",
+    "people.phone": "Τηλέφωνο",
+    "people.withFirmSince": "Στο γραφείο μας από το",
     "people.email": "Email",
 
     // Footer
