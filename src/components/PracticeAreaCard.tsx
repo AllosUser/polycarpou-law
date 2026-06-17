@@ -48,9 +48,9 @@ export function PracticeAreaCard({ area, index }: { area: PracticeArea; index: n
   }, [expanded, desc, lang]);
 
   return (
-    <div 
+    <article 
       id={area.id} 
-      className={`group bg-card rounded-sm border border-border/50 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-gold/50 flex flex-col p-5 ${expanded ? "self-start h-auto" : "h-full"}`}
+      className={`practice-area-card scroll-mt-[110px] md:scroll-mt-[140px] group bg-card rounded-sm border border-border/50 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-gold/50 flex flex-col p-5 ${expanded ? "self-start h-auto" : "h-full"}`}
     >
       {/* Header Area */}
       <div className="flex items-start justify-between gap-4">
@@ -102,6 +102,6 @@ export function PracticeAreaCard({ area, index }: { area: PracticeArea; index: n
           )}
         </button>
       )}
-    </div>
+    </article>
   );
 }

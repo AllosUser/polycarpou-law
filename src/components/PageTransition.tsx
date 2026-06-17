@@ -21,7 +21,7 @@ export function PageTransition() {
     if (isFirstMount.current) {
       isFirstMount.current = false;
       prevPathRef.current = pathname;
-      if (hash) {
+      if (hash && pathname !== "/services") {
         setTimeout(() => {
           const el = document.getElementById(hash.slice(1));
           if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -47,7 +47,7 @@ export function PageTransition() {
 
       const timer = setTimeout(() => {
         setShowOverlay(false);
-        if (hash) {
+        if (hash && pathname !== "/services") {
           const el = document.getElementById(hash.slice(1));
           if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
         }

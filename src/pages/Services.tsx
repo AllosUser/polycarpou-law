@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { ArrowRight, CheckCircle, Search, MessageSquare, Handshake, FileText } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { GoldDivider } from "@/components/GoldDivider";
@@ -11,6 +12,31 @@ const timelineIcons = [MessageSquare, Search, FileText, Handshake, CheckCircle];
 
 export default function Services() {
   const { t, lang } = useI18n();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const id = decodeURIComponent(location.hash.slice(1));
+
+    const scrollToTarget = () => {
+      const element = document.getElementById(id);
+
+      if (element) {
+        element.scrollIntoView({
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ? "auto"
+            : "smooth",
+          block: "start",
+        });
+      }
+    };
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(scrollToTarget);
+    });
+  }, [location.pathname, location.hash]);
+
   useSEO({
     title: "Practice Areas | Legal Services in Cyprus | Polycarpou Law",
     description:
