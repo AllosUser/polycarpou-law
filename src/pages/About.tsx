@@ -60,14 +60,12 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <Reveal direction="left">
               <div>
-                <p className="eyebrow mb-3">{t("about.story.eyebrow")}</p>
-                <h2 className="heading-serif mb-6">{t("about.story.title")}</h2>
+                <h2 className="heading-serif mb-6 text-gold">{t("about.story.title")}</h2>
                 <GoldDivider className="mb-8" width="80px" />
                 <div className="space-y-4">
                   <p>{t("about.story.p1")}</p>
                   <p>{t("about.story.p2")}</p>
                   <p>{t("about.story.p3")}</p>
-                  <p>{t("about.story.p4")}</p>
                 </div>
                 <div className="mt-8">
                   <Link to="/team" className="btn-outline-gold">{t("about.story.cta")} <ArrowRight size={15} /></Link>
