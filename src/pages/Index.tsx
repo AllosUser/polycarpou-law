@@ -13,9 +13,9 @@ import heroBg from "@/assets/hero-bg.jpg";
 import heroBgMobile from "@/assets/hero-mobile-bg.jpg";
 
 const featuredAreaSlugs = [
-  "corporate-commercial-law",
   "civil-law",
-  "real-estate-property-law",
+  "corporate-commercial",
+  "real-estate",
   "family-law",
   "criminal-law",
   "immigration-law"
@@ -121,7 +121,7 @@ export default function Index() {
               // @ts-expect-error dynamic map
               const Icon = LucideIcons[area.icon] || Scale;
               return (
-                <Reveal key={area.id} delay={i * 0.08}>
+                <Reveal key={area.id} delay={i * 0.08} className="h-full">
                   <Link to={`/services#${area.id}`} className="service-card block group no-underline h-full flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-gold" style={{ outlineOffset: "2px" }}>
                     <div className="w-10 h-10 rounded-sm flex items-center justify-center mb-5 shrink-0" style={{ background: "hsl(var(--accent-light))" }}>
                       <Icon size={18} className="text-gold" />
@@ -134,7 +134,7 @@ export default function Index() {
             })}
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-10 text-center">
             <Link to="/services" className="btn-outline-gold inline-flex items-center gap-2">
               {t("home.services.viewAll")}
             </Link>
