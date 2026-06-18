@@ -20,13 +20,7 @@
   <meta name="keywords"
     content="law firm Cyprus, lawyer Cyprus, Nicosia lawyer, legal services Cyprus, corporate law Cyprus, civil litigation Cyprus, real estate lawyer Cyprus, family law Cyprus, immigration lawyer Cyprus, advocates Cyprus, legal consultants Cyprus" />
 
-  <!-- Canonical (homepage default; per-page canonical injected by useSEO) -->
-  <link rel="canonical" href="https://andreaspolycarpou.com.cy/" />
-
-  <!-- Hreflang — same URL serves both EN and EL (language switched client-side) -->
-  <link rel="alternate" hreflang="en" href="https://andreaspolycarpou.com.cy/" />
-  <link rel="alternate" hreflang="el" href="https://andreaspolycarpou.com.cy/" />
-  <link rel="alternate" hreflang="x-default" href="https://andreaspolycarpou.com.cy/" />
+  <!-- Canonical and hreflang managed per-page by useSEO hook -->
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -51,7 +45,7 @@
     content="Boutique law firm in Nicosia, Cyprus, providing strategic legal advice to individuals and businesses across a broad range of practice areas." />
   <meta name="twitter:image" content="https://andreaspolycarpou.com.cy/og-image.jpg" />
 
-  <!-- Global structured data (@graph combines WebSite + Organization + LegalService) -->
+  <!-- Global structured data (@graph combines WebSite + Organization + Person) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -62,27 +56,24 @@
         "url": "https://andreaspolycarpou.com.cy",
         "name": "Andreas Polycarpou & Co LLC",
         "description": "Law firm in Nicosia, Cyprus",
-        "inLanguage": ["en", "el"],
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://andreaspolycarpou.com.cy/?s={search_term_string}"
-          },
-          "query-input": "required name=search_term_string"
-        }
+        "publisher": {
+          "@id": "https://andreaspolycarpou.com.cy/#organization"
+        },
+        "inLanguage": ["en", "el"]
       },
       {
-        "@type": ["LegalService", "LocalBusiness"],
-        "@id": "https://andreaspolycarpou.com.cy/#firm",
-        "name": "ANDREAS POLYCARPOU & CO LLC",
+        "@type": ["LegalService", "Organization"],
+        "@id": "https://andreaspolycarpou.com.cy/#organization",
+        "name": "Andreas Polycarpou & Co LLC",
         "legalName": "ANDREAS POLYCARPOU & CO LLC",
-        "alternateName": "Polycarpou Law",
         "description": "Boutique law firm in Nicosia, Cyprus, specialising in corporate law, civil litigation, real estate, family law, immigration, and contract law. Serving individuals and businesses across Cyprus since 2015.",
-        "url": "https://andreaspolycarpou.com.cy",
+        "url": "https://andreaspolycarpou.com.cy/",
         "logo": {
           "@type": "ImageObject",
+          "@id": "https://andreaspolycarpou.com.cy/#logo",
           "url": "https://andreaspolycarpou.com.cy/logo.png",
+          "contentUrl": "https://andreaspolycarpou.com.cy/logo.png",
+          "caption": "Andreas Polycarpou & Co LLC",
           "width": 400,
           "height": 400
         },
@@ -91,6 +82,9 @@
         "email": "info@polycarpoulaw.com",
         "faxNumber": "+35722003576",
         "foundingDate": "2015",
+        "founder": {
+          "@id": "https://andreaspolycarpou.com.cy/our-people/andreas-polycarpou#person"
+        },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Arch. Makarios III Avenue 1-7, Office 201, MITSI BUILDING 3",
@@ -133,10 +127,29 @@
           "@type": "Organization",
           "name": "Cyprus Bar Association",
           "url": "https://www.cyprusbarassociation.org"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://andreaspolycarpou.com.cy/our-people/andreas-polycarpou#person",
+        "name": "Andreas Polycarpou",
+        "url": "https://andreaspolycarpou.com.cy/our-people/andreas-polycarpou",
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://andreaspolycarpou.com.cy/our-people/andreas-polycarpou#primaryimage",
+          "url": "https://andreaspolycarpou.com.cy/andreas-polycarpou-lawyer-cyprus.jpg",
+          "contentUrl": "https://andreaspolycarpou.com.cy/andreas-polycarpou-lawyer-cyprus.jpg",
+          "caption": "Andreas Polycarpou, lawyer at Andreas Polycarpou & Co LLC in Nicosia, Cyprus"
         },
-        "sameAs": [
-          "https://andreaspolycarpou.com.cy"
-        ]
+        "jobTitle": "Founder, Managing Director & Lawyer",
+        "worksFor": {
+          "@id": "https://andreaspolycarpou.com.cy/#organization"
+        },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Aristotle University of Thessaloniki"
+        },
+        "knowsLanguage": ["Greek", "English"]
       }
     ]
   }

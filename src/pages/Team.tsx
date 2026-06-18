@@ -88,7 +88,9 @@ export default function Team() {
                     <div className="aspect-[2/3] overflow-hidden bg-secondary">
                       <img
                         src={member.image}
-                        alt={member.name[l]}
+                        alt={`${member.name[l]}, ${member.role[l]} — Andreas Polycarpou & Co LLC`}
+                        width={300}
+                        height={450}
                         className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
                       />

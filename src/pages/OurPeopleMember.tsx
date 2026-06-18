@@ -19,14 +19,23 @@ export default function OurPeopleMember() {
   const getBioString = (bio: string | string[]) => Array.isArray(bio) ? bio.join("\n\n") : bio;
   const getBioArray = (bio: string | string[]) => Array.isArray(bio) ? bio : bio.split("\n\n").filter(Boolean);
 
-  // Build SEO data regardless of member existence — hooks must be called unconditionally
   const memberTitle = member
-    ? `${member.name.en} — ${member.role.en} | Andreas Polycarpou & Co LLC`
+    ? `${member.name[l]} — ${member.role[l]} | Andreas Polycarpou & Co LLC`
     : "Our People | Andreas Polycarpou & Co LLC";
   const memberDesc = member
-    ? `${member.name.en} is ${member.role.en} at Andreas Polycarpou & Co LLC in Nicosia, Cyprus. ${getBioString(member.bio.en).split("\n\n")[0].slice(0, 160)}...`
+    ? `${member.name[l]} is ${member.role.en} at Andreas Polycarpou & Co LLC in Nicosia, Cyprus. ${getBioString(member.bio.en).split("\n\n")[0].slice(0, 160)}...`
     : "Meet the legal team at Andreas Polycarpou & Co LLC — experienced lawyers in Nicosia, Cyprus.";
   const memberCanonical = member ? `/our-people/${member.id}` : "/team";
+
+  const isEnglish = typeof window !== "undefined" && window.location.pathname.startsWith("/en");
+  const langPrefix = isEnglish ? "/en" : "";
+
+  const portraitUrl = member?.id === "andreas-polycarpou"
+    ? `${SITE_URL}/andreas-polycarpou-lawyer-cyprus.jpg`
+    : undefined;
+  const personId = member ? `${SITE_URL}/our-people/${member.id}#person` : undefined;
+  const profileCanonicalUrl = member ? `${SITE_URL}/our-people/${member.id}` : undefined;
+  const profileLocaleUrl = member ? `${SITE_URL}${langPrefix}/our-people/${member.id}` : undefined;
 
   const personSchema = member
     ? [
@@ -35,20 +44,37 @@ export default function OurPeopleMember() {
           itemListElement: [
             { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
             { "@type": "ListItem", position: 2, name: "Our People", item: `${SITE_URL}/team` },
-            { "@type": "ListItem", position: 3, name: member.name.en, item: `${SITE_URL}/our-people/${member.id}` },
+            { "@type": "ListItem", position: 3, name: member.name.en, item: profileCanonicalUrl },
           ],
         },
         {
+          "@type": "ProfilePage",
+          "@id": `${profileLocaleUrl}#webpage`,
+          url: profileLocaleUrl,
+          name: `${member.name.en} | Andreas Polycarpou & Co LLC`,
+          inLanguage: isEnglish ? "en" : "el",
+          mainEntity: { "@id": personId },
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+        },
+        {
           "@type": "Person",
+          "@id": personId,
           name: member.name.en,
           jobTitle: member.role.en,
           email: member.email,
-          url: `${SITE_URL}/our-people/${member.id}`,
+          url: profileCanonicalUrl,
           description: getBioString(member.bio.en).split("\n\n")[0].slice(0, 300),
+          ...(portraitUrl ? {
+            image: {
+              "@type": "ImageObject",
+              "@id": `${profileCanonicalUrl}#primaryimage`,
+              url: portraitUrl,
+              contentUrl: portraitUrl,
+              caption: `${member.name.en}, ${member.role.en.toLowerCase()} at Andreas Polycarpou & Co LLC in Nicosia, Cyprus`,
+            },
+          } : {}),
           worksFor: {
-            "@type": "LegalService",
-            name: "ANDREAS POLYCARPOU & CO LLC",
-            url: SITE_URL,
+            "@id": `${SITE_URL}/#organization`,
           },
           knowsLanguage: member.languages.en.split(", "),
           ...(member.education.en
@@ -63,11 +89,22 @@ export default function OurPeopleMember() {
       ]
     : undefined;
 
+  const memberAltText = member
+    ? (member.id === "andreas-polycarpou"
+        ? (l === "el"
+            ? "Ανδρέας Πολυκάρπου, δικηγόρος στη δικηγορική εταιρεία Andreas Polycarpou & Co LLC στη Λευκωσία"
+            : "Andreas Polycarpou, lawyer at Andreas Polycarpou & Co LLC in Nicosia, Cyprus")
+        : `${member.name[l]}, ${member.role[l]} — Andreas Polycarpou & Co LLC`)
+    : "";
+
   useSEO({
     title: memberTitle,
     description: memberDesc,
     canonical: memberCanonical,
     schema: personSchema,
+    ogType: "profile",
+    ogImage: portraitUrl,
+    ogImageAlt: memberAltText,
   });
 
   if (!member) return <Navigate to="/team" replace />;
@@ -135,7 +172,9 @@ export default function OurPeopleMember() {
                 >
                   <img
                     src={member.image}
-                    alt={member.name[l]}
+                    alt={memberAltText}
+                    width={300}
+                    height={450}
                     className="w-full object-contain block bg-secondary"
                     style={{ aspectRatio: "2/3" }}
                     loading="eager"

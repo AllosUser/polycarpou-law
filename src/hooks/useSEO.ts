@@ -12,6 +12,10 @@ export interface SEOConfig {
   schema?: Record<string, unknown> | Record<string, unknown>[];
   /** Overrides the default OG/Twitter card image */
   ogImage?: string;
+  /** Alt text for the OG/Twitter card image */
+  ogImageAlt?: string;
+  /** OG type — defaults to "website" */
+  ogType?: string;
   robots?: string;
 }
 
@@ -26,13 +30,16 @@ function upsertMeta(selector: string, attr: string, content: string) {
   el.setAttribute("content", content);
 }
 
-export function useSEO({ title, description, canonical, schema, ogImage, robots }: SEOConfig) {
+export function useSEO({ title, description, canonical, schema, ogImage, ogImageAlt, ogType, robots }: SEOConfig) {
   useEffect(() => {
     const prevTitle = document.title;
     document.title = title;
 
-    const canonicalUrl = canonical !== undefined ? `${SITE_URL}${canonical}` : SITE_URL;
+    const isEnglish = window.location.pathname.startsWith("/en");
+    const langPrefix = isEnglish ? "/en" : "";
+    const canonicalUrl = canonical !== undefined ? `${SITE_URL}${langPrefix}${canonical}` : SITE_URL;
     const imageUrl = ogImage ?? DEFAULT_OG_IMAGE;
+    const imageAlt = ogImageAlt ?? "Andreas Polycarpou & Co LLC - Advocates & Legal Consultants";
 
     // ── Core ──────────────────────────────────────────────
     upsertMeta('meta[name="description"]', "name=description", description);
@@ -45,10 +52,10 @@ export function useSEO({ title, description, canonical, schema, ogImage, robots 
     upsertMeta('meta[property="og:image"]', "property=og:image", imageUrl);
     upsertMeta('meta[property="og:image:width"]', "property=og:image:width", "1200");
     upsertMeta('meta[property="og:image:height"]', "property=og:image:height", "630");
-    upsertMeta('meta[property="og:image:alt"]', "property=og:image:alt", "Andreas Polycarpou & Co LLC - Advocates & Legal Consultants");
+    upsertMeta('meta[property="og:image:alt"]', "property=og:image:alt", imageAlt);
     upsertMeta('meta[property="og:image:secure_url"]', "property=og:image:secure_url", imageUrl);
     upsertMeta('meta[property="og:image:type"]', "property=og:image:type", "image/jpeg");
-    upsertMeta('meta[property="og:type"]', "property=og:type", "website");
+    upsertMeta('meta[property="og:type"]', "property=og:type", ogType ?? "website");
     upsertMeta('meta[property="og:site_name"]', "property=og:site_name", "Andreas Polycarpou & Co LLC");
 
     // ── Twitter / X Card ──────────────────────────────────
@@ -58,14 +65,30 @@ export function useSEO({ title, description, canonical, schema, ogImage, robots 
     upsertMeta('meta[name="twitter:image"]', "name=twitter:image", imageUrl);
 
     // ── Canonical ─────────────────────────────────────────
+    let canonicalEl: HTMLLinkElement | null = null;
     if (canonical !== undefined) {
-      let el = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-      if (!el) {
-        el = document.createElement("link");
-        el.rel = "canonical";
-        document.head.appendChild(el);
+      canonicalEl = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+      if (!canonicalEl) {
+        canonicalEl = document.createElement("link");
+        canonicalEl.rel = "canonical";
+        document.head.appendChild(canonicalEl);
       }
-      el.href = canonicalUrl;
+      canonicalEl.href = canonicalUrl;
+    }
+
+    // ── Hreflang ──────────────────────────────────────────
+    const addedHreflangs: HTMLLinkElement[] = [];
+    if (canonical !== undefined) {
+      const elUrl = canonical === "/" ? `${SITE_URL}/` : `${SITE_URL}${canonical}`;
+      const enUrl = canonical === "/" ? `${SITE_URL}/en/` : `${SITE_URL}/en${canonical}`;
+      for (const [hl, href] of [["el", elUrl], ["en", enUrl], ["x-default", elUrl]] as const) {
+        const link = document.createElement("link");
+        link.rel = "alternate";
+        link.hreflang = hl;
+        link.href = href;
+        document.head.appendChild(link);
+        addedHreflangs.push(link);
+      }
     }
 
     // ── JSON-LD Schema ────────────────────────────────────
@@ -78,8 +101,6 @@ export function useSEO({ title, description, canonical, schema, ogImage, robots 
         document.head.appendChild(schemaEl);
       }
       const schemas = Array.isArray(schema) ? schema : [schema];
-      // Single schema that already carries @context → serialize as-is (backward compat).
-      // Otherwise wrap in @graph so multiple schemas share one @context.
       if (schemas.length === 1 && schemas[0]["@context"]) {
         schemaEl.textContent = JSON.stringify(schemas[0]);
       } else {
@@ -93,9 +114,8 @@ export function useSEO({ title, description, canonical, schema, ogImage, robots 
     return () => {
       document.title = prevTitle || DEFAULT_TITLE;
       document.getElementById("page-schema")?.remove();
-      if (canonical !== undefined) {
-        document.querySelector('link[rel="canonical"]')?.remove();
-      }
+      canonicalEl?.remove();
+      addedHreflangs.forEach((el) => el.remove());
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [title, description, canonical]);

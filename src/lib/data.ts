@@ -1,5 +1,5 @@
 import mariantinaPhoto from "@/assets/mariantina-koutsogeorgopoulou.png";
-import mrPolycarpouPhoto from "@/assets/mrPolycarpouPhoto.jpg";
+const mrPolycarpouPhoto = "/andreas-polycarpou-lawyer-cyprus.jpg";
 import renePhoto from "@/assets/RenePhoto.jpg";
 import josephinPhoto from "@/assets/JosephinPhoto.jpg";
 import eleniPhoto from "@/assets/EleniPhoto.jpg";

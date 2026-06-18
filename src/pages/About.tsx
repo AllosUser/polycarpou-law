@@ -5,7 +5,7 @@ import { SectionReveal } from "@/components/SectionReveal";
 import { GoldDivider } from "@/components/GoldDivider";
 import { useI18n } from "@/lib/i18n";
 import { useSEO } from "@/hooks/useSEO";
-import founderImg from "@/assets/mrPolycarpouPhoto.jpg";
+const founderImg = "/andreas-polycarpou-lawyer-cyprus.jpg";
 
 const iconMap: Record<string, React.ElementType> = { Shield, Target, Users };
 const valueKeys = [
@@ -15,7 +15,7 @@ const valueKeys = [
 ];
 
 export default function About() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   useSEO({
     title: "About Us | Corporate & Civil Lawyers in Nicosia, Cyprus | Polycarpou Law",
     description:
@@ -77,7 +77,7 @@ export default function About() {
               <div className="w-full max-w-[400px] mx-auto lg:ml-auto lg:mr-4 flex flex-col">
                 <div className="relative mb-6">
                   <div className="absolute top-4 -left-4 lg:top-5 lg:-left-5 w-full h-full rounded-md" style={{ border: "1px solid hsl(var(--border-gold))", opacity: 0.5 }} />
-                  <img src={founderImg} alt={t("about.founder.name")} className="relative rounded-md object-cover w-full aspect-[4/5] shadow-md" style={{ objectPosition: "center" }} />
+                  <img src={founderImg} alt={lang === "el" ? "Ανδρέας Πολυκάρπου, δικηγόρος στη δικηγορική εταιρεία Andreas Polycarpou & Co LLC στη Λευκωσία" : "Andreas Polycarpou, lawyer at Andreas Polycarpou & Co LLC in Nicosia, Cyprus"} width={400} height={500} className="relative rounded-md object-cover w-full aspect-[4/5] shadow-md" style={{ objectPosition: "center" }} />
                 </div>
                 <div className="text-left mt-1">
                   <p className="heading-serif text-2xl font-medium">{t("about.founder.name")}</p>
