@@ -31,7 +31,7 @@ const App = () => (
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter>
+          <BrowserRouter basename={(window.location.pathname === "/en" || window.location.pathname.startsWith("/en/")) ? "/en" : "/"}>
             <PageTransition />
             <Layout>
               <Routes>

@@ -82,8 +82,10 @@ export default function Index() {
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
-            {t("home.hero.title")}{" "}
-            <em style={{ color: "hsl(var(--accent))", fontStyle: "italic" }}>{t("home.hero.titleAccent")}</em>
+            <span className="block sm:inline">{t("home.hero.title")}</span>{" "}
+            <span className="block sm:inline" style={{ color: "hsl(var(--accent))", fontStyle: "italic" }}>
+              {t("home.hero.titleAccent")}
+            </span>
           </motion.h1>
 
           <motion.p

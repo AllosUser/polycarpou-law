@@ -339,7 +339,7 @@ const translations: Translations = {
 
     // Home Hero
     "home.hero.eyebrow": "ANDREAS POLYCARPOU & CO LLC · 2015",
-    "home.hero.title": "Στρατηγική Νομική ",
+    "home.hero.title": "Στρατηγική Νομική",
     "home.hero.titleAccent": "Αριστεία",
     "home.hero.subtitle": "Ολοκληρωμένες νομικές υπηρεσίες με επαγγελματική ακεραιότητα, στρατηγική προσέγγιση και αποτελεσματική δικαστηριακή εκπροσώπηση.",
     "home.hero.cta1": "ΚΛΕΙΣΤΕ ΣΥΝΑΝΤΗΣΗ",
@@ -658,14 +658,40 @@ const translations: Translations = {
 /* ─── Provider ─────────────────────────────────────────────── */
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>(() => {
+    // 1. Check pathname (e.g. /en, /en/, /en/about)
+    const path = window.location.pathname;
+    if (path === "/en" || path.startsWith("/en/")) {
+      return "en";
+    }
+    // 2. Check HTML document lang attribute
+    const htmlLang = document.documentElement.lang;
+    if (htmlLang === "el" || htmlLang === "en") {
+      return htmlLang as Lang;
+    }
+    // 3. Check localStorage
     const saved = localStorage.getItem("lang");
-    return saved === "el" ? "el" : "en";
+    if (saved === "el" || saved === "en") {
+      return saved as Lang;
+    }
+    return "el"; // Default to Greek (default root)
   });
 
   const changeLang = useCallback((l: Lang) => {
     setLang(l);
     localStorage.setItem("lang", l);
     document.documentElement.lang = l;
+
+    // Dynamically update URL if it doesn't match the new language
+    const currentPath = window.location.pathname;
+    const isEnPath = currentPath === "/en" || currentPath.startsWith("/en/");
+
+    if (l === "en" && !isEnPath) {
+      const newPath = "/en" + (currentPath === "/" ? "" : currentPath);
+      window.location.href = newPath;
+    } else if (l === "el" && isEnPath) {
+      const newPath = currentPath.replace(/^\/en/, "") || "/";
+      window.location.href = newPath;
+    }
   }, []);
 
   const t = useCallback(
